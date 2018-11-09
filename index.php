@@ -51,7 +51,7 @@ $_SESSION["viewIndex"] = true;
 //if information was incorrect, dispays error
 $error=$_REQUEST['error'];
 if ($error == "Y"){
-	echo "<font color='red'>Incorrect Information Entered</font>";
+	echo "<font color='red'>Incorrect Information Entered</font>"
 }
 
 ?>
