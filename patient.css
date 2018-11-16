@@ -13,6 +13,15 @@ h1 {
 	color:red;
 }
 
+header {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: Ghostwhite;
+    position: fixed;
+    width: 100%;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -20,8 +29,7 @@ ul {
     overflow: hidden;
     background-color: LightBlue;
     position: fixed;
-    top: 11%;
-	left: -0.5%;
+    top: 13%;
     width: 100%;
 }
 
@@ -49,13 +57,33 @@ li a:hover:not(.active) {
 /* end nav bar */
 
 /* page instruction header */
+/* padding for sticky header*/
 .p01{
-	padding-top:60px;
+	padding-top:160px;
 	font-size:20px;
 	font-family:verdana;
 	text-align:center;
 }
 
+/**/
+.p02{
+	font-size:18px;
+	font-family:verdana;
+	text-align:center;
+	padding-right:400px;
+}
+
+/* used for div boxes that dont use a table*/
+.login{
+	width:450px;
+	height:20%;
+	text-align:center;
+	margin: auto;
+	background-color:White;
+	border:1px solid black;
+}
+
+/* used for div boxes that have a table */
 .main {	
 	width:600px;
 	height:20%;
@@ -63,10 +91,17 @@ li a:hover:not(.active) {
 	margin: auto;
 }
 
+/* padding for a button */
 .button {
 	text-align:center;
 	padding:10px;
 	background-color:clear;
+}
+
+.fpassword{
+	padding:5px;
+	font-size:11px;
+	text-decoration:none;
 }
 
 table, th, td {
