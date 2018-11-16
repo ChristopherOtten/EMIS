@@ -24,10 +24,7 @@ $_SESSION["viewIndex"] = true;
 	</h1>
 	<hr>
 	<ul>
-		<li><a href="">Personal Info</a></li>
-		<li><a href="">Medical Info</a></li>
-		<li><a href="">Receipts</a></li>
-		<li><a href="">Messages</a></li>
+		<li><a href="">   </a></li>
 	</ul>
 </header>
 	
