@@ -35,7 +35,7 @@ $_SESSION["viewIndex"] = true;
 	
 	<!--Login form-->
 	<p class="p01">Welcome to the Electronic Medical Information System</p>
-	<div class="main"><form action="patient.html" method="post">
+	<div class="main"><form action="process.php" method="post">
 		<br>
 		Username: <input type="text" name="email" id="email" required><br><br>
 		Password: <input type="password" name="password" id="password" required><br>
