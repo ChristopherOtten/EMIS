@@ -36,17 +36,17 @@ if (($row['permissions'] == 'Doctor') && (strtoupper($pass) == strtoupper($row['
 }
 
 //nurse
-if (($row['permissions'] == 'Nurse') && (strtoupper($pass) == strtoupper($row['password']))){
+else if (($row['permissions'] == 'Nurse') && (strtoupper($pass) == strtoupper($row['password']))){
 	header('Location: nurse.php');
 }
 
 //patient
-if (($row['permissions'] == 'Patient') && (strtoupper($pass) == strtoupper($row['password']))){
+else if (($row['permissions'] == 'Patient') && (strtoupper($pass) == strtoupper($row['password']))){
 	header('Location: patient.php');
 }
 
 //receptionist
-if (($row['permissions'] == 'Receptionist') && (strtoupper($pass) == strtoupper($row['password']))){
+else if (($row['permissions'] == 'Receptionist') && (strtoupper($pass) == strtoupper($row['password']))){
 	header('Location: receptionist.php');
 }
 

@@ -1,4 +1,8 @@
 <?php
+if ($_SESSION["viewIndex"] == NULL){
+	header('Location: index.php');
+	exit;
+}
 
 if (!$MYSQLI) {
 		$MYSQLI = mysqli_connect('10.100.118.106', 'root', 'P@$$w0rd');
