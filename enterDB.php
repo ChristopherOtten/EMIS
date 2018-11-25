@@ -24,7 +24,7 @@ VALUES ('$first', '$last', '$usrName', '$pPass', '$patient', '$ID', '$specializa
 
 //plug into databse, if it breaks, print error
 if (mysqli_query($MYSQLI, $sql)) {
-    echo "New record created successfully";
+    header('Location: index.php');
 	
 	//close
 	mysqli_close($MYSQLI);
