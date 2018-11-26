@@ -19,7 +19,7 @@ $ID = '99';
 //$specialization = ' ';
 
 //set up sql statement
-$sql = "INSERT INTO generalUsers ". "(firstName, lastName, email, password, permissions, accountID, specialization)". "
+$sql = "INSERT INTO generalUsers ". "(firstName, lastName, email, password, permissions, accountID)". "
 VALUES ('$first', '$last', '$usrName', '$pPass', '$patient', '$ID')";
 
 //plug into databse, if it breaks, print error
