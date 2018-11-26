@@ -16,11 +16,11 @@ $first = $_REQUEST['fNameC'];
 $last = $_REQUEST['lNameC'];
 $patient = 'Patient';
 $ID = '99';
-$specialization = ' ';
+//$specialization = ' ';
 
 //set up sql statement
 $sql = "INSERT INTO generalUsers ". "(firstName, lastName, email, password, permissions, accountID, specialization)". "
-VALUES ('$first', '$last', '$usrName', '$pPass', '$patient', '$ID', '$specialization')";
+VALUES ('$first', '$last', '$usrName', '$pPass', '$patient', '$ID')";
 
 //plug into databse, if it breaks, print error
 if (mysqli_query($MYSQLI, $sql)) {
