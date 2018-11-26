@@ -5,7 +5,7 @@ if ($_SESSION["viewIndex"] == NULL){
 }
 
 if (!$MYSQLI) {
-		$MYSQLI = mysqli_connect('10.100.118.106', 'root', 'P@$$w0rd');
+		$MYSQLI = mysqli_connect('10.100.118.106', 'root', 'P@$$w0rd', 'EMIS');
 }
 
 	if (!$MYSQLI) {
