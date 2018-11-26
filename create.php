@@ -80,22 +80,11 @@ include("inc_connect.php");
 			<td style="text-align:center">Password: <input type="password" name="passC" required size="20"></td>
 		</tr>
 		<tr>
-			<td style="text-align:center">Confirm : <input type="password" name="passConfirm" required size="20"></td>
+			<td style="text-align:center">Confirm : <input type="password" name="email" required size="20"></td>
 		</tr>
-		<?php
-			$pPass = $_REQUEST['passC'];
-			$pPassConfirm = $_REQUEST['passConfrim'];
-			if ($pPass == $pPassConfirm){
-				?>
-				<input type="submit" value="Create Account" style="color:Black">
-				<?php
-			}
-		
-		
-		?>
 		</table>
 		<br>
-		<!--<input type="submit" value="Create Account" style="color:Black">-->
+		<input type="submit" value="Create Account" style="color:Black">
 		<br><br>
 	</form></div>
 	<br>
