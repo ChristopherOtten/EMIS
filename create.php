@@ -77,10 +77,10 @@ include("inc_connect.php");
 			<td style="text-align:center">Email: <input type="text" name="emailC" required size="40"></td>
 		</tr>
 		<tr>
-			<td style="text-align:center">Password: <input type="text" name="passC" required size="20"></td>
+			<td style="text-align:center">Password: <input type="password" name="passC" required size="20"></td>
 		</tr>
 		<tr>
-			<td style="text-align:center">Confirm : <input type="text" name="email" required size="20"></td>
+			<td style="text-align:center">Confirm : <input type="password" name="email" required size="20"></td>
 		</tr>
 		</table>
 		<br>
