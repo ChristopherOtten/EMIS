@@ -36,18 +36,18 @@ include("inc_connect.php");
 			<td>Middle Initial: <input type="mname" name="mNameC" maxlength="1"></td> <!---idk if we really need this, but ill leave it here for now -->
 			<td>Last Name: <input type="text" name="lNameC" required></td>
 			<td>Gender: <br>
-				<input type="radio" name="gender" id="male" value="male"><label for="male">Male</label><br>
-				<input type="radio" name="gender" id="female" value="female"><label for="female">Female</label><br>
-				<input type="radio" name="gender" id="female" value="female"><label for="other">Other</label><br></td>
+				<input type="radio" name="genderC" id="male" value="male"><label for="male">Male</label><br>
+				<input type="radio" name="genderC" id="female" value="female"><label for="female">Female</label><br>
+				<input type="radio" name="genderC" id="female" value="other"><label for="other">Other</label><br></td>
 		</tr>
 		<tr>
-			<td>Street Address: <input type="text" name="street" required></td>
-			<td>City: <input type="text" name="city" required></td>
-			<td>State: <input type="text" name="state" required></td>
-			<td>Zip Code:  <input type="text" name="zip" required maxlength="5"></td>
+			<td>Street Address: <input type="text" name="streetC" required></td>
+			<td>City: <input type="text" name="cityC" required></td>
+			<td>State: <input type="text" name="stateC" required></td>
+			<td>Zip Code:  <input type="text" name="zipC" required maxlength="5"></td>
 		</tr>
 		<tr>
-			<td>Cell #: <input type="text" name="phone" required maxlength="10"></td>
+			<td>Cell #: <input type="text" name="phoneC" required maxlength="10"></td>
 		</tr>
 		<br>
 		</table>
@@ -67,8 +67,8 @@ include("inc_connect.php");
 		<br>
 		<table id="t03">
 		<tr>
-			<td>Medical Insurance: <input type="text" name="insuranceName" required></td>
-			<td>Medical Insurance Number: <input type="text" name="insuranceNumber" required></td>
+			<td>Medical Insurance: <input type="text" name="insuranceNameC" required></td>
+			<td>Medical Insurance Number: <input type="text" name="insuranceNumberC" required></td>
 		</tr>
 		</table>
 		<br>
