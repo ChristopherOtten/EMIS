@@ -47,7 +47,7 @@ include("inc_connect.php");
 			<td>Zip Code:  <input type="text" name="zipC" required maxlength="5"></td>
 		</tr>
 		<tr>
-			<td>Cell #: <input type="text" name="phoneC" required maxlength="10"></td>
+			<td>Cell #: <input type="text" name="phoneC" required maxlength="12"></td>
 		</tr>
 		<br>
 		</table>
