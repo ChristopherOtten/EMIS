@@ -39,10 +39,10 @@ $numberIns = $_REQUEST['insuranceNumberC'];
 $sql = "INSERT INTO generalUsers ". "(firstName, lastName, email, password, permissions, accountID)". "
 VALUES ('$first', '$last', '$usrName', '$pPass', '$patient', '$ID')";
 
-$sql2 = "INSERT INTO patients ". "(first_name, middle_name, last_name, gender, weight, height, age, blood_pressure, diagnosis, medications, Doctor)". "
-VALUE ('$first', '$middle', '$last', '$gender', '$weight', '$height', '$weight', '$age', '$bloodP', '$diag', '$meds', '$doctor')";
+$sql2 = "INSERT INTO patients ". "(first_name, middle_name, last_name, Gender, weight, height, age, blood_pressure, diagnosis, medications, Doctor)". "
+VALUE ('$first', '$middle', '$last', '$gender', '$weight', '$height', '$age', '$bloodP', '$diag', '$meds', '$doctor')";
 
-$sql3 = "INSERT INTO patientInfo ". "(first_name, middle_name, last_name, gender, address, city, state, zip, cellphone, insurance_provider, insurance_number)". "
+$sql3 = "INSERT INTO patientInfo ". "(first_name, middle_name, last_name, Gender, address, city, state, zip, cellphone, insurance_provider, insurance_number)". "
 VALUE ('$first', '$middle', '$last', '$gender', '$street', '$city', '$state', '$zip', '$cell', '$providerIns', '$numberIns')";
 
 //plug into databse, if it breaks, print error
