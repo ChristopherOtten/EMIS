@@ -54,7 +54,7 @@ include("inc_connect.php");
 		<br>
 		<table id="t02">
 		<tr>
-			<td>Age: <input type="text" name="ageC" required></td>
+			<td>Date of Birth: (YYYY-MM-DD) <input type="text" name="ageC" required></td>
 			<td>Weight: <input type="mname" name="weightC" required></td>
 			<td>height: <input type="text" name="heightC" required></td>
 			<td>Blood Pressure: <input type="text" name="bloodPC" required></td>
