@@ -21,7 +21,9 @@ $ID = '99';
 $middle = $_REQUEST['mNameC'];
 $weight = $_REQUEST['weightC'];
 $age = $_REQUEST['ageC'];
-$height = mysqli_real_escape_string($_REQUEST['heightC']);
+$height = $_REQUEST['heightC'];
+$height = mysqli_real_escape_string($height);
+
 $bloodP = $_REQUEST['bloodPC'];
 $diag = $_REQUEST['diagnosisC'];
 $meds = $_REQUEST['medicationsC'];
