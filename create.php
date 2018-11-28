@@ -33,7 +33,7 @@ include("inc_connect.php");
 	<div class="main"><form action="enterDB.php" method="post"><table id="t01">
 		<tr>
 			<td>First Name: <input type="text" name="fNameC" required></td>
-			<td>Middle Initial: <input type="mname" name="mname" maxlength="1"></td> <!---idk if we really need this, but ill leave it here for now -->
+			<td>Middle Initial: <input type="mname" name="mNameC" maxlength="1"></td> <!---idk if we really need this, but ill leave it here for now -->
 			<td>Last Name: <input type="text" name="lNameC" required></td>
 			<td>Gender: <br>
 				<input type="radio" name="gender" id="male" value="male"><label for="male">Male</label><br>
@@ -54,14 +54,14 @@ include("inc_connect.php");
 		<br>
 		<table id="t02">
 		<tr>
-			<td>Age: <input type="text" name="age" required></td>
-			<td>Weight: <input type="mname" name="weight" required></td>
-			<td>height: <input type="text" name="height" required></td>
-			<td>Blood Pressure: <input type="text" name="bloodP" required></td>
+			<td>Age: <input type="text" name="ageC" required></td>
+			<td>Weight: <input type="mname" name="weightC" required></td>
+			<td>height: <input type="text" name="heightC" required></td>
+			<td>Blood Pressure: <input type="text" name="bloodPC" required></td>
 		</tr>
 		<tr>
-			<td>Previous Diagnosis: <input type="text" name="diagnosis" required></td>
-			<td>Medications Perscribed: <input type="text" name="medications" required></td>
+			<td>Previous Diagnosis: <input type="text" name="diagnosisC" required></td>
+			<td>Medications Perscribed: <input type="text" name="medicationsC" required></td>
 		</tr>
 		</table>
 		<br>
