@@ -88,7 +88,15 @@ include("inc_connect.php");
 		<br><br>
 	</form></div>
 	<br>
-	
+<?php
+//if information was incorrect, dispays error
+$error=$_REQUEST['error'];
+if ($error == "Y"){
+	//echo "<font color='red'>Incorrect Information Entered</font>";
+    echo "<div style='text-align:center'><font color='red'>Incorrect Information Entered</font></div>";
+}
+
+?>	
 	
 	
 </body>
