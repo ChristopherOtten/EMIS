@@ -33,10 +33,10 @@ include("inc_connect.php");
 	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
 		<?php
             $search_value = $_REQUEST['email'];
-            $sql = "SELECT firstName, lastName FROM generalUsers where email like ".strtolower($search_value);
+            $sql = "SELECT firstName, lastName FROM generalUsers WHERE email=".$search_value;
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr><td>First Name:" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:".$row["lastName"]."</td><td>Gender: <br></td></tr>";
+                    echo "<tr><td>First Name:" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:".$row["lastName"]."</td><td>Gender:".$row["gender"]."</td></tr>";
                 }
         }
         ?>
