@@ -13,7 +13,7 @@ include("inc_connect.php");
 $usrName = $_REQUEST['emailC'];
 $pPass = $_REQUEST['passC'];
 $first = $_REQUEST['fNameC'];
-$first = mysqli_real_escape_string($first);
+$first = mysqli_real_escape_string($MYSQLI, $first);
 $last = $_REQUEST['lNameC'];
 $patient = 'Patient';
 $ID = '99';
@@ -23,7 +23,7 @@ $middle = $_REQUEST['mNameC'];
 $weight = $_REQUEST['weightC'];
 $age = $_REQUEST['ageC'];
 $height = $_REQUEST['heightC'];
-$height = mysqli_real_escape_string($height);
+$height = mysqli_real_escape_string($MYSQLI, $height);
 
 $bloodP = $_REQUEST['bloodPC'];
 $diag = $_REQUEST['diagnosisC'];
