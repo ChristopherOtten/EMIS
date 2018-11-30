@@ -2,7 +2,15 @@
 session_start();
 include("inc_connect.php");
 ?>
+<?php
+//if information was incorrect, dispays error
+$error=$_REQUEST['error'];
+if ($error == "Y"){
+	//echo "<font color='red'>Invalid Information Entered</font>";
+    echo "<div style='text-align:center'><font color='red'>Incorrect Information Entered</font></div>";
+}
 
+?>
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -87,16 +95,7 @@ include("inc_connect.php");
 		<input type="submit" value="Create Account" style="color:Black">
 		<br><br>
 	</form></div>
-	<br>
-<?php
-//if information was incorrect, dispays error
-$error=$_REQUEST['error'];
-if ($error == "Y"){
-	//echo "<font color='red'>Incorrect Information Entered</font>";
-    echo "<div style='text-align:center'><font color='red'>Incorrect Information Entered</font></div>";
-}
-
-?>	
+	<br>	
 	
 	
 </body>
