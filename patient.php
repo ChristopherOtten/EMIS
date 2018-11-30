@@ -32,12 +32,12 @@ include("inc_connect.php");
 	<p class="p01">Personal Information</p>
 	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
 		<?php
-            $sql = "SELECT firstName, lastName FROM generalUsers WHERE email=".$search_value;
+            $sql = "SELECT firstName, lastName FROM generalUsers";
             $search_value = $_REQUEST['email']; //from index.php
             $sql .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr><td>First Name:" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:".$row["lastName"]."</td><td>Gender:".$row["gender"]."</td></tr>";
+                    echo "<tr><td>First Name:" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:".$row["lastName"]."</td><td>Gender:</td></tr>";
                 }
         }
         ?>
