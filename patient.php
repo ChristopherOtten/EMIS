@@ -1,3 +1,7 @@
+<?php
+session_start();
+include("inc_connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -27,12 +31,15 @@
 	<!--Info--><!--  need a way to display variables here -->
 	<p class="p01">Personal Information</p>
 	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
-		<tr>
-			<td>First Name: </td>
-			<td>Middle Initial: </td>
-			<td>Last Name: </td>
-			<td>Gender: <br></td>
-		</tr>
+		<<?php
+            $sql = "SELECT firstName, lastName FROM generalUsers";
+            $result = mysqli_query($MYSQLI, $sql);
+            if (mysqli_num_rows($result) > 0) {
+                while($row = mysql_fetch_assoc($result)){
+                    echo "<tr><td>First Name:" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:".$row["lastName"]."</td><td>Gender: <br></td></tr>";
+                }
+        }
+        ?>
 		<tr>
 			<td>Street Address: </td>
 			<td>City: </td>
