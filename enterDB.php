@@ -15,6 +15,7 @@ $pPass = $_REQUEST['passC'];
 $first = $_REQUEST['fNameC'];
 $first = mysqli_real_escape_string($MYSQLI, $first);
 $last = $_REQUEST['lNameC'];
+$last = mysqli_real_escape_string($MYSQLI, $last);
 $patient = 'Patient';
 $ID = '99';
 //$specialization = ' ';
@@ -31,11 +32,14 @@ $meds = $_REQUEST['medicationsC'];
 $doctor = ' ';
 $gender = $_REQUEST['genderC'];
 $street = $_REQUEST['streetC'];
+$street = mysqli_real_escape_string($MYSQLI, $street)
 $city = $_REQUEST['cityC'];
+$city = mysqli_real_escape_string($MYSQLI, $city)
 $state = $_REQUEST['stateC'];
 $zip = $_REQUEST['zipC'];
 $cell = $_REQUEST['phoneC'];
-$providerIns = $_REQUEST['insuranceNameC'];//php prepared statements
+$providerIns = $_REQUEST['insuranceNameC'];//look into php prepared statements
+$providerIns = mysqli_real_escape_string($MYSQLI, $providerIns)
 $numberIns = $_REQUEST['insuranceNumberC'];
 
 //set up sql statement
