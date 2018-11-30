@@ -32,14 +32,14 @@ $meds = $_REQUEST['medicationsC'];
 $doctor = ' ';
 $gender = $_REQUEST['genderC'];
 $street = $_REQUEST['streetC'];
-$street = mysqli_real_escape_string($MYSQLI, $street)
+$street = mysqli_real_escape_string($MYSQLI, $street);
 $city = $_REQUEST['cityC'];
-$city = mysqli_real_escape_string($MYSQLI, $city)
+$city = mysqli_real_escape_string($MYSQLI, $city);
 $state = $_REQUEST['stateC'];
 $zip = $_REQUEST['zipC'];
 $cell = $_REQUEST['phoneC'];
 $providerIns = $_REQUEST['insuranceNameC'];//look into php prepared statements
-$providerIns = mysqli_real_escape_string($MYSQLI, $providerIns)
+$providerIns = mysqli_real_escape_string($MYSQLI, $providerIns);
 $numberIns = $_REQUEST['insuranceNumberC'];
 
 //set up sql statement
@@ -48,7 +48,6 @@ VALUES ('$first', '$last', '$usrName', '$pPass', '$patient', '$ID')";
 
 $sql2 = "INSERT INTO patients ". "(first_name, middle_name, last_name, Gender, weight, height, age, blood_pressure, diagnosis, medications, Doctor)". "
 VALUE ('$first', '$middle', '$last', '$gender', '$weight', '$height', '$age', '$bloodP', '$diag', '$meds', '$doctor')";
-echo $sql;
 
 $sql3 = "INSERT INTO patientInfo ". "(first_name, middle_name, last_name, Gender, address, city, state, zip, cellphone, insurance_provider, insurance_number)". "
 VALUE ('$first', '$middle', '$last', '$gender', '$street', '$city', '$state', '$zip', '$cell', '$providerIns', '$numberIns')";
