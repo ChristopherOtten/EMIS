@@ -37,6 +37,14 @@ include("inc_connect.php");
 	}
 
 	?>
+	<?php
+	//if information was incorrect, dispays error
+	$error=$_REQUEST['error'];
+	if ($error == "EM"){
+		echo "<div style='text-align:center'><font color='red'>Email Already Exists In Records, Please Try Another Email</font></div>";
+	}
+
+	?>
 	<p class="p02">Personal information</p>
 	<div class="main"><form action="enterDB.php" method="post"><table id="t01">
 		<tr>
