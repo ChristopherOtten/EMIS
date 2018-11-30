@@ -34,6 +34,7 @@ include("inc_connect.php");
 		<?php
             $sql = "SELECT firstName, lastName FROM generalUsers";
             $search_value = $_REQUEST['email']; //from index.php
+            echo $search_value;
             $query .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
             $result = mysqli_query($MYSQLI, $sql);
             if (mysqli_num_rows($result) > 0) {
