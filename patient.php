@@ -35,7 +35,7 @@ include("inc_connect.php");
             $sql = "SELECT firstName, lastName FROM generalUsers";
             $result = mysqli_query($MYSQLI, $sql);
             if (mysqli_num_rows($result) > 0) {
-                while($row = mysql_fetch_assoc($result)){
+                while($row = mysqli_fetch_assoc($result)){
                     echo "<tr><td>First Name:" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:".$row["lastName"]."</td><td>Gender: <br></td></tr>";
                 }
         }
