@@ -28,7 +28,7 @@ include("inc_connect.php");
 		</ul>
 	</header>
 	
-	<!--Info--><!--  need a way to display variables here -->
+	<!--Info--><!---- need a way to display variables here -->
 	<p class="p01">Personal Information</p>
 	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
 		<?php
