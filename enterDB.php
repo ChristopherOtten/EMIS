@@ -35,7 +35,7 @@ $city = $_REQUEST['cityC'];
 $state = $_REQUEST['stateC'];
 $zip = $_REQUEST['zipC'];
 $cell = $_REQUEST['phoneC'];
-$providerIns = $_REQUEST['insuranceNameC'];
+$providerIns = $_REQUEST['insuranceNameC'];//php prepared statements
 $numberIns = $_REQUEST['insuranceNumberC'];
 
 //set up sql statement
@@ -50,7 +50,7 @@ $sql3 = "INSERT INTO patientInfo ". "(first_name, middle_name, last_name, Gender
 VALUE ('$first', '$middle', '$last', '$gender', '$street', '$city', '$state', '$zip', '$cell', '$providerIns', '$numberIns')";
 
 //plug into databse, if it breaks, print error
-/*if ((mysqli_query($MYSQLI, $sql)) && (mysqli_query($MYSQLI, $sql2))  && (mysqli_query($MYSQLI, $sql3))) {
+if ((mysqli_query($MYSQLI, $sql)) && (mysqli_query($MYSQLI, $sql2))  && (mysqli_query($MYSQLI, $sql3))) {
     header('Location: index.php');
 	
 	//close
@@ -60,6 +60,6 @@ VALUE ('$first', '$middle', '$last', '$gender', '$street', '$city', '$state', '$
 } else {
     echo "Error: " . $sql . "<br>" . $MYSQLI->error;
 }
-*/
+
 
 ?>
