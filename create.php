@@ -33,8 +33,7 @@ include("inc_connect.php");
 	//if information was incorrect, dispays error
 	$error=$_REQUEST['error'];
 	if ($error == "Y"){
-		//echo "<font color='red'>Invalid Information Entered</font>";
-		echo "<div style='text-align:center'><font color='red'>Incorrect Information Entered</font></div>";
+		echo "<div style='text-align:center'><font color='red'>Invalid Information Entered, Please Try Again</font></div>";
 	}
 
 	?>
