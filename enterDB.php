@@ -28,7 +28,9 @@ $height = mysqli_real_escape_string($MYSQLI, $height);
 
 $bloodP = $_REQUEST['bloodPC'];
 $diag = $_REQUEST['diagnosisC'];
+$diag = mysqli_real_escape_string($MYSQLI, $diag);
 $meds = $_REQUEST['medicationsC'];
+$meds = mysqli_real_escape_string($MYSQLI, $meds);
 $doctor = ' ';
 $gender = $_REQUEST['genderC'];
 $street = $_REQUEST['streetC'];
