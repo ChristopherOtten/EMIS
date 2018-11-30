@@ -2,15 +2,7 @@
 session_start();
 include("inc_connect.php");
 ?>
-<?php
-//if information was incorrect, dispays error
-$error=$_REQUEST['error'];
-if ($error == "Y"){
-	//echo "<font color='red'>Invalid Information Entered</font>";
-    echo "<div style='text-align:center'><font color='red'>Incorrect Information Entered</font></div>";
-}
 
-?>
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -37,6 +29,15 @@ if ($error == "Y"){
 	
 	<!--paragraph has a top buffer for spacing-->
 	<p class="p01">Enter your information</p>
+	<?php
+	//if information was incorrect, dispays error
+	$error=$_REQUEST['error'];
+	if ($error == "Y"){
+		//echo "<font color='red'>Invalid Information Entered</font>";
+		echo "<div style='text-align:center'><font color='red'>Incorrect Information Entered</font></div>";
+	}
+
+	?>
 	<p class="p02">Personal information</p>
 	<div class="main"><form action="enterDB.php" method="post"><table id="t01">
 		<tr>
