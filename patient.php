@@ -31,7 +31,7 @@ include("inc_connect.php");
 	<!--Info--><!--  need a way to display variables here -->
 	<p class="p01">Personal Information</p>
 	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
-		<<?php
+		<?php
             $sql = "SELECT firstName, lastName FROM generalUsers";
             $result = mysqli_query($MYSQLI, $sql);
             if (mysqli_num_rows($result) > 0) {
