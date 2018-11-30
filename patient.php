@@ -33,8 +33,8 @@ include("inc_connect.php");
 	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
 		<?php
             $sql = "SELECT firstName, lastName FROM patientInfo";
-            $search_value = $_REQUEST['email']; //from index.php
-            $sql .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
+            $search_value = $_REQUEST['firstName']; //from index.php
+            $sql .= " WHERE " . "firstName" . " LIKE '" . strtolower($search_value) . "' ";
             $result = mysqli_query($MYSQLI, $sql);
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)){
