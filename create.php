@@ -29,6 +29,14 @@ include("inc_connect.php");
 	
 	<!--paragraph has a top buffer for spacing-->
 	<p class="p01">Enter your information</p>
+	<?php
+	//if information was incorrect, dispays error
+	$error=$_REQUEST['error'];
+	if ($error == "Y"){
+		echo "<div style='text-align:center'><font color='red'>Invalid Information Entered, Please Try Again</font></div>";
+	}
+
+	?>
 	<p class="p02">Personal information</p>
 	<div class="main"><form action="enterDB.php" method="post"><table id="t01">
 		<tr>
@@ -87,8 +95,7 @@ include("inc_connect.php");
 		<input type="submit" value="Create Account" style="color:Black">
 		<br><br>
 	</form></div>
-	<br>
-	
+	<br>	
 	
 	
 </body>

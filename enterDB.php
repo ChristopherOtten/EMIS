@@ -63,7 +63,8 @@ if ((mysqli_query($MYSQLI, $sql)) && (mysqli_query($MYSQLI, $sql2))  && (mysqli_
 	exit;
 	
 } else {
-    echo "Error: " . $sql . "<br>" . $MYSQLI->error;
+    header('Location: create.php?error=Y');
+	exit;
 }
 
 
