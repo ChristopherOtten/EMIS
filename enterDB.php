@@ -44,6 +44,19 @@ $providerIns = $_REQUEST['insuranceNameC'];//look into php prepared statements
 $providerIns = mysqli_real_escape_string($MYSQLI, $providerIns);
 $numberIns = $_REQUEST['insuranceNumberC'];
 
+$query = "SELECT email FROM generalUsers";
+//$search_field = "email";
+$search_value = $_REQUEST['emailC']; //from index.php
+$query .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
+
+//create query, die if error
+$query_result = mysqli_query($MYSQLI,$query)
+if($query_result){
+	header('Location: create.php?error=EM');
+	exit;
+}
+
+
 //set up sql statement
 $sql = "INSERT INTO generalUsers ". "(firstName, lastName, email, password, permissions, accountID)". "
 VALUES ('$first', '$last', '$usrName', '$pPass', '$patient', '$ID')";
