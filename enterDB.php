@@ -11,6 +11,8 @@ include("inc_connect.php");
 
 //grab stuff from create.php
 $usrName = $_REQUEST['emailC'];
+$usrName = mysqli_real_escape_string($usrName);
+
 $pPass = $_REQUEST['passC'];
 $first = $_REQUEST['fNameC'];
 $last = $_REQUEST['lNameC'];
