@@ -28,16 +28,17 @@ include("inc_connect.php");
 		</ul>
 	</header>
 	
-	<!--Info--><!---- need a way to display variables here -->
+	<!--Info--><!--  need a way to display variables here -->
 	<p class="p01">Personal Information</p>
 	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
 		<?php
             $sql = "SELECT firstName, lastName FROM generalUsers";
-            #$search_value = $_REQUEST['email']; //from index.php
-            #$sql .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "'";
+            $search_value = $_REQUEST['email']; //from index.php
+            $query .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
+            $result = mysqli_query($MYSQLI, $sql);
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr><td>First Name:" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:".$row["lastName"]."</td><td>Gender:</td></tr>";
+                    echo "<tr><td>First Name:" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:".$row["lastName"]."</td><td>Gender: <br></td></tr>";
                 }
         }
         ?>
