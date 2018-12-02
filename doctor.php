@@ -56,11 +56,7 @@ session_start();
 	</header>
 	
 	
-	<p class="p01">Upcoming Appointments</p>
-	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
-		
-		<div style="height:200px;width:550px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-		<?php
+	<?php
 		//print table of all information from database
 		if (mysqli_num_rows($sql_result) > 0){
 		?>
@@ -96,6 +92,7 @@ session_start();
 		
 		}
 		?>
+		
 		
 		
 		</div>
