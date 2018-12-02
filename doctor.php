@@ -26,7 +26,7 @@ session_start();
 	$sql = "SELECT first_name, middle_name, last_name FROM patients WHERE Doctor LIKE 'Star' " ;
 	echo "$sql";
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
-		echo "sql_result";
+		echo "$sql_result";
 
 ?>
 <!DOCTYPE html>
