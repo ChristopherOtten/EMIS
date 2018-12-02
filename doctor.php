@@ -23,7 +23,7 @@ session_start();
 	
 	$idk  = $row["lastName"]
 	
-	echo($idk)
+	echo "$idk"
 	
 	//sql to grab info from database 'dateTime'
 	$sql = "SELECT first_name, middle_name, last_name FROM patients WHERE Doctor LIKE '" . $row["lastName"] ."' " ;
