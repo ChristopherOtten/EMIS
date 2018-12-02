@@ -13,7 +13,7 @@ session_start();
 		echo "problem";
 	
 	
-	$query = "SELECT email FROM generalUsers";
+	$query = "SELECT lastName FROM generalUsers";
 	$search_value = $_REQUEST['email']; //from index.php
 	$query .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
 	$query_result = mysqli_query($MYSQLI,$query)
