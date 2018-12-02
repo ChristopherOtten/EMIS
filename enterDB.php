@@ -56,6 +56,17 @@ $query .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
 //	exit;
 //}
 
+//create query, die if error
+$query_result = mysqli_query($MYSQLI,$query)
+	or die ("Invalid query: ".mysqli_error($MYSQLI));
+//make array out of query results
+$row = mysqli_fetch_array($query_result);
+
+if ($row['email'] == $usrName){
+	header('Location: create.php?error=EM');
+	exit;
+}
+
 
 //set up sql statement
 $sql = "INSERT INTO generalUsers ". "(firstName, lastName, email, password, permissions, accountID)". "
