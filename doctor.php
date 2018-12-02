@@ -57,6 +57,7 @@ session_start();
 	
 	<?php
 		//print table of all information from database
+		echo ("mysqli_num_rows($sql_result)");
 		if (mysqli_num_rows($sql_result) > 0){
 		?>
 		
