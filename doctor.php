@@ -24,7 +24,7 @@ session_start();
 	
 	//sql to grab info from database 'dateTime'
 	$sql = "SELECT first_name, middle_name, last_name FROM patients" ;
-	$sql .= " WHERE " . "Doctor" . " LIKE '" . $query_result . "' ";
+	$sql .= " WHERE " . "Doctor" . " LIKE " . "'Star'";
 	echo "$sql";
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 
