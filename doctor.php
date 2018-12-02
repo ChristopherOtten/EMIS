@@ -61,39 +61,41 @@ session_start();
 		if (mysqli_num_rows($sql_result) > 0){
 		?>
 		
-		<table border="2">
-		<tbody>
-		<tr>
-		<td>First name</td>
-		<td>Middle name</td>
-		<td>Last name</td>
-		</tr>
-		
-		<?php
-		
-		while($row = mysqli_fetch_assoc($sql_result)){
-			$items[] = $row;
-		}
-		
-		foreach($items as $item){
-			
-			?>
+			<table border="2">
+			<tbody>
 			<tr>
-			<td><?php echo $item["first_name"]?></td>
-			<td><?php echo $item["middle_name"]?></td>
-			<td><?php echo $item["last_name"]?></td>
+			<td>First name</td>
+			<td>Middle name</td>
+			<td>Last name</td>
 			</tr>
+		
 			<?php
-		}
-		?>
-		</tbody>
-		</table>
+		
+			while($row = mysqli_fetch_assoc($sql_result)){
+				$items[] = $row;
+			}
+			
+			foreach($items as $item){
+			
+				?>
+				<tr>
+				<td><?php echo $item["first_name"]?></td>
+				<td><?php echo $item["middle_name"]?></td>
+				<td><?php echo $item["last_name"]?></td>
+				</tr>
+				<?php
+			}
+			?>
+			</tbody>
+			</table>
 		<?php
 		
 		}
-		?>
+		else{
+			echo "Error, zero or fewer results found in database";
+		}
 		
-		
+	?>
 		
 		</div>
 		</tr>
