@@ -13,21 +13,22 @@ session_start();
 	if (!$MYSQLI)
 		echo "problem";
 	
-	
+	//Get last name of doctor who logged in
 	$query = "SELECT lastName FROM generalUsers";
-	//$search_value2 = $GLOBALS['search_value']; //from index.php
 	$query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
+	
+	//create query
 	$query_result = mysqli_query($MYSQLI,$query)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
+	
 	//make array out of query results
 	$row = mysqli_fetch_array($query_result);
 	
-	echo ("$query");
-	//sql to grab info from database 'dateTime'
-	$sql = "SELECT first_name, middle_name, last_name FROM patients" ;
-	//$sql .= " WHERE Doctor LIKE 'Star'";
+	//sql to grab first, middle, last names of patients associated w/ doctor who logged in
+	$sql = "SELECT first_name, middle_name, last_name, Date, Time FROM appointments" ;
 	$sql .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
-	echo "$sql";
+	
+	//make query
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 
 ?>
@@ -70,8 +71,8 @@ session_start();
 			<td>First name</td>
 			<td>Middle name</td>
 			<td>Last name</td>
-			<!--<td>Date</td>-->
-			<!--<td>Time</td>-->
+			<td>Date</td>
+			<td>Time</td>
 			</tr>
 		
 			<?php
@@ -87,8 +88,8 @@ session_start();
 				<td><?php echo $item["first_name"]?></td>
 				<td><?php echo $item["middle_name"]?></td>
 				<td><?php echo $item["last_name"]?></td>
-				<!--<td><?php //echo $item["date"]?></td>-->
-				<!--<td><?php //echo $item["time"]?></td>-->
+				<td><?php echo $item["Date"]?></td>
+				<td><?php echo $item["Time"]?></td>
 				</tr>
 				<?php
 			}
