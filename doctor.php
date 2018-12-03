@@ -9,7 +9,7 @@ session_start();
 	
 	//Get connection to database, prints error if one exists
 	include("inc_connect.php");
-	include("index.php");
+	//include("index.php");
 	if (!$MYSQLI)
 		echo "problem";
 	
@@ -22,10 +22,10 @@ session_start();
 	//make array out of query results
 	$row = mysqli_fetch_array($query_result);
 	
-	echo ("$query_result");
+	echo ("$row['lastName']");
 	//sql to grab info from database 'dateTime'
 	$sql = "SELECT first_name, middle_name, last_name FROM patients" ;
-	$sql .= " WHERE Doctor LIKE '$query_result'";
+	$sql .= " WHERE Doctor LIKE '$row['lastName']";
 	echo "$sql";
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 
