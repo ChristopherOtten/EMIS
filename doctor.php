@@ -22,10 +22,10 @@ session_start();
 	//make array out of query results
 	$row = mysqli_fetch_array($query_result);
 	
-	echo ("$row['lastName']");
+	echo ("$query");
 	//sql to grab info from database 'dateTime'
 	$sql = "SELECT first_name, middle_name, last_name FROM patients" ;
-	$sql .= " WHERE Doctor LIKE '$row['lastName']";
+	$sql .= " WHERE Doctor LIKE 'Star";
 	echo "$sql";
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 
