@@ -69,7 +69,7 @@ session_start();
 
             $query3 = "SELECT age FROM patients";
             $query3 .= " WHERE " . "first_name" . " LIKE '" . $row["firstName"] . "' ";
-            $query_result3 = mysqli_query($MYSQLI,$query2)
+            $query_result3 = mysqli_query($MYSQLI,$query3)
             or die ("Invalid query: ".mysqli_error($MYSQLI));
             //make array out of query results
             $row3 = mysqli_fetch_array($query_result2);
