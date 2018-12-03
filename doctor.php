@@ -21,10 +21,10 @@ session_start();
 	//make array out of query results
 	$row = mysqli_fetch_array($query_result);
 	
-	
+	echo ("strtolower($search_value)");
 	//sql to grab info from database 'dateTime'
 	$sql = "SELECT first_name, middle_name, last_name FROM patients" ;
-	//$sql .= " WHERE " . "Doctor" . " LIKE " . "'Star'";
+	$sql .= " WHERE Doctor LIKE 'Star'";
 	echo "$sql";
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 
@@ -60,6 +60,7 @@ session_start();
 		//print table of all information from database
 		echo ("Hello there");
 		if (mysqli_num_rows($sql_result) > 0){
+		echo ("General Kenobi!");
 		?>
 		
 			<table border="2">
