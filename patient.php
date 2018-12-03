@@ -81,7 +81,7 @@ session_start();
                     echo "<tr><td>First Name:<br>" .$row["firstName"]."</td><td>Middle Initial:<br>".$row2["middle_name"];
                     echo "</td><td>Last Name:<br>".$row["lastName"]."</td><td>Gender:<br>".$row2["Gender"]."<br></td></tr>";
                 //}
-                echo "<tr><td>Street Address:<br>".$row2["address"]."</td><td>City:<br>".$row2["city"]." </td><td>State:<br>".$row2["city"];
+                echo "<tr><td>Street Address:<br>".$row2["address"]."</td><td>City:<br>".$row2["city"]." </td><td>State:<br>".$row2["state"];
                 echo "</td><td>Zip Code:<br>".$row2["zip"]."</td></tr><tr><td>Cell #:<br>".$row2[cellphone]." </td><td>Email:<br>".$_SESSION["email"];
                 echo "</td><td>DOB:<br>".$row3["age"]."</td><td></td></tr>";
             }
