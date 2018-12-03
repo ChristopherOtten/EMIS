@@ -9,6 +9,7 @@ session_start();
 	
 	//Get connection to database, prints error if one exists
 	include("inc_connect.php");
+	include("index.php")
 	if (!$MYSQLI)
 		echo "problem";
 	
@@ -59,17 +60,17 @@ session_start();
 	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
 	<?php
 		//print table of all information from database
-		echo ("Hello there");
 		if (mysqli_num_rows($sql_result) > 0){
-		echo ("General Kenobi!");
 		?>
 		
-			<table border="2">
+			<table border="2" align="center">
 			<tbody>
 			<tr>
 			<td>First name</td>
 			<td>Middle name</td>
 			<td>Last name</td>
+			<!--<td>Date</td>-->
+			<!--<td>Time</td>-->
 			</tr>
 		
 			<?php
@@ -85,6 +86,8 @@ session_start();
 				<td><?php echo $item["first_name"]?></td>
 				<td><?php echo $item["middle_name"]?></td>
 				<td><?php echo $item["last_name"]?></td>
+				<!--<td><?php //echo $item["date"]?></td>-->
+				<!--<td><?php //echo $item["time"]?></td>-->
 				</tr>
 				<?php
 			}
