@@ -61,7 +61,7 @@ session_start();
             //$search_value = $_REQUEST['email']; //from index.php
             //$sql = "SELECT firstName, lastName FROM generalUsers WHERE email=" .$search_value."''";
             //$result = mysqli_query($MYSQLI, $sql);
-            if (mysqli_num_rows($result) > 0) {
+            if (mysqli_num_rows($query_result) > 0) {
                 //while($row = mysqli_fetch_assoc($result)){
                     echo "<tr><td>First Name:" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:".$row["lastName"]."</td><td>Gender: <br></td></tr>";
                 //}
