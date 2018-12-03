@@ -16,13 +16,13 @@ session_start();
 	
 	$query = "SELECT lastName FROM generalUsers";
 	$search_value2 = $GLOBALS['search_value']; //from index.php
-	$query .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
+	$query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
 	$query_result = mysqli_query($MYSQLI,$query)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
 	//make array out of query results
 	$row = mysqli_fetch_array($query_result);
 	
-	echo ("$_SESSION["email"]");
+	echo ("query");
 	//sql to grab info from database 'dateTime'
 	$sql = "SELECT first_name, middle_name, last_name FROM patients" ;
 	$sql .= " WHERE Doctor LIKE 'Star'";
