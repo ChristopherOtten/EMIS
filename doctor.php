@@ -193,7 +193,7 @@ session_start();
 			foreach($items as $item){
 			
 				?>
-				<a href="#about"><?php echo ("$item["firstName"] $item["lastName"]")?></a>
+				<a href="#about"><?php echo $item["firstName"]?></a>
 				</tr>
 				<?php
 			}
