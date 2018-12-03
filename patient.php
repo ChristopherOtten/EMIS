@@ -59,7 +59,7 @@ session_start();
             or die ("Invalid query: ".mysqli_error($MYSQLI));
             //make array out of query results
             $row = mysqli_fetch_array($query_result);
-            $query2 = "SELECT Gender, address, city, state, zip, cellphone  FROM patientInfo";
+            $query2 = "SELECT middle_name, Gender, address, city, state, zip, cellphone  FROM patientInfo";
             $query2 .= " WHERE " . "first_name" . " LIKE '" . $row["firstName"] . "' ";
             $query_result2 = mysqli_query($MYSQLI,$query2)
             or die ("Invalid query: ".mysqli_error($MYSQLI));
