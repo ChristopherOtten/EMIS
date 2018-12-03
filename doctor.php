@@ -55,7 +55,8 @@ session_start();
 		</ul>
 	</header>
 	
-	
+	<p class="p01">Upcoming Appointments</p>
+	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
 	<?php
 		//print table of all information from database
 		echo ("Hello there");
