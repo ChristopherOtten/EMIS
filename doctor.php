@@ -31,7 +31,7 @@ session_start();
 	//make query
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 	
-	$query2 = "SELECT firstName, lastName FROM generalUsers";
+	$query2 = "SELECT first_name, last_name FROM patients";
 	$query2 .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
 	$query_result2 = mysqli_query($MYSQLI,$query2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
@@ -193,7 +193,7 @@ session_start();
 			foreach($items as $item){
 			
 				?>
-				<a href="#about"><?php echo $item["firstName"]?></a>
+				<a href="#about"><?php echo $item["first_name"]?></a>
 				</tr>
 				<?php
 			}
