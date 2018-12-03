@@ -21,7 +21,7 @@ session_start();
     //make array out of query results
     $row = mysqli_fetch_array($query_result);
 
-    echo ("$query_result");
+    echo ("$row");
     //sql to grab info from database 'dateTime'
     //$sql = "SELECT first_name, middle_name, last_name FROM patients" ;
     //$sql .= " WHERE Doctor LIKE 'Star'";
