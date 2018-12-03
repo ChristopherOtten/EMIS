@@ -15,7 +15,7 @@ session_start();
 	
 	
 	$query = "SELECT lastName FROM generalUsers";
-	$search_value2 = $GLOBALS['search_value']; //from index.php
+	//$search_value2 = $GLOBALS['search_value']; //from index.php
 	$query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
 	$query_result = mysqli_query($MYSQLI,$query)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
@@ -25,7 +25,8 @@ session_start();
 	echo ("$query");
 	//sql to grab info from database 'dateTime'
 	$sql = "SELECT first_name, middle_name, last_name FROM patients" ;
-	$sql .= " WHERE Doctor LIKE 'Star'";
+	//$sql .= " WHERE Doctor LIKE 'Star'";
+	$sql .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
 	echo "$sql";
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 
