@@ -13,13 +13,7 @@ session_start();
         echo "problem";
 
 
-    $query = "SELECT firstName, lastName FROM generalUsers";
-    //$search_value2 = $GLOBALS['search_value']; //from index.php
-    $query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
-    $query_result = mysqli_query($MYSQLI,$query)
-    or die ("Invalid query: ".mysqli_error($MYSQLI));
-    //make array out of query results
-    $row = mysqli_fetch_array($query_result);
+
 
     //echo ($row["lastName"]);
     //sql to grab info from database 'dateTime'
@@ -58,12 +52,26 @@ session_start();
 	<p class="p01">Personal Information</p>
 	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
 		<?php
+            $query = "SELECT firstName, lastName FROM generalUsers";
+            //$search_value2 = $GLOBALS['search_value']; //from index.php
+            $query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
+            $query_result = mysqli_query($MYSQLI,$query)
+            or die ("Invalid query: ".mysqli_error($MYSQLI));
+            //make array out of query results
+            $row = mysqli_fetch_array($query_result);
+            $query2 = "SELECT Gender FROM patientInfo where first_name like ";
+            $query2 .= " WHERE " . "first_name" . " LIKE '" . $row["firstName"] . "' ";
+            $query_result2 = mysqli_query($MYSQLI,$query2)
+            or die ("Invalid query: ".mysqli_error($MYSQLI));
+            //make array out of query results
+            $row = mysqli_fetch_array($query_result);
+            $row2 = mysqli_fetch_array($query_result2);
             //$search_value = $_REQUEST['email']; //from index.php
             //$sql = "SELECT firstName, lastName FROM generalUsers WHERE email=" .$search_value."''";
             //$result = mysqli_query($MYSQLI, $sql);
-            if (mysqli_num_rows($query_result) > 0) {
+            if (mysqli_num_rows($query_result) > 0 && mysqli_num_rows($query_result2)) {
                 //while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr><td>First Name:" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:".$row["lastName"]."</td><td>Gender: <br></td></tr>";
+                    echo "<tr><td>First Name:<br>" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:<br>".$row["lastName"]."</td><td>Gender:".$row2["Gender"]."<br></td></tr>";
                 //}
         }
         ?>
