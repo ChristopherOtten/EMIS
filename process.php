@@ -18,6 +18,9 @@ else echo "ok";
 $query = "SELECT email, password, permissions FROM generalUsers";
 $search_field = "email";
 $search_value = $_REQUEST['email']; //from index.php
+
+$_SESSION["email"] = $search_value; // create session variable from email
+
 $query .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
 
 //create query, die if error
