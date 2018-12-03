@@ -1,6 +1,32 @@
 <?php
-session_start();
-include("inc_connect.php");
+
+    // If session variable is NULL, redirect to first page, otherwise continue
+    if ($_SESSION["viewIndex"] == NULL){
+        header('Location: index.php');
+        exit;
+    }
+
+    //Get connection to database, prints error if one exists
+    include("inc_connect.php");
+    //include("index.php");
+    if (!$MYSQLI)
+        echo "problem";
+
+
+    $query = "SELECT lastName FROM generalUsers";
+    //$search_value2 = $GLOBALS['search_value']; //from index.php
+    $query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
+    $query_result = mysqli_query($MYSQLI,$query)
+    or die ("Invalid query: ".mysqli_error($MYSQLI));
+    //make array out of query results
+    $row = mysqli_fetch_array($query_result);
+
+    echo ("$query");
+    //sql to grab info from database 'dateTime'
+    //$sql = "SELECT first_name, middle_name, last_name FROM patients" ;
+    //$sql .= " WHERE Doctor LIKE 'Star'";
+    //echo "$sql";
+    //$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
