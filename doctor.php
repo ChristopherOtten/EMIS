@@ -9,7 +9,7 @@ session_start();
 	
 	//Get connection to database, prints error if one exists
 	include("inc_connect.php");
-	include("index.php")
+	include("index.php");
 	if (!$MYSQLI)
 		echo "problem";
 	
