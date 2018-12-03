@@ -25,7 +25,7 @@ session_start();
 	$row = mysqli_fetch_array($query_result);
 	
 	//sql to grab first, middle, last names of patients associated w/ doctor who logged in
-	$sql = "SELECT first_name, middle_name, last_name, Date, Time FROM appointments" ;
+	$sql = "SELECT first_name, middle_name, last_name, Date, Time, ReasonForVisit FROM appointments" ;
 	$sql .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
 	
 	//make query
@@ -59,7 +59,7 @@ session_start();
 	</header>
 	
 	<p class="p01">Upcoming Appointments</p>
-	<div class="main" style="height:300px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;"><form action="patientEdit.html" method="post"><table id="t01">
+	<div class="main" style="height:300px;width:600px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;"><form action="patientEdit.html" method="post"><table id="t01">
 	<?php
 		//print table of all information from database
 		if (mysqli_num_rows($sql_result) > 0){
@@ -73,6 +73,7 @@ session_start();
 			<td>Last name</td>
 			<td>Date</td>
 			<td>Time</td>
+			<td>ReasonForVisit</td>
 			</tr>
 		
 			<?php
@@ -90,6 +91,7 @@ session_start();
 				<td><?php echo $item["last_name"]?></td>
 				<td><?php echo $item["Date"]?></td>
 				<td><?php echo $item["Time"]?></td>
+				<td><?php echo $item["ReasonForVisit"]?></td>
 				</tr>
 				<?php
 			}
