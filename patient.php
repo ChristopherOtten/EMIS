@@ -59,7 +59,7 @@ session_start();
             or die ("Invalid query: ".mysqli_error($MYSQLI));
             //make array out of query results
             $row = mysqli_fetch_array($query_result);
-            $query2 = "SELECT Gender FROM patientInfo";
+            $query2 = "SELECT Gender, address, city, state, zip, cellphone,  FROM patientInfo";
             $query2 .= " WHERE " . "first_name" . " LIKE '" . $row["firstName"] . "' ";
             $query_result2 = mysqli_query($MYSQLI,$query2)
             or die ("Invalid query: ".mysqli_error($MYSQLI));
@@ -70,22 +70,13 @@ session_start();
             //$result = mysqli_query($MYSQLI, $sql);
             if (mysqli_num_rows($query_result) > 0 && mysqli_num_rows($query_result2)) {
                 //while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr><td>First Name:<br>" .$row["firstName"]."</td><td>Middle Initial: </td><td>Last Name:<br>".$row["lastName"]."</td><td>Gender:".$row2["Gender"]."<br></td></tr>";
+                    echo "<tr><td>First Name:<br>" .$row["firstName"]."</td><td>Middle Initial:<br>".$row2["middle_name"];
+                    echo "</td><td>Last Name:<br>".$row["lastName"]."</td><td>Gender:<br>".$row2["Gender"]."<br></td></tr>";
                 //}
-        }
+                echo "<tr><td>Street Address:<br>".$row2["address"]."</td><td>City:<br>".$row2["city"]." </td><td>State:<br>".$row2["city"];
+                echo "</td><td>Zip Code:<br>".$row2["zip"]."</td></tr><tr><td>Cell #:<br>".$row2[cellphone]." </td><td>Email:<br>".$_SESSION["email"]." </td><td>DOB: </td><td></td></tr>";
+            }
         ?>
-		<tr>
-			<td>Street Address: </td>
-			<td>City: </td>
-			<td>State: </td>
-			<td>Zip Code:  </td>
-		</tr>
-		<tr>
-			<td>Cell #: </td>
-			<td>Email: </td>
-			<td>DOB: </td>
-			<td></td>
-		</tr>
 	</table>
 	</div>
 	<div class="button">
