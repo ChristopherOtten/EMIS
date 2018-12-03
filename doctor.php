@@ -30,6 +30,12 @@ session_start();
 	
 	//make query
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
+	
+	$query2 = "SELECT firstName, lastName FROM generalUsers";
+	$query2 .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
+	$query_result2 = mysqli_query($MYSQLI,$query2)
+	or die ("Invalid query: ".mysqli_error($MYSQLI));
+	$row2 = mysqli_fetch_array($query_result2);
 
 ?>
 <!DOCTYPE html>
@@ -40,6 +46,61 @@ session_start();
 	<meta charset="UTF-8">
 	<meta name="description" content="Medical records and Appointment scheduling">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+#myInput {
+    border-box: box-sizing;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
 </head>
 
 <!-- Main Body-->
@@ -115,6 +176,53 @@ session_start();
 	<input type="submit" value="Update" style="color:BLue;margin:auto">
 	</div>
 	</form>
+	
+	<h2>Search/Filter Dropdown</h2>
+<p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
+
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+	<?php
+		
+			while($row = mysqli_fetch_assoc($sql_result)){
+				$items[] = $row2;
+			}
+			
+			foreach($items as $item){
+			
+				?>
+				<a href="#about"><?php echo ("$item["firstName"] $item["lastName"]")?></a>
+				</tr>
+				<?php
+			}
+			?>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 
 </html>
