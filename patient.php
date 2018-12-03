@@ -59,22 +59,31 @@ session_start();
             or die ("Invalid query: ".mysqli_error($MYSQLI));
             //make array out of query results
             $row = mysqli_fetch_array($query_result);
+
             $query2 = "SELECT middle_name, Gender, address, city, state, zip, cellphone  FROM patientInfo";
             $query2 .= " WHERE " . "first_name" . " LIKE '" . $row["firstName"] . "' ";
             $query_result2 = mysqli_query($MYSQLI,$query2)
             or die ("Invalid query: ".mysqli_error($MYSQLI));
             //make array out of query results
             $row2 = mysqli_fetch_array($query_result2);
+
+            $query3 = "SELECT age FROM patient";
+            $query3 .= " WHERE " . "first_name" . " LIKE '" . $row["firstName"] . "' ";
+            $query_result3 = mysqli_query($MYSQLI,$query2)
+            or die ("Invalid query: ".mysqli_error($MYSQLI));
+            //make array out of query results
+            $row3 = mysqli_fetch_array($query_result2);
             //$search_value = $_REQUEST['email']; //from index.php
             //$sql = "SELECT firstName, lastName FROM generalUsers WHERE email=" .$search_value."''";
             //$result = mysqli_query($MYSQLI, $sql);
-            if (mysqli_num_rows($query_result) > 0 && mysqli_num_rows($query_result2)) {
+            if (mysqli_num_rows($query_result) > 0 && mysqli_num_rows($query_result2) && mysqli_num_rows($query_result3)) {
                 //while($row = mysqli_fetch_assoc($result)){
                     echo "<tr><td>First Name:<br>" .$row["firstName"]."</td><td>Middle Initial:<br>".$row2["middle_name"];
                     echo "</td><td>Last Name:<br>".$row["lastName"]."</td><td>Gender:<br>".$row2["Gender"]."<br></td></tr>";
                 //}
                 echo "<tr><td>Street Address:<br>".$row2["address"]."</td><td>City:<br>".$row2["city"]." </td><td>State:<br>".$row2["city"];
-                echo "</td><td>Zip Code:<br>".$row2["zip"]."</td></tr><tr><td>Cell #:<br>".$row2[cellphone]." </td><td>Email:<br>".$_SESSION["email"]." </td><td>DOB: </td><td></td></tr>";
+                echo "</td><td>Zip Code:<br>".$row2["zip"]."</td></tr><tr><td>Cell #:<br>".$row2[cellphone]." </td><td>Email:<br>".$_SESSION["email"];
+                echo "</td><td>DOB:<br>".$row3["age"]."</td><td></td></tr>";
             }
         ?>
 	</table>
