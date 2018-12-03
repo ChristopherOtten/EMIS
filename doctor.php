@@ -176,7 +176,7 @@ session_start();
 	</div>
 	</form>
 	
-	<h2>Search/Filter Dropdown</h2>
+	<h2>Search/Filter Patients -- Can only view those associated with you</h2>
 <p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
 
 <div class="dropdown">
@@ -185,7 +185,7 @@ session_start();
     <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 	<?php
 		
-			while($row = mysqli_fetch_assoc($sql_result2)){
+			while($row2 = mysqli_fetch_assoc($sql_result2)){
 				$items[] = $row2;
 			}
 			
