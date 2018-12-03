@@ -9,7 +9,7 @@ session_start();
 	
 	//Get connection to database, prints error if one exists
 	include("inc_connect.php");
-	//include("index.php");
+	include("index.php");
 	if (!$MYSQLI)
 		echo "problem";
 	
@@ -52,7 +52,7 @@ session_start();
 		</h1><hr>
 		<ul>
 			<li><a class="active" href="#pinfo">Personal Info</a></li>
-			<li><a href="medInfo.html">Appointments</a></li>
+			<li><a href="doctor.php">Appointments</a></li>
 			<li><a href="#receipt">Patient List</a></li>
 			<li><a href="#message">Messages</a></li>
 		</ul>
