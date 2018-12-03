@@ -64,7 +64,6 @@ session_start();
             $query_result2 = mysqli_query($MYSQLI,$query2)
             or die ("Invalid query: ".mysqli_error($MYSQLI));
             //make array out of query results
-            $row = mysqli_fetch_array($query_result);
             $row2 = mysqli_fetch_array($query_result2);
             //$search_value = $_REQUEST['email']; //from index.php
             //$sql = "SELECT firstName, lastName FROM generalUsers WHERE email=" .$search_value."''";
