@@ -185,10 +185,10 @@ session_start();
     <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 	<?php
 		
-			while($row2 = mysqli_fetch_assoc($sql_result2)){
+			while($row2 = mysqli_fetch_assoc($query_result2)){
 				$items1[] = $row2;
 			}
-			echo("$items1");
+			echo("$items1")
 			foreach($items1 as $item){
 			
 				?>
