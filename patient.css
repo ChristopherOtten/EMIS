@@ -15,14 +15,12 @@ h1 {
 
 .column1 {
     float: left;
-    width: 70%;
-    padding: 15px;
+    width: 50%;
 }
 
 .column2 {
     float: left;
     width: 30%;
-    padding: 15px;
 }
 
 .row:after {
