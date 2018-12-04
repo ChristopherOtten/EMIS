@@ -15,11 +15,14 @@ h1 {
 
 .column1 {
     float: left;
-    width: 50%;
+    width: 60%;
 }
 
 .column2 {
-    float: right;
+	padding-top:80px;
+	padding-right:40px;
+	float: right;
+	text-align:right;
     width: 30%;
 }
 

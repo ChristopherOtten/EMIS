@@ -49,14 +49,14 @@ session_start();
                     <img src="redcross.png"
                     alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
                     <b>EMIS</b>
-
             </h1></div>
             <div class="column2">
+				Welcome, Jeff
                 <?php echo "Welcome, ".$row["firstName"]; ?>
             </div>
         </div>
+		<hr>
 		<ul>
-            <hr>
 			<li><a class="active" href="#pinfo">Personal Info</a></li>
 			<li><a href="medInfo.html">Medical Info</a></li>
 			<li><a href="#receipt">Receipts</a></li>
