@@ -48,17 +48,13 @@ session_start();
 			alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
 			<b>EMIS</b>
 		</h1>
-        <div style="float:right">
-            <?php
-                echo "Welcome,".$row["firstName"];
-            ?>
-        </div>
         <hr>
 		<ul>
 			<li><a class="active" href="#pinfo">Personal Info</a></li>
 			<li><a href="medInfo.html">Medical Info</a></li>
 			<li><a href="#receipt">Receipts</a></li>
 			<li><a href="#message">Messages</a></li>
+            <li style="float:right"><?php echo "Welcome,".$row["firstName"]; ?></li>
 		</ul>
 	</header>
 	
