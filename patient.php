@@ -44,14 +44,14 @@ session_start();
 <body>
 	<header>
         <div class="row">
-            <div style="background-color:purple" class="column1">
+            <div  class="column1">
             <h1>
                     <img src="redcross.png"
                     alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
                     <b>EMIS</b>
 
             </h1></div>
-            <div style="background-color:green" class="column2">
+            <div  class="column2">
 				bepis
                 <?php echo "Welcome,".$row["firstName"]; ?>
             </div>
