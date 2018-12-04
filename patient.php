@@ -49,9 +49,9 @@ session_start();
                     <img src="redcross.png"
                     alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
                     <b>EMIS</b>
-            </h1></div>
+            </h1><br></div>
             <div class="column2">
-                <?php echo "Welcome, ".$row["firstName"]."<hr>"; ?>
+                <?php echo "Welcome, ".$row["firstName"]."<br>";?>
             </div>
         </div>
         <hr>
