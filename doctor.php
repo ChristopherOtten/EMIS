@@ -194,7 +194,7 @@ Use the input field to search for a specific dropdown link.
 			foreach($items2 as $item){
 			
 				?>
-				<a href="#about"><?php echo ("$item["first_name"] $item["last_name"]")?></a>
+				<a href="#about"><?php echo $item["first_name"] . " " . ["last_name"]?></a>
 				</tr>
 				<?php
 			}
