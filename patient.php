@@ -43,16 +43,16 @@ session_start();
 <!-- Main Body-->
 <body>
 	<header>
-		<h1>
-			<div class="column1">
+        <div class="column1">
+        <h1>
                 <img src="redcross.png"
                 alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
                 <b>EMIS</b>
-            </div>
-            <div class="column2">
-                <?php echo "Welcome,".$row["firstName"]; ?>
-            </div>
-		</h1>
+
+		</h1></div>
+        <div class="column2">
+            <?php echo "Welcome,".$row["firstName"]; ?>
+        </div>
         <hr>
 		<ul>
 			<li><a class="active" href="#pinfo">Personal Info</a></li>
