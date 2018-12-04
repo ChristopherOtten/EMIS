@@ -179,7 +179,7 @@ session_start();
 <h4>Search/Filter Patients:</h4><br>
 *Can only view those associated with you<br>
 Click on the button to open the dropdown menu.<br>
-Use the input field to search for a specific dropdown link.
+Use the input field to search for a specific dropdown link.<br>
 
 <div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Dropdown</button>
@@ -194,13 +194,14 @@ Use the input field to search for a specific dropdown link.
 			foreach($items2 as $item){
 			
 				?>
-				<a href="#about"><?php echo $item["first_name"] . " " . ["last_name"]?></a>
+				<a href="#about"><?php echo $item["first_name"] . " " . $item["last_name"]?></a>
 				</tr>
 				<?php
 			}
 			?>
   </div>
 </div>
+<br><br><br>
 
 <script>
 /* When the user clicks on the button,
