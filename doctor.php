@@ -35,7 +35,7 @@ session_start();
 	echo ($sql2);
 	$query_result2 = mysqli_query($MYSQLI,$sql2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
-	$rowOfNames = mysqli_fetch_array($query_result2);
+	//$rowOfNames = mysqli_fetch_array($query_result2);
 
 ?>
 <!DOCTYPE html>
