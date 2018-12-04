@@ -19,8 +19,8 @@ h1 {
 }
 
 .column2 {
-	padding-top:50px;
-	padding-right:50px;
+	margin-top:50px;
+	margin:50px;
 	float: right;
 	text-align:right;
     width: 30%;
