@@ -13,6 +13,14 @@ session_start();
         echo "problem";
 
 
+    //  Using username/email, find the user's name
+    $query = "SELECT firstName, lastName FROM generalUsers";
+    //$search_value2 = $GLOBALS['search_value']; //from index.php
+    $query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
+    $query_result = mysqli_query($MYSQLI,$query)
+        or die ("Invalid query: ".mysqli_error($MYSQLI));
+    //make array out of query results
+    $row = mysqli_fetch_array($query_result);
 
 
     //echo ($row["lastName"]);
@@ -39,6 +47,9 @@ session_start();
 			<img src="redcross.png" 
 			alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
 			<b>EMIS</b>
+            <?php
+                echo "Welcome,".$row["firstName"];
+            ?>
 		</h1><hr>
 		<ul>
 			<li><a class="active" href="#pinfo">Personal Info</a></li>
