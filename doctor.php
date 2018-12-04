@@ -202,6 +202,7 @@ Use the input field to search for a specific dropdown link.<br>
   </div>
 </div>
 <br><br><br>
+<p id="demo"></p>
 
 <script>
 function myFunction2() {
