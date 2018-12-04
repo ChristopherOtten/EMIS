@@ -51,8 +51,8 @@ session_start();
                     <b>EMIS</b>
             </h1><hr></div>
             <div class="column2">
-                <?php echo "Welcome, ".$row["firstName"]."<hr>";?>
-            </div>
+                <?php echo "Welcome, ".$row["firstName"];?>
+            </div><hr>
         </div>
         <hr>
 		<ul>
