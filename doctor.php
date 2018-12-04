@@ -188,7 +188,7 @@ session_start();
 			while($row = mysqli_fetch_assoc($query_result2)){
 				$items[] = $row;
 			}
-			echo("$items1")
+			echo("$items1");
 			foreach($items as $item){
 			
 				?>
