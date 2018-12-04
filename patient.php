@@ -51,7 +51,6 @@ session_start();
                     <b>EMIS</b>
             </h1></div>
             <div class="column2">
-				Welcome, Jeff
                 <?php echo "Welcome, ".$row["firstName"]; ?>
             </div>
         </div>
