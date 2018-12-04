@@ -176,8 +176,10 @@ session_start();
 	</div>
 	</form>
 	
-	<h2>Search/Filter Patients -- Can only view those associated with you</h2>
-<p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
+<h4>Search/Filter Patients:</h4><br>
+*Can only view those associated with you<br>
+Click on the button to open the dropdown menu.<br>
+Use the input field to search for a specific dropdown link.
 
 <div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Dropdown</button>
@@ -192,7 +194,7 @@ session_start();
 			foreach($items2 as $item){
 			
 				?>
-				<a href="#about"><?php echo $item["first_name"]?></a>
+				<a href="#about"><?php echo ("$item["first_name"] $item["last_name"]")?></a>
 				</tr>
 				<?php
 			}
