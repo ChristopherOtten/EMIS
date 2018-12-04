@@ -34,7 +34,7 @@ session_start();
 	$query2 .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
 	$query_result2 = mysqli_query($MYSQLI,$query2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
-	$row2 = mysqli_fetch_array($query_result2);
+	//$row2 = mysqli_fetch_array($query_result2);
 
 ?>
 <!DOCTYPE html>
@@ -162,7 +162,7 @@ session_start();
 		
 		}
 		else{
-			echo "Error, zero or fewer results found in database";
+			echo "No upcoming appointments on record.";
 		}
 		
 	?>
@@ -186,10 +186,10 @@ session_start();
 	<?php
 		
 			while($row2 = mysqli_fetch_assoc($sql_result2)){
-				$items[] = $row2;
+				$items1[] = $row2;
 			}
-			
-			foreach($items as $item){
+			echo("$items1");
+			foreach($items1 as $item){
 			
 				?>
 				<a href="#about"><?php echo $item["first_name"]?></a>
