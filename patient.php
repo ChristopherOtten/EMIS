@@ -53,8 +53,8 @@ session_start();
             <div class="column2">
                 <?php echo "Welcome, ".$row["firstName"]; ?>
             </div>
-            <hr>
         </div>
+        <hr>
 		<ul>
 			<li><a class="active" href="#pinfo">Personal Info</a></li>
 			<li><a href="medInfo.html">Medical Info</a></li>
