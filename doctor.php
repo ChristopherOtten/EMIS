@@ -32,6 +32,7 @@ session_start();
 	
 	$sql2 = "SELECT first_name, last_name FROM patients";
 	$sql2 .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
+	echo ($sql2);
 	$query_result2 = mysqli_query($MYSQLI,$sql2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
 	$rowOfNames = mysqli_fetch_array($query_result2);
