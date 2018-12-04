@@ -19,7 +19,8 @@ h1 {
 }
 
 .column2 {
-    float: left;
+    float: right;
+    text-align: right;
     width: 30%;
 }
 
