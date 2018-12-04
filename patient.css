@@ -15,13 +15,13 @@ h1 {
 
 .column1 {
     float: left;
-    width: 90%;
+    width: 70%;
     padding: 15px;
 }
 
 .column2 {
     float: left;
-    width: 10%;
+    width: 30%;
     padding: 15px;
 }
 
@@ -37,7 +37,7 @@ header {
     overflow: hidden;
     background-color: Ghostwhite;
     position: fixed;
-    width: 80%;
+    width: 100%;
 }
 
 ul {
