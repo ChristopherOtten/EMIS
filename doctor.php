@@ -186,10 +186,10 @@ session_start();
 	<?php
 		
 			while($row = mysqli_fetch_assoc($query_result2)){
-				$items[] = $row;
+				$items2[] = $row;
 			}
-			echo("$items1");
-			foreach($items as $item){
+			//echo("$items1");
+			foreach($items2 as $item){
 			
 				?>
 				<a href="#about"><?php echo $item["first_name"]?></a>
