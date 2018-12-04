@@ -52,11 +52,11 @@ session_start();
 
             </h1></div>
             <div class="column2">
-                <?php echo "Welcome,".$row["firstName"]; ?>
+                <?php echo "Welcome, ".$row["firstName"]; ?>
             </div>
         </div>
-        <hr>
 		<ul>
+            <hr>
 			<li><a class="active" href="#pinfo">Personal Info</a></li>
 			<li><a href="medInfo.html">Medical Info</a></li>
 			<li><a href="#receipt">Receipts</a></li>
