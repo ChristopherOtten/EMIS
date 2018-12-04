@@ -23,8 +23,6 @@ $_SESSION["viewIndex"] = true;
 			alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
 			<b>EMIS</b>
 		</h1>
-		
-		<hr>
 		<ul>
 		     <li><a href="">   </a></li>
 		</ul>
