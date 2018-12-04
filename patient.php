@@ -52,37 +52,39 @@ session_start();
 	<p class="p01">Personal Information</p>
 	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
 		<?php
+            //  Using username/email, find the user's name
             $query = "SELECT firstName, lastName FROM generalUsers";
             //$search_value2 = $GLOBALS['search_value']; //from index.php
             $query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
             $query_result = mysqli_query($MYSQLI,$query)
-            or die ("Invalid query: ".mysqli_error($MYSQLI));
+                or die ("Invalid query: ".mysqli_error($MYSQLI));
             //make array out of query results
             $row = mysqli_fetch_array($query_result);
 
+            //  Using the name pulled, find the other personal information
             $query2 = "SELECT middle_name, Gender, address, city, state, zip, cellphone  FROM patientInfo";
             $query2 .= " WHERE " . "first_name" . " LIKE '" . $row["firstName"] . "' ";
             $query_result2 = mysqli_query($MYSQLI,$query2)
-            or die ("Invalid query: ".mysqli_error($MYSQLI));
-            //make array out of query results
+                or die ("Invalid query: ".mysqli_error($MYSQLI));
             $row2 = mysqli_fetch_array($query_result2);
 
+            //  Using the name pulled, get their age from the medical information
             $query3 = "SELECT age FROM patients";
             $query3 .= " WHERE " . "first_name" . " LIKE '" . $row["firstName"] . "' ";
             $query_result3 = mysqli_query($MYSQLI,$query3)
-            or die ("Invalid query: ".mysqli_error($MYSQLI));
-            //make array out of query results
+                or die ("Invalid query: ".mysqli_error($MYSQLI));
             $row3 = mysqli_fetch_array($query_result3);
-            //$search_value = $_REQUEST['email']; //from index.php
-            //$sql = "SELECT firstName, lastName FROM generalUsers WHERE email=" .$search_value."''";
-            //$result = mysqli_query($MYSQLI, $sql);
             if (mysqli_num_rows($query_result) > 0 && mysqli_num_rows($query_result2) && mysqli_num_rows($query_result3)) {
-                //while($row = mysqli_fetch_assoc($result)){
-                    echo "<tr><td>First Name:<br>" .$row["firstName"]."</td><td>Middle Initial:<br>".$row2["middle_name"];
-                    echo "</td><td>Last Name:<br>".$row["lastName"]."</td><td>Gender:<br>".$row2["Gender"]."<br></td></tr>";
-                //}
-                echo "<tr><td>Street Address:<br>".$row2["address"]."</td><td>City:<br>".$row2["city"]." </td><td>State:<br>".$row2["state"];
-                echo "</td><td>Zip Code:<br>".$row2["zip"]."</td></tr><tr><td>Cell #:<br>".$row2[cellphone]." </td><td>Email:<br>".$_SESSION["email"];
+                echo "<tr><td>First Name:<br>" .$row["firstName"]."</td>";
+                echo "<td>Middle Initial:<br>".$row2["middle_name"]."</td>";
+                echo "<td>Last Name:<br>".$row["lastName"]."</td>";
+                echo "<td>Gender:<br>".$row2["Gender"]."<br></td></tr>";
+                echo "<tr><td>Street Address:<br>".$row2["address"]."</td>";
+                echo "<td>City:<br>".$row2["city"]." </td>";
+                echo "<td>State:<br>".$row2["state"];
+                echo "</td><td>Zip Code:<br>".$row2["zip"]."</td></tr>";
+                echo "<tr><td>Cell #:<br>".$row2[cellphone]." </td>";
+                echo "<td>Email:<br>".$_SESSION["email"];
                 echo "</td><td>DOB:<br>".$row3["age"]."</td><td></td></tr>";
             }
         ?>
