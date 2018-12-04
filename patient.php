@@ -44,9 +44,14 @@ session_start();
 <body>
 	<header>
 		<h1>
-			<img src="redcross.png" 
-			alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
-			<b>EMIS</b>
+			<div class="column1">
+                <img src="redcross.png"
+                alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
+                <b>EMIS</b>
+            </div>
+            <div class="column2">
+                <?php echo "Welcome,".$row["firstName"]; ?>
+            </div>
 		</h1>
         <hr>
 		<ul>
@@ -54,7 +59,6 @@ session_start();
 			<li><a href="medInfo.html">Medical Info</a></li>
 			<li><a href="#receipt">Receipts</a></li>
 			<li><a href="#message">Messages</a></li>
-            <li style="float:right"><a href="#"><?php echo "Welcome,".$row["firstName"]; ?></a></li>
 		</ul>
 	</header>
 	

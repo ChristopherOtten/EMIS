@@ -13,6 +13,18 @@ h1 {
 	color:red;
 }
 
+.column1 {
+    float: left;
+    width: 90%;
+    padding: 15px;
+}
+
+.column2 {
+    float: left;
+    width: 10%;
+    padding: 15px;
+}
+
 header {
     margin: 0;
     padding: 0;
