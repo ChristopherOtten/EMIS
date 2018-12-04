@@ -47,10 +47,13 @@ session_start();
 			<img src="redcross.png" 
 			alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
 			<b>EMIS</b>
+		</h1>
+        <div style="float:right">
             <?php
                 echo "Welcome,".$row["firstName"];
             ?>
-		</h1><hr>
+        </div>
+        <hr>
 		<ul>
 			<li><a class="active" href="#pinfo">Personal Info</a></li>
 			<li><a href="medInfo.html">Medical Info</a></li>
