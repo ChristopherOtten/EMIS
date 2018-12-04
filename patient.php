@@ -54,7 +54,7 @@ session_start();
 			<li><a href="medInfo.html">Medical Info</a></li>
 			<li><a href="#receipt">Receipts</a></li>
 			<li><a href="#message">Messages</a></li>
-            <li style="float:right"><?php echo "Welcome,".$row["firstName"]; ?></li>
+            <li style="float:right"><a href="#"><?php echo "Welcome,".$row["firstName"]; ?></a></li>
 		</ul>
 	</header>
 	
