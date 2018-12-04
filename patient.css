@@ -25,6 +25,12 @@ h1 {
     padding: 15px;
 }
 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 header {
     margin: 0;
     padding: 0;
