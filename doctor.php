@@ -194,7 +194,7 @@ Use the input field to search for a specific dropdown link.<br>
 			foreach($items2 as $item){
 			
 				?>
-				<a href="#" onclick="myFunction2()"><?php echo $item["first_name"] . " " . $item["last_name"]?></a>
+				<a href="#" id="mylink" onclick="myFunction2(); return false"><?php echo $item["first_name"] . " " . $item["last_name"]?></a>
 				</tr>
 				<?php
 			}
@@ -205,7 +205,7 @@ Use the input field to search for a specific dropdown link.<br>
 
 <script>
 function myFunction2() {
-    var x = document.getElementById("myInput").value;
+    var x = document.getElementById("mylink").value;
     document.getElementById("demo").innerHTML = "You selected: " + x;
 }
 </script>
