@@ -30,11 +30,11 @@ session_start();
 	//make query
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 	
-	$query2 = "SELECT first_name, last_name FROM patients";
-	$query2 .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
-	$query_result2 = mysqli_query($MYSQLI,$query2)
+	$sql2 = "SELECT first_name, last_name FROM patients";
+	$sql2 .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
+	$query_result2 = mysqli_query($MYSQLI,$sql2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
-	$row2 = mysqli_fetch_array($query_result2);
+	$rowOfNames = mysqli_fetch_array($query_result2);
 
 ?>
 <!DOCTYPE html>
@@ -185,14 +185,14 @@ session_start();
     <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
 	<?php
 		
-			while($row2 = mysqli_fetch_assoc($sql_result2)){
-				$items[] = $row2;
+			while($rowOfNames = mysqli_fetch_assoc($sql_result2)){
+				$names[] = $rowOfNames;
 			}
 			
-			foreach($items as $item){
+			foreach($names as $name){
 			
 				?>
-				<a href="#about"><?php echo $item["first_name"]?></a>
+				<a href="#about"><?php echo $name["first_name"]?></a>
 				</tr>
 				<?php
 			}
