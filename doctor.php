@@ -205,7 +205,7 @@ Use the input field to search for a specific dropdown link.<br>
 
 <script>
 function myFunction2() {
-    var x = document.getElementById("mySelect").value;
+    var x = document.getElementById("myInput").value;
     document.getElementById("demo").innerHTML = "You selected: " + x;
 }
 </script>
