@@ -132,6 +132,7 @@ Use the input field to search for a specific dropdown link.<br>
 <div class="dropdown">
 
   <select id="mySelect" onchange="myFunction2()">
+  <option value="Selection">Selection
 	<?php
 		
 			while($row = mysqli_fetch_assoc($query_result2)){
@@ -156,7 +157,9 @@ Use the input field to search for a specific dropdown link.<br>
 <script>
 function myFunction2() {
     var x = document.getElementById("mySelect").value;
-    document.getElementById("demo").innerHTML = "You selected: " + x;
+	if (x != "Selection"){
+		document.getElementById("demo").innerHTML = "You selected: " + x;
+	}
 }
 </script>
 
