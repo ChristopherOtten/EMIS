@@ -132,7 +132,7 @@ Click on the button to open the dropdown menu.<br>
 Use the input field to search for a specific dropdown link.<br>
 
 <div class="dropdown">
-
+<form method="post" action="" name="form">  
   <select id="mySelect" name="mySelect" onchange="myFunction2()">
   <option value="Selection">Selection
 	<?php
@@ -151,6 +151,7 @@ Use the input field to search for a specific dropdown link.<br>
 	</select>
 	</div>
 	</div>
+</form>
 <br><br><br>
 
 
@@ -159,7 +160,7 @@ Use the input field to search for a specific dropdown link.<br>
 
 <script>
 function myFunction2() {
-	
+	<?php $_SESSION['lastName'] = $_POST['mySelect'];?>
     var x = document.getElementById("mySelect").value;
 	if (x != "Selection"){
 		document.getElementById("demo").innerHTML = '<button onclick="myButton()">Edit File</button>';
