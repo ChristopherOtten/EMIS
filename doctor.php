@@ -61,7 +61,7 @@ session_start();
                     <b>EMIS</b>
                 </h1></div>
             <div class="column2">
-                <?php echo "Welcome, ".$row["firstName"];?>
+                <?php echo "Welcome, Dr".$row["lastName"];?>
             </div>
         </div>
 		<ul>
@@ -150,7 +150,7 @@ Use the input field to search for a specific dropdown link.<br>
 			}
 			?>
 			</select>
- </div></div>
+ </div>
 <br><br><br>
 
 
@@ -175,6 +175,7 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 </script>
+    </div>
 </body>
 
 </html>
