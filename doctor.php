@@ -160,7 +160,6 @@ Use the input field to search for a specific dropdown link.<br>
 
 <script>
 function myFunction2() {
-	<?php $_SESSION['lastName'] = $_POST['mySelect'];?>
     var x = document.getElementById("mySelect").value;
 	if (x != "Selection"){
 		document.getElementById("demo").innerHTML = '<button onclick="myButton()">Edit File</button>';

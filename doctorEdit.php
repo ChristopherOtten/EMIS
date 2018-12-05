@@ -30,7 +30,7 @@ include("inc_connect.php");
 	<!--paragraph has a top buffer for spacing-->
 	<p class="p01">Enter your information</p>
 	<?php
-	echo ($_SESSION['lastName']);
+	echo ($_POST['mySelect']);
 	?>
 	<p class="p02">Personal information</p>
 	<div class="main"><form action="enterDB.php" method="post"><table id="t01">
