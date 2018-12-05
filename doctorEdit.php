@@ -4,7 +4,7 @@ include("inc_connect.php");
 
 
 
-$query2 = "SELECT first_name, middle_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
+$query2 = "SELECT first_name, middle_name, last_name, weight, height, age, blood_pressure, diagnosis, medications FROM patients";
 $query2 .= " WHERE " . "Doctor" . " LIKE '" . $_SESSION['doctorName']  . "' AND last_name LIKE '" . $_POST['mySelect']  . "'";
 $query_result2 = mysqli_query($MYSQLI,$query2)
 or die ("Invalid query: ".mysqli_error($MYSQLI));
@@ -38,7 +38,7 @@ $info = mysqli_fetch_array($query_result2);
 	</header>
 	
 	<!--paragraph has a top buffer for spacing-->
-	<p class="p01">Enter your information</p>
+	<p class="p01">Editing Medical Information for <?php echo $info['first_name']?> <?php echo $info['last_name']?>:</p>
 	<p class="p02">Personal information</p>
 	<div class="main"><form action="enterDB.php" method="post"><table id="t01">
 		<tr>
