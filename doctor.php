@@ -52,15 +52,21 @@ session_start();
 
 <!-- Main Body-->
 <body>
-	<header>
-		<h1>
-			<img src="redcross.png" 
-			alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
-			<b>EMIS</b>
-		</h1>
+    <header>
+        <div class="row">
+            <div  class="column1">
+                <h1>
+                    <img src="redcross.png"
+                         alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
+                    <b>EMIS</b>
+                </h1></div>
+            <div class="column2">
+                <?php echo "Welcome, ".$row["firstName"];?>
+            </div>
+        </div>
 		<ul>
-			<li><a class="active" href="#pinfo">Personal Info</a></li>
-			<li><a href="doctor.php">Appointments</a></li>
+			<li><a href="patient.php">Personal Info</a></li>
+			<li><a class="active"  href="doctor.php">Appointments</a></li>
 			<li><a href="#receipt">Patient List</a></li>
 			<li><a href="#message">Messages</a></li>
 		</ul>
