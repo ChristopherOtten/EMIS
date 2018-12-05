@@ -152,13 +152,14 @@ Use the input field to search for a specific dropdown link.<br>
 	</select>
 	<input type="submit" value="Edit This Patients Info" style="color:BLue">
 	<br><br>
-	<?php
-	if ($edit == "Y"){
-		echo("Patient medical information successfuly updated");
-	}
-	?>
 	</form></div>
 <br><br><br>
+
+<?php
+	if ($edit == "Y"){ ?>
+		Patient medical information successfuly updated
+	<?php }
+?>
 
 
 
