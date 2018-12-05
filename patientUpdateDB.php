@@ -38,7 +38,7 @@ if ((mysqli_query($MYSQLI, $sql)) && (mysqli_query($MYSQLI, $sql2))) {
     exit;
 
 } else {
-    header('Location: patientEdit.php?error=Y');
+    header('Location: patientEdit.php?error=Ymessage='.$sql2);
     exit;
 }
 ?>
