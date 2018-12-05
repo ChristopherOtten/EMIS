@@ -47,8 +47,8 @@ $row = mysqli_fetch_array($query_result);
         </div>
     </div>
     <ul>
-        <li><a class="active" href="#pinfo">Personal Info</a></li>
-        <li><a href="medInfo.html">Medical Info</a></li>
+        <li><a href="patient.php">Personal Info</a></li>
+        <li><a class="active" href="medInfo.php">Medical Info</a></li>
         <li><a href="#receipt">Receipts</a></li>
         <li><a href="#message">Messages</a></li>
     </ul>
@@ -81,26 +81,26 @@ $row = mysqli_fetch_array($query_result);
                 or die ("Invalid query: ".mysqli_error($MYSQLI));
             $row3 = mysqli_fetch_array($query_result3);
             echo "<tr><td>First Name: <input type='text' name='fname' value=".$row["firstName"]." required></td>";
-            echo "<td>Middle Initial: <input type='text' name='mname' value".$row2["middle_name"]." maxlength='1'></td>";
+            echo "<td>Middle Initial: <input maxlength=1 type='text' name='mname' value".$row2["middle_name"]."</td>";
             echo "<td>Last Name: <input type='text' name='lname' value=".$row["lastName"]." required></td>";
             echo "<td>Gender: <br>
                     <input type='radio' name='gender' id='male' value='male'><label for='male'>Male</label><br>
                     <input type='radio' name='gender' id='female' value='female'><label for='female'>Female</label><br>
                     <input type='radio' name='gender' id='female' value='female'><label for='other'>Other</label><br></td>
-            </tr>";?>
-            <tr>
-                <td>Street Address: <input type="text" name="street" required></td>
-                <td>City: <input type="text" name="city" required></td>
-                <td>State: <input type="text" name="state" required></td>
-                <td>Zip Code:  <input type="text" name="zip" maxlength=5 required></td>
-            </tr>
-            <tr>
-                <td>Cell #: <input type="text" name="phone" maxlength=10 required></td>
-                <td>Email: <input type="email" name="email" required></td>
-                <td>DOB: <input type="date" name="dob" required></td>
+            </tr>";
+            echo "<tr>
+                <td>Street Address: <input type='text' name='street' value=".$row2["address"]." required></td>
+                <td>City: <input type='text' name='city' value=".$row2["city"]." required></td>
+                <td>State: <input type='text' name='state' value=".$row2["state"]." required></td>
+                <td>Zip Code:  <input type='text' name='zip' maxlength=5 value=".$row2["zip"]." required></td>
+            </tr>";
+            echo "<tr>
+                <td>Cell #: <input type='text' name='phone' maxlength=10 value=".$row2["cellphone"]." required></td>
+                <td>Email: <input type='email' name='email' value=".$_SESSION["email"]." required></td>
+                <td>DOB: <input type='date' name='dob' value=".$row3["age"]." required></td>
                 <td></td>
-            </tr>
-
+            </tr>";
+            ?>
         </table>
 </div>
 <div class="button">
