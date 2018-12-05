@@ -81,7 +81,7 @@ $row = mysqli_fetch_array($query_result);
                 or die ("Invalid query: ".mysqli_error($MYSQLI));
             $row3 = mysqli_fetch_array($query_result3);
             echo "<tr><td>First Name: <input type='text' name='fname' value=".$row["firstName"]." required></td>";
-            echo "<td>Middle Initial: <input maxlength=1 type='text' name='mname' value".$row2["middle_name"]."</td>";
+            echo "<td>Middle Initial: <input maxlength=1 type='text' name='mname' value=".$row2["middle_name"]."</td>";
             echo "<td>Last Name: <input type='text' name='lname' value=".$row["lastName"]." required></td>";
             echo "<td>Gender: <br>
                     <input type='radio' name='gender' id='male' value='male'><label for='male'>Male</label><br>
