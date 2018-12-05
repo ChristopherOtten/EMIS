@@ -50,12 +50,7 @@ $info = mysqli_fetch_array($query_result2);
 				<input type="radio" name="genderC" id="female" value="female"><label for="female">Female</label><br>
 				<input type="radio" name="genderC" id="female" value="other"><label for="other">Other</label><br></td>
 		</tr>
-		<tr>
-			<td>Street Address: <input type="text" name="streetC" value="**********" readonly required></td>
-			<td>City: <input type="text" name="cityC" value="**********" readonly required></td>
-			<td>State: <input type="text" name="stateC" value="**********" readonly required></td>
-			<td>Zip Code:  <input type="text" name="zipC" value="**********" readonly required maxlength="5"></td>
-		</tr>
+	
 		<tr>
 			<td>Cell #: <input type="text" name="phoneC" value="**********" readonly required maxlength="12"></td>
 		</tr>
@@ -64,7 +59,7 @@ $info = mysqli_fetch_array($query_result2);
 		<br>
 		<table id="t02">
 		<tr>
-			<td>Date of Birth: (YYYY-MM-DD) <input type="text" name="ageC" value="<?php echo $info['age']?>" required></td>
+			<td>Date of Birth: (YYYY-MM-DD) <input type="text" name="ageC" value="<?php echo $info['age']?>"readonly required></td>
 			<td>Weight: <input type="mname" name="weightC" value="<?php echo $info['weight']?>" required></td>
 			<td>height: <input type="text" name="heightC" value="<?php echo $info['height']?>" required></td>
 			<td>Blood Pressure: <input type="text" name="bloodPC" value="<?php echo $info['blood_pressure']?>" required></td>
@@ -75,16 +70,11 @@ $info = mysqli_fetch_array($query_result2);
 		</tr>
 		</table>
 		<br>
-		<table id="t03">
-		<tr>
-			<td>Medical Insurance: <input type="text" name="insuranceNameC"  value="**********" readonly required></td>
-			<td>Medical Insurance Number: <input type="text" name="insuranceNumberC"  value="**********" readonly required></td>
-		</tr>
-		</table>
+		
 		<br>
 		
 		<br>
-		<input type="submit" value="Create Account" style="color:Black">
+		<input type="submit" value="Update Information Entered" style="color:Black">
 		<br><br>
 	</form></div>
 	<br>	
