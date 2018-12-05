@@ -148,33 +148,17 @@ Use the input field to search for a specific dropdown link.<br>
 			}
 			?>
 	</select>
-	<input type="submit" value="Enter" style="color:BLue">
+	<?php if ($_POST['mySelect'] != 'Selection'){?>
+	<input type="submit" value="Edit This Patients Info" style="color:BLue">
+	<?php } ?>
 	<br><br>
 	</form></div>
 <br><br><br>
 
 
-<p id="demo"></p>
-
-
-<script>
-function myFunction2() {
-    var x = document.getElementById("mySelect").value;
-	if (x != "Selection"){
-		document.getElementById("demo").innerHTML = '<button onclick="myButton()">Edit File</button>';
-	}
-}
-</script>
 
 
 
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myButton() {
-    location.replace("doctorEdit.php")
-}
-</script>
 </div>
 </body>
 
