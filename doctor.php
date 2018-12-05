@@ -61,13 +61,12 @@ session_start();
                     <b>EMIS</b>
                 </h1></div>
             <div class="column2">
-                <?php echo "Welcome, Dr".$row["lastName"];?>
+                <?php echo "Welcome, Dr. ".$row["lastName"];?>
             </div>
         </div>
 		<ul>
-			<li><a href="patient.php">Personal Info</a></li>
 			<li><a class="active"  href="doctor.php">Appointments</a></li>
-			<li><a href="#receipt">Patient List</a></li>
+			<li><a href="#Patient_list">Patient List</a></li>
 			<li><a href="#message">Messages</a></li>
 		</ul>
 	</header>

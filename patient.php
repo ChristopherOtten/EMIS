@@ -56,7 +56,7 @@ session_start();
         </div>
 		<ul>
 			<li><a class="active" href="#pinfo">Personal Info</a></li>
-			<li><a href="medInfo.html">Medical Info</a></li>
+			<li><a href="medInfo.php">Medical Info</a></li>
 			<li><a href="#receipt">Receipts</a></li>
 			<li><a href="#message">Messages</a></li>
 		</ul>
