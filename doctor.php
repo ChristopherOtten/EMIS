@@ -159,9 +159,6 @@ Use the input field to search for a specific dropdown link.<br>
 
 <script>
 function myFunction2() {
-	<?php $_SESSION["lastName"] = $_REQUEST['mySelect'];
-	echo ($_SESSION["lastName"]);
-	
 	
     var x = document.getElementById("mySelect").value;
 	if (x != "Selection"){
@@ -176,7 +173,7 @@ function myFunction2() {
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myButton() {
-    location.replace("10.100.116.108")
+    location.replace("doctorEdit.php")
 }
 </script>
 </div>
