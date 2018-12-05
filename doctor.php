@@ -163,7 +163,7 @@ function myFunction2() {
     var x = document.getElementById("mySelect").value;
 	//var www = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients WHERE Doctor Like '<?php echo $row['lastName'];?>' AND last_name LIKE 'x'
 	<?php
-	$x = "<script>document.getElementById("demo").innerHTML = x;</script>";
+	$x = "<script>document.getElementById("mySelect").value;</script>";
 	echo ($x);
 	$queryJS = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
 	$queryJS .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' AND last_name LIKE '" . $x . "' ";
