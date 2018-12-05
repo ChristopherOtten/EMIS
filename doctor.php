@@ -132,8 +132,8 @@ Click on the button to open the dropdown menu.<br>
 Use the input field to search for a specific dropdown link.<br>
 
 <div class="dropdown"><form action="doctorEdit.php" method="post"> 
-  <select id="mySelect" name="mySelect">
-  <option value="Selection">Selection
+  <select id="mySelect" name="mySelect" value="Selection">
+  <option value="" selected disabled hidden>Select Patient</option>
 	<?php
 		
 			while($row3 = mysqli_fetch_assoc($query_result2)){
@@ -148,9 +148,7 @@ Use the input field to search for a specific dropdown link.<br>
 			}
 			?>
 	</select>
-	<?php if ($_POST['mySelect'] != 'Selection'){?>
 	<input type="submit" value="Edit This Patients Info" style="color:BLue">
-	<?php } ?>
 	<br><br>
 	</form></div>
 <br><br><br>
