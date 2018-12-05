@@ -22,6 +22,7 @@ if (mysqli_query($MYSQLI, $sql)){
 	
 	//close
 	mysqli_close($MYSQLI);
+	header('Location: doctor.php');
 	exit;
 	
 } else {
