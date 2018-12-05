@@ -64,7 +64,7 @@ session_start();
 	
 	<!--Info--><!--  need a way to display variables here -->
 	<p class="p01">Personal Information</p>
-	<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
+	<div class="main"><form action="patientEdit.php" method="post"><table id="t01">
 		<?php
             //  Using username/email, find the user's name
             $query = "SELECT firstName, lastName FROM generalUsers";

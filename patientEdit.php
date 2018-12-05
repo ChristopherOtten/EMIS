@@ -80,15 +80,14 @@ $row = mysqli_fetch_array($query_result);
             $query_result3 = mysqli_query($MYSQLI,$query3)
                 or die ("Invalid query: ".mysqli_error($MYSQLI));
             $row3 = mysqli_fetch_array($query_result3);
-            echo "<tr><td>First Name: <input type='text' name='fname' value=".$row["firstName"]."required></td>";
-            ?>
-                <td>Middle Initial: <input type="mname" name="mname" maxlength='1'></td>
-                <td>Last Name: <input type="text" name="lname" required></td>
-                <td>Gender: <br>
-                    <input type="radio" name="gender" id="male" value="male"><label for="male">Male</label><br>
-                    <input type="radio" name="gender" id="female" value="female"><label for="female">Female</label><br>
-                    <input type="radio" name="gender" id="female" value="female"><label for="other">Other</label><br></td>
-            </tr>
+            echo "<tr><td>First Name: <input type='text' name='fname' value=".$row["firstName"]." required></td>";
+            echo "<td>Middle Initial: <input type='text' name='mname' value".$row2["middle_name"]." maxlength='1'></td>";
+            echo "<td>Last Name: <input type='text' name='lname' value=".$row["lastName"]." required></td>";
+            echo "<td>Gender: <br>
+                    <input type='radio' name='gender' id='male' value='male'><label for='male'>Male</label><br>
+                    <input type='radio' name='gender' id='female' value='female'><label for='female'>Female</label><br>
+                    <input type='radio' name='gender' id='female' value='female'><label for='other'>Other</label><br></td>
+            </tr>";?>
             <tr>
                 <td>Street Address: <input type="text" name="street" required></td>
                 <td>City: <input type="text" name="city" required></td>
