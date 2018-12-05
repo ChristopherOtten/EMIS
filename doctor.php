@@ -159,8 +159,6 @@ Use the input field to search for a specific dropdown link.<br>
 
 <script>
 function myFunction2() {
-	<?php $_SESSION["lastName"] = $_GET['mySelect'];
-	echo ($_GET['mySelect']);
 	
 	
     var x = document.getElementById("mySelect").value;
