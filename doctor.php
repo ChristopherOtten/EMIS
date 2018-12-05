@@ -91,8 +91,8 @@ session_start();
 		
 			<?php
 		
-			while($row = mysqli_fetch_assoc($sql_result)){
-				$items[] = $row;
+			while($row2 = mysqli_fetch_assoc($sql_result)){
+				$items[] = $row2;
 			}
 			
 			foreach($items as $item){
@@ -137,8 +137,8 @@ Use the input field to search for a specific dropdown link.<br>
   <option value="Selection">Selection
 	<?php
 		
-			while($row = mysqli_fetch_assoc($query_result2)){
-				$items2[] = $row;
+			while($row3 = mysqli_fetch_assoc($query_result2)){
+				$items2[] = $row3;
 			}
 			//echo("$items1");
 			foreach($items2 as $item){
