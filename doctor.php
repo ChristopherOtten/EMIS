@@ -133,7 +133,7 @@ Use the input field to search for a specific dropdown link.<br>
 
 <div class="dropdown">
 
-  <select id="mySelect" onchange="myFunction2()">
+  <select id="mySelect" name="mySelect" onchange="myFunction2()">
   <option value="Selection">Selection
 	<?php
 		
@@ -159,13 +159,13 @@ Use the input field to search for a specific dropdown link.<br>
 
 <script>
 function myFunction2() {
-	<?php $_SESSION["lastName"] = $_GET['mySelect'];
-	echo ($_GET['mySelect']);
+	<?php $_SESSION["lastName"] = $_REQUEST['mySelect'];
+	echo ($_SESSION["lastName"]);
 	
 	
     var x = document.getElementById("mySelect").value;
 	if (x != "Selection"){
-		document.getElementById("demo").innerHTML = "<button onclick="myButton()">Edit File</button>";
+		document.getElementById("demo").innerHTML = '<button onclick="myButton()">Edit File</button>';
 	}
 }
 </script>
