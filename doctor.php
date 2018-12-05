@@ -197,8 +197,8 @@ Use the input field to search for a specific dropdown link.<br>
 ?>
 
 <div class="appointments"><form action="appMaker.php" method="post">
-	Date: <input type="date" name="dateD" id="dateD" required><br>
-	Time: <input type="time" name="timeD" id="timeD" required>
+	Date: <input type="date" name="dateD" id="dateD" required>
+	Time: <input type="time" name="timeD" id="timeD" required><br>
 	Reason For Visit: <input type="text" name="visitD" id="visitD" required><br>
 	Patients Name:<br>
 	First Name: <input type="text" name="firstD" id="firstD" required><br>
