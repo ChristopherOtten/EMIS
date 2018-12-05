@@ -21,6 +21,7 @@ session_start();
 	$last = $_REQUEST['lNameDE'];
 	$last = mysqli_real_escape_string($MYSQLI, $last);
 	$middle = $_REQUEST['mNameDE'];
+	$weight = $_REQUEST['weightDE'];
 	$age = $_REQUEST['ageDE'];
 	$height = $_REQUEST['heightDE'];
 	$height = mysqli_real_escape_string($MYSQLI, $height);
