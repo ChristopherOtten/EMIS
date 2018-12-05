@@ -16,33 +16,34 @@ session_start();
 	$edit=$_REQUEST['edit'];
 	if ($edit == "Y"){ 
 	
-	$first = $_REQUEST['fNameDE'];
-	$first = mysqli_real_escape_string($MYSQLI, $first);
-	$last = $_REQUEST['lNameDE'];
-	$last = mysqli_real_escape_string($MYSQLI, $last);
-	$middle = $_REQUEST['mNameDE'];
-	$weight = $_REQUEST['weightDE'];
-	$age = $_REQUEST['ageDE'];
-	$height = $_REQUEST['heightDE'];
-	$height = mysqli_real_escape_string($MYSQLI, $height);
-	$bloodP = $_REQUEST['bloodPDE'];
-	$diag = $_REQUEST['diagnosisDE'];
-	$diag = mysqli_real_escape_string($MYSQLI, $diag);
-	$meds = $_REQUEST['medicationsDE'];
-	$meds = mysqli_real_escape_string($MYSQLI, $meds);
+		$first = $_REQUEST['fNameDE'];
+		$first = mysqli_real_escape_string($MYSQLI, $first);
+		$last = $_REQUEST['lNameDE'];
+		$last = mysqli_real_escape_string($MYSQLI, $last);
+		$middle = $_REQUEST['mNameDE'];
+		$weight = $_REQUEST['weightDE'];
+		$age = $_REQUEST['ageDE'];
+		$height = $_REQUEST['heightDE'];
+		$height = mysqli_real_escape_string($MYSQLI, $height);
+		$bloodP = $_REQUEST['bloodPDE'];
+		$diag = $_REQUEST['diagnosisDE'];
+		$diag = mysqli_real_escape_string($MYSQLI, $diag);
+		$meds = $_REQUEST['medicationsDE'];
+		$meds = mysqli_real_escape_string($MYSQLI, $meds);
 	
-	//UPDATE Customers SET ContactName='Alfred Schmidt', City='Frankfurt' WHERE CustomerID=1;
+		//I know this line is super long, ill come back and fix it later
+		$sql_update = "UPDATE patients SET weight='" . $weight . "',  height='" . $height . "', ";
+		$sql_update .= "blood_pressure='" . $bloodP . "', diagnosis='" . $diag . "', ";
+		$sql_update .="medications='" . $meds . "' WHERE first_name='" . $first . "' AND last_name='" . $last . "'  AND Doctor='" . $_SESSION['doctorName'] . "' ";
 	
-	$sql_update = "UPDATE patients SET weight='" . $weight . "',  height='" . $height . "', blood_pressure='" . $bloodP . "', diagnosis='" . $diag . "', medications='" . $meds . "' WHERE first_name='" . $first . "' AND last_name='" . $last . "'  AND Doctor='" . $_SESSION['doctorName'] . "' ";
+		$update = mysqli_query($MYSQLI,$sql_update)
+		or die ("Invalid query: ".mysqli_error($MYSQLI));
 	
-	$update = mysqli_query($MYSQLI,$sql_update)
-	or die ("Invalid query: ".mysqli_error($MYSQLI));
-	
-	if (mysqli_query($MYSQLI, $update)) {
-		echo "Record updated successfully";
-	} else {
-		echo "Error updating record: " . mysqli_error($conn);
-	}
+		if (mysqli_query($MYSQLI, $update)) {
+			echo "Record updated successfully";
+		} else {
+			echo "Error updating record: " . mysqli_error($conn);
+		}
 	
 	}
 	
