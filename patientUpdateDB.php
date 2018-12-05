@@ -27,8 +27,7 @@ $phone = $_REQUEST['phone'];
 
 // Update variables
 $sql = "UPDATE generalUsers SET firstName= '".$firstName."' lastName= '".$lastName."' WHERE email=";
-$sql2 = "Update patientInfo SET first_name= '".$firstName."', middle_name= '".$middleName."', last_name= '".$lastName."', Gender= '".$gender."'";
-$sql2 .= ", street= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', phone= '".$phone."' WHERE email='".$_SESSION["email"]."' ";
+$sql2 = "Update patientInfo SET first_name= '".$firstName."', middle_name= '".$middleName."', last_name= '".$lastName."', Gender= '".$gender."', street= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', phone= '".$phone."' WHERE email= '".$_SESSION["email"]."' ";
 
 //plug into database, if it breaks, print error
 if ((mysqli_query($MYSQLI, $sql)) && (mysqli_query($MYSQLI, $sql2))) {
@@ -39,7 +38,7 @@ if ((mysqli_query($MYSQLI, $sql)) && (mysqli_query($MYSQLI, $sql2))) {
     exit;
 
 } else {
-    header('Location: patientEdit.php?error=Y');
+    header('Location: patientEdit.php?error=YerrorMessage='.$sql2);
     exit;
 }
 ?>
