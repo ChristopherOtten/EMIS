@@ -7,6 +7,12 @@ session_start();
 		exit;
 	}
 	
+	//Get connection to database, prints error if one exists
+	include("inc_connect.php");
+	if (!$MYSQLI)
+		echo "problem";
+	
+	
 	$edit=$_REQUEST['edit'];
 	if ($edit == "Y"){ 
 	
@@ -31,14 +37,13 @@ session_start();
 	$update = mysqli_query($MYSQLI,$sql_update)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
 	
+	if (mysqli_query($MYSQLI, $update)) {
+		echo "Record updated successfully";
+	} else {
+		echo "Error updating record: " . mysqli_error($conn);
 	}
 	
-	
-	
-	//Get connection to database, prints error if one exists
-	include("inc_connect.php");
-	if (!$MYSQLI)
-		echo "problem";
+	}
 	
 	//Get last name of doctor who logged in
 	$query = "SELECT lastName FROM generalUsers";
