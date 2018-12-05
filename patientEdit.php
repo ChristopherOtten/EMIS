@@ -91,7 +91,7 @@ $row = mysqli_fetch_array($query_result);
             $city = $row2["city"];
             echo "<tr>
                 <td>Street Address: <input type='text' name='street' value=".$row2["address"]." required></td>
-                <td>City: <input type='text' name='city' value=".$city." required></td>
+                <td>City: <input type='text' name='city' value='".$city."' required></td>
                 <td>State: <input type='text' name='state' value=".$row2["state"]." required></td>
                 <td>Zip Code:  <input type='text' name='zip' maxlength=5 value=".$row2["zip"]." required></td>
             </tr>";
