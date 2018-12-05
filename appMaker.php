@@ -16,7 +16,7 @@ $time = $_REQUEST['timeD'];
 
 
 $sql = "INSERT INTO appointments". "(Date, Time, Doctor, ReasonForVisit, first_name, middle_name, last_name)". "
-VALUES ('$date', '$time', '$_SESSION['doctorName']', '$reason', '$first', '$middle', '$last')";
+VALUES ('$date', '$time', '" . $_SESSION['doctorName']. "', '$reason', '$first', '$middle', '$last')";
 
 if (mysqli_query($MYSQLI, $sql)){
 	
