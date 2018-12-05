@@ -24,10 +24,17 @@ $phone = $_REQUEST['phone'];
 //$email = $_REQUEST['email'];
 //$dob = $_REQUEST['dob'];
 
+// Get the old first name, used for updating patientInfo
+$query = "SELECT firstName, lastName FROM generalUsers";
+$query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
+$query_result = mysqli_query($MYSQLI,$query)
+or die ("Invalid query: ".mysqli_error($MYSQLI));
+$old = mysqli_fetch_array($query_result);
+$oldName = $old['name'];
 
 // Update variables
-$sql = "UPDATE generalUsers SET firstName= '".$firstName."' lastName= '".$lastName."' WHERE email=";
-$sql2 = "Update patientInfo SET first_name= '".$firstName."', middle_name= '".$middleName."', last_name= '".$lastName."', Gender= '".$gender."', street= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', phone= '".$phone."' WHERE email= '".$_SESSION["email"]."' ";
+$sql2 = "Update patientInfo SET first_name= '".$firstName."', middle_name= '".$middleName."', last_name= '".$lastName."', Gender= '".$gender."', street= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', phone= '".$phone."' WHERE first_name= '".$oldName."' ";
+$sql = "UPDATE generalUsers SET firstName= '".$firstName."' lastName= '".$lastName."' WHERE email=".$_SESSION['email'];
 
 //plug into database, if it breaks, print error
 if ((mysqli_query($MYSQLI, $sql)) && (mysqli_query($MYSQLI, $sql2))) {

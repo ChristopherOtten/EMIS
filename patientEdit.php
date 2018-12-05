@@ -59,8 +59,10 @@ $row = mysqli_fetch_array($query_result);
 <?php
 //if information was incorrect, dispays error
 $error=$_REQUEST['error'];
+$message = $_REQUEST['message'];
 if ($error == "Y"){
-    echo "<div style='text-align:center'><font color='red'>Invalid Information Entered, Please Try Again<br>".$_REQUEST["message"]."</font></div>";
+    echo "<div style='text-align:center'><font color='red'>Invalid Information Entered, Please Try Again</font></div>";
+    echo $message;
 }
 
 ?>
