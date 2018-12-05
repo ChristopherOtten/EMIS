@@ -162,8 +162,9 @@ function myFunction2() {
 	
     var x = document.getElementById("mySelect").value;
 	<?php
+	$x = "<script>document.write(x)</script>";
 	$queryJS = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
-	$queryJS .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' AND last_name LIKE 'Berg'";
+	$queryJS .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' AND last_name LIKE '" . $x . "' ";
 	$query_resultJS = mysqli_query($MYSQLI,$queryJS)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
 	$rowJS = mysqli_fetch_array($query_resultJS);
