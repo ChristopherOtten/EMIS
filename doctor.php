@@ -133,7 +133,7 @@ Use the input field to search for a specific dropdown link.<br>
 
 <div class="dropdown">
 
-  <select id="mySelect" onchange="myFunction2()">
+  <select id="mySelect" name="mySelect" onchange="myFunction2()">
   <option value="Selection">Selection
 	<?php
 		
