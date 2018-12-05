@@ -53,15 +53,20 @@ session_start();
 <!-- Main Body-->
 <body>
 	<header>
-		<h1>
-			<img src="redcross.png" 
-			alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
-			<b>EMIS</b>
-		</h1><hr>
+        <div class="row">
+            <div  class="column1">
+                <h1>
+                    <img src="redcross.png"
+                         alt="EMIS Red Cross" width="50" height="50" title="EMIS" style="text-align:center">
+                    <b>EMIS</b>
+                </h1></div>
+            <div class="column2">
+                <?php echo "Welcome, Dr."$row["lastName"];?>
+            </div>
+        </div>
 		<ul>
-			<li><a class="active" href="#pinfo">Personal Info</a></li>
-			<li><a href="doctor.php">Appointments</a></li>
-			<li><a href="#receipt">Patient List</a></li>
+			<li><a class="active"  href="doctor.php">Appointments</a></li>
+			<li><a href="#Patient_list">Patient List</a></li>
 			<li><a href="#message">Messages</a></li>
 		</ul>
 	</header>
@@ -119,11 +124,8 @@ session_start();
 		</tr>
 	</table>
 	</div>
-	<div class="button">
-	<input type="submit" value="Update" style="color:BLue;margin:auto">
-	</div>
 	</form>
-	
+<div class="button">
 <h4>Search/Filter Patients:</h4>
 *Can only view those associated with you<br>
 Click on the button to open the dropdown menu.<br>
@@ -147,8 +149,8 @@ Use the input field to search for a specific dropdown link.<br>
 			}
 			?>
 	</select>
-	
- </div>
+	</div>
+	</div>
 <br><br><br>
 
 
@@ -173,6 +175,7 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 </script>
+</div>
 </body>
 
 </html>
