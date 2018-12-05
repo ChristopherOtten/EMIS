@@ -34,7 +34,7 @@ $row = mysqli_fetch_array($query_result);
 </head>
 
 <!-- Main Body-->
-<body>
+<body style="font-family: 'Comic Sans MS'">
 <header>
     <div class="row">
         <div  class="column1">
@@ -94,7 +94,7 @@ $row = mysqli_fetch_array($query_result);
 
                 echo "<tr><td>Recent diagnosis:<br>".$row3["diagnosis"]." </td>";
                 echo "<td>Treatment/Medications:<br>".$row3["medications"];
-                echo "</td><td>Current doctor:<br>Dr. ".$row3["Doctor"]."</td><td></td></tr>";
+                echo "</td><td>Current Doctor:<br>Dr. ".$row3["Doctor"]."</td><td></td></tr>";
             }
             ?>
         </table>
