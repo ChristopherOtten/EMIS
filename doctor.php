@@ -159,7 +159,7 @@ Use the input field to search for a specific dropdown link.<br>
 
 <script>
 function myFunction2() {
-    var x = document.getElementById("mySelect").value;
+    var x = document.getElementById("<?php echo $item?>").value;
 	if (x != "Selection"){
 		document.getElementById("demo").innerHTML ="<input type='text' value='<?php echo $item["weight"]?>'><br><input type='text' value='<?php echo $item["height"]?>'><br><input type='text' value='<?php echo $item["blood_pressure"]?>'><br><input type='text' value='<?php echo $item["diagnosis"]?>'><br><input type='text value='<?php echo $item["medications"]?>'>";
 	}
