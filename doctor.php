@@ -26,10 +26,10 @@ session_start();
 	
 	//UPDATE Customers SET ContactName='Alfred Schmidt', City='Frankfurt' WHERE CustomerID=1;
 	
-	$sql_update = "UPDATE patients SET first_name='" . $first . "'";
+	$sql_update = "UPDATE patients SET weight='" . $weight . "',  height='" . $height . "', blood_pressure='" . $bloodP . "', diagnosis='" . $diag . "', medications='" . $meds . "' WHERE first_name='" . $first . "' AND last_name='" . $last . "' ";
 	
-	
-	
+	$update = mysqli_query($MYSQLI,$sql_update)
+	or die ("Invalid query: ".mysqli_error($MYSQLI));
 	
 	}
 	
