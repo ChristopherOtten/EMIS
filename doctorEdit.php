@@ -4,7 +4,7 @@ include("inc_connect.php");
 
 
 
-$query2 = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
+$query2 = "SELECT first_name, middle_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
 $query2 .= " WHERE " . "Doctor" . " LIKE '" . $_SESSION['doctorName']  . "' AND last_name LIKE '" . $_POST['mySelect']  . "'";
 $query_result2 = mysqli_query($MYSQLI,$query2)
 or die ("Invalid query: ".mysqli_error($MYSQLI));
@@ -39,63 +39,50 @@ $info = mysqli_fetch_array($query_result2);
 	
 	<!--paragraph has a top buffer for spacing-->
 	<p class="p01">Enter your information</p>
-	<?php
-	//echo ($_POST['mySelect']);
-	?>
 	<p class="p02">Personal information</p>
 	<div class="main"><form action="enterDB.php" method="post"><table id="t01">
 		<tr>
 			<td>First Name: <input type="text" name="fNameC" value="<?php echo $info['first_name']?>" readonly required></td>
-			<td>Middle Initial: <input type="mname" name="mNameC" maxlength="1"></td> <!---idk if we really need this, but ill leave it here for now -->
-			<td>Last Name: <input type="text" name="lNameC" required></td>
+			<td>Middle Initial: <input type="mname" name="mNameC" maxlength="1" value="<?php echo $info['middle_name']?>" readonly ></td> <!---idk if we really need this, but ill leave it here for now -->
+			<td>Last Name: <input type="text" name="lNameC" value="<?php echo $info['last_name']?>" readonly required></td>
 			<td>Gender: <br>
 				<input type="radio" name="genderC" id="male" value="male"><label for="male">Male</label><br>
 				<input type="radio" name="genderC" id="female" value="female"><label for="female">Female</label><br>
 				<input type="radio" name="genderC" id="female" value="other"><label for="other">Other</label><br></td>
 		</tr>
 		<tr>
-			<td>Street Address: <input type="text" name="streetC" required></td>
-			<td>City: <input type="text" name="cityC" required></td>
-			<td>State: <input type="text" name="stateC" required></td>
-			<td>Zip Code:  <input type="text" name="zipC" required maxlength="5"></td>
+			<td>Street Address: <input type="text" name="streetC" value="**********" readonly required></td>
+			<td>City: <input type="text" name="cityC" value="**********" readonly required></td>
+			<td>State: <input type="text" name="stateC" value="**********" readonly required></td>
+			<td>Zip Code:  <input type="text" name="zipC" value="**********" readonly required maxlength="5"></td>
 		</tr>
 		<tr>
-			<td>Cell #: <input type="text" name="phoneC" required maxlength="12"></td>
+			<td>Cell #: <input type="text" name="phoneC" value="**********" readonly required maxlength="12"></td>
 		</tr>
 		<br>
 		</table>
 		<br>
 		<table id="t02">
 		<tr>
-			<td>Date of Birth: (YYYY-MM-DD) <input type="text" name="ageC" required></td>
-			<td>Weight: <input type="mname" name="weightC" required></td>
-			<td>height: <input type="text" name="heightC" required></td>
-			<td>Blood Pressure: <input type="text" name="bloodPC" required></td>
+			<td>Date of Birth: (YYYY-MM-DD) <input type="text" name="ageC" value="<?php echo $info['age']?>" required></td>
+			<td>Weight: <input type="mname" name="weightC" value="<?php echo $info['weight']?>" required></td>
+			<td>height: <input type="text" name="heightC" value="<?php echo $info['height']?>" required></td>
+			<td>Blood Pressure: <input type="text" name="bloodPC" value="<?php echo $info['blood_pressure']?>" required></td>
 		</tr>
 		<tr>
-			<td>Previous Diagnosis: <input type="text" name="diagnosisC" required></td>
-			<td>Medications Perscribed: <input type="text" name="medicationsC" required></td>
+			<td>Previous Diagnosis: <input type="text" name="diagnosisC" value="<?php echo $info['diagnosis']?>" required></td>
+			<td>Medications Perscribed: <input type="text" name="medicationsC" value="<?php echo $info['medications']?>" required></td>
 		</tr>
 		</table>
 		<br>
 		<table id="t03">
 		<tr>
-			<td>Medical Insurance: <input type="text" name="insuranceNameC" required></td>
-			<td>Medical Insurance Number: <input type="text" name="insuranceNumberC" required></td>
+			<td>Medical Insurance: <input type="text" name="insuranceNameC"  value="**********" readonly required></td>
+			<td>Medical Insurance Number: <input type="text" name="insuranceNumberC"  value="**********" readonly required></td>
 		</tr>
 		</table>
 		<br>
-		<table id="t04">
-		<tr>
-			<td style="text-align:center">Email: <input type="text" name="emailC" required size="40"></td>
-		</tr>
-		<tr>
-			<td style="text-align:center">Password: <input type="password" name="passC" required size="20"></td>
-		</tr>
-		<tr>
-			<td style="text-align:center">Confirm : <input type="password" name="email" required size="20"></td>
-		</tr>
-		</table>
+		
 		<br>
 		<input type="submit" value="Create Account" style="color:Black">
 		<br><br>
