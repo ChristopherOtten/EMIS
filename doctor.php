@@ -188,13 +188,27 @@ Use the input field to search for a specific dropdown link.<br>
 	<input type="submit" value="Edit This Patients Info" style="color:BLue">
 	<br><br>
 	</form></div>
-<br><br><br>
+<br>
 
 <?php
 	if ($edit == "Y"){ ?>
 		Patient medical information successfuly updated
 	<?php }
 ?>
+
+<div class="appointments"><form action="appMaker.php" method="post">
+	Date: <input type="date" name="dateD" id="dateD" required><br>
+	Time: <input type="time" name="timeD" id="timeD" required><br>
+	Reason For Visit: <input type="text" name="visitD" id="visitD" required><br>
+	Patients Name:<br>
+	First Name: <input type="text" name="firstD" id="firstD" required><br>
+	Middle Initial: <input type="text" name="middleD" id="middleD" required><br>
+	Last Name: <input type="text" name="lastD" id="lastD" required><br>
+	<input type="submit" value="Create Appointment" style="color:BLue">
+		<br><br>
+</form></div>
+
+
 
 
 
