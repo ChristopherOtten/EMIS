@@ -30,7 +30,7 @@ session_start();
 	//make query
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 	
-	$query2 = "SELECT first_name, last_name FROM patients";
+	$query2 = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
 	$query2 .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
 	$query_result2 = mysqli_query($MYSQLI,$query2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
@@ -159,7 +159,7 @@ Use the input field to search for a specific dropdown link.<br>
 function myFunction2() {
     var x = document.getElementById("mySelect").value;
 	if (x != "Selection"){
-		document.getElementById("demo").innerHTML ="<input type='text' value='Weight'><br><input type='text' value='Height'><br><input type='text' value='Blood Pressure'><br><input type='text' value='Diagnosis'><br><input type='text value='Medications''>";
+		document.getElementById("demo").innerHTML ="<input type='text' value='<?php echo $item["weight"]?>'><br><input type='text' value='<?php echo $item["height"]?>'><br><input type='text' value='<?php echo $item["blood_pressure"]?>'><br><input type='text' value='<?php echo $item["diagnosis"]?>'><br><input type='text value='<?php echo $item["medications"]?>'>";
 	}
 }
 </script>
