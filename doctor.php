@@ -133,7 +133,7 @@ Use the input field to search for a specific dropdown link.<br>
 
 <div class="dropdown">
 
-  <select id="mySelect" onchange="myFunction2()">
+  <select id="mySelect" onchange="index.php">
   <option value="Selection">Selection
 	<?php
 		
@@ -161,17 +161,6 @@ Use the input field to search for a specific dropdown link.<br>
 function myFunction2() {
 	
     var x = document.getElementById("mySelect").value;
-	//var www = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients WHERE Doctor Like '<?php echo $row['lastName'];?>' AND last_name LIKE 'x'
-	<?php
-	//$x = "<script>document.getElementById("mySelect").value;</script>";
-	echo ($x);
-	$queryJS = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
-	$queryJS .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' AND last_name LIKE '" . $x . "' ";
-	$query_resultJS = mysqli_query($MYSQLI,$queryJS)
-	or die ("Invalid query: ".mysqli_error($MYSQLI));
-	$rowJS = mysqli_fetch_array($query_resultJS);
-	?>
-	x = '<?php echo $rowJS["weight"];?>';
 	if (x != "Selection"){
 		document.getElementById("demo").innerHTML = "You selected: " + x;
 	}
