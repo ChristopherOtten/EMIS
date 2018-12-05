@@ -7,7 +7,7 @@ session_start();
 		exit;
 	}
 	
-	$edit=$_REQUEST['error'];
+	$edit=$_REQUEST['edit'];
 	if ($edit == "Y"){ 
 	
 	$first = $_REQUEST['fNameDE'];
