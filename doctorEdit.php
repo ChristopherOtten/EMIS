@@ -45,12 +45,7 @@ $info = mysqli_fetch_array($query_result2);
 			<td>First Name: <input type="text" name="fNameC" value="<?php echo $info['first_name']?>" readonly required></td>
 			<td>Middle Initial: <input type="mname" name="mNameC" maxlength="1" value="<?php echo $info['middle_name']?>" readonly ></td> <!---idk if we really need this, but ill leave it here for now -->
 			<td>Last Name: <input type="text" name="lNameC" value="<?php echo $info['last_name']?>" readonly required></td>
-			<td>Gender: <br>
-				<input type="radio" name="genderC" id="male" value="male"><label for="male">Male</label><br>
-				<input type="radio" name="genderC" id="female" value="female"><label for="female">Female</label><br>
-				<input type="radio" name="genderC" id="female" value="other"><label for="other">Other</label><br></td>
-		</tr>
-
+			
 		<br>
 		</table>
 		<br>
