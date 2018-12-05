@@ -1,6 +1,16 @@
 <?php 
 session_start();
 include("inc_connect.php");
+
+
+
+$query2 = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
+$query2 .= " WHERE " . "Doctor" . " LIKE '" . $_SESSION['doctorName']  . "' AND last_name LIKE '" . $_POST['mySelect']  . "'";
+$query_result2 = mysqli_query($MYSQLI,$query2)
+or die ("Invalid query: ".mysqli_error($MYSQLI));
+
+$info = mysqli_fetch_array($query_result2);
+
 ?>
 
 
@@ -30,12 +40,12 @@ include("inc_connect.php");
 	<!--paragraph has a top buffer for spacing-->
 	<p class="p01">Enter your information</p>
 	<?php
-	echo ($_POST['mySelect']);
+	//echo ($_POST['mySelect']);
 	?>
 	<p class="p02">Personal information</p>
 	<div class="main"><form action="enterDB.php" method="post"><table id="t01">
 		<tr>
-			<td>First Name: <input type="text" name="fNameC" required></td>
+			<td>First Name: <input type="text" name="fNameC" value="<?php echo $info['first_name']?>" readonly required></td>
 			<td>Middle Initial: <input type="mname" name="mNameC" maxlength="1"></td> <!---idk if we really need this, but ill leave it here for now -->
 			<td>Last Name: <input type="text" name="lNameC" required></td>
 			<td>Gender: <br>

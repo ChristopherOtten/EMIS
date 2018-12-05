@@ -27,6 +27,8 @@ session_start();
 	$sql = "SELECT first_name, middle_name, last_name, Date, Time, ReasonForVisit FROM appointments" ;
 	$sql .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
 	
+	$_SESSION['doctorName'] = $row['lastName'];
+	
 	//make query
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 	
