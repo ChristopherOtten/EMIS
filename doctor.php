@@ -168,8 +168,9 @@ function myFunction2() {
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
 	$rowJS = mysqli_fetch_array($query_resultJS);
 	?>
+	x = <?php echo $rowJS["weight"]?>;
 	if (x != "Selection"){
-		document.getElementById("demo").innerHTML = "You selected: " + <?phpecho $rowJS["weight"]?>;
+		document.getElementById("demo").innerHTML = "You selected: " + x;
 	}
 }
 </script>
