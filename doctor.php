@@ -26,7 +26,7 @@ session_start();
 	
 	//UPDATE Customers SET ContactName='Alfred Schmidt', City='Frankfurt' WHERE CustomerID=1;
 	
-	$sql_update = "UPDATE patients SET first_name='" . $first . "'"
+	$sql_update = "UPDATE patients SET first_name='" . $first . "'";
 	
 	
 	
