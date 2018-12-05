@@ -96,8 +96,8 @@ if ($error == "EM"){
             $query_result3 = mysqli_query($MYSQLI,$query3)
                 or die ("Invalid query: ".mysqli_error($MYSQLI));
             $row3 = mysqli_fetch_array($query_result3);
-            echo "<tr><td>First Name: <input type='text' name='fname' value=".$row["firstName"]." required></td>";
-            echo "<td>Middle Initial: <input maxlength=1 type='text' name='mname' value=".$row2["middle_name"]." </td>";
+            echo "<tr><td>First Name: <input type='text' name='fname' value='".$row["firstName"]."' required></td>";
+            echo "<td>Middle Initial: <input maxlength=1 type='text' name='mname' value='".$row2["middle_name"]."' </td>";
             echo "<td>Last Name: <input type='text' name='lname' value=".$row["lastName"]." required></td>";
             echo "<td>Gender: <br>
                     <input type='radio' name='gender' id='male' value='male' required><label for='male'>Male</label><br>
@@ -106,15 +106,15 @@ if ($error == "EM"){
             </tr>";
             $city = $row2["city"];
             echo "<tr>
-                <td>Street Address: <input type='text' name='street' value=".$row2["address"]." required></td>
+                <td>Street Address: <input type='text' name='street' value='".$row2["address"]."'required></td>
                 <td>City: <input type='text' name='city' value='".$city."' required></td>
-                <td>State: <input type='text' name='state' value=".$row2["state"]." required></td>
-                <td>Zip Code:  <input type='text' name='zip' maxlength=5 value=".$row2["zip"]." required></td>
+                <td>State: <input type='text' name='state' value='".$row2["state"]."' required></td>
+                <td>Zip Code:  <input type='text' name='zip' maxlength=5 value='".$row2["zip"]."' required></td>
             </tr>";
             echo "<tr>
-                <td>Cell #: <input type='text' name='phone' maxlength=10 value=".$row2["cellphone"]." required></td>
-                <td>Email: <input type='email' name='email' value=".$_SESSION["email"]." disabled></td>
-                <td>DOB: <input type='date' name='dob' value=".$row3["age"]." diabled></td>
+                <td>Cell #: <input type='text' name='phone' maxlength=10 value='".$row2["cellphone"]."' required></td>
+                <td>Email: <input type='email' name='email' value='".$_SESSION["email"]."' disabled></td>
+                <td>DOB: <input type='date' name='dob' value='".$row3["age"]."' disabled></td>
                 <td></td>
             </tr>";
             ?>
