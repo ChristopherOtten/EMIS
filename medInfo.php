@@ -34,7 +34,7 @@ $row = mysqli_fetch_array($query_result);
 </head>
 
 <!-- Main Body-->
-<body style="font-family: 'Comic Sans MS'">
+<body>
 <header>
     <div class="row">
         <div  class="column1">
@@ -57,7 +57,7 @@ $row = mysqli_fetch_array($query_result);
 
 <!--  get data from the server and display it here  -->
 <p class="p01">Medical Information</p>
-<div class="main"><form action="patientEdit.html" method="post"><table id="t01">
+<div class="main"><form action="patientEdit.php" method="post"><table id="t01">
             <?php
             //  Using username/email, find the user's name
             $query = "SELECT firstName, lastName FROM generalUsers";
