@@ -40,18 +40,18 @@ $info = mysqli_fetch_array($query_result2);
 	<!--paragraph has a top buffer for spacing-->
 	<p class="p01">Editing Medical Information for <?php echo $info['first_name']?> <?php echo $info['last_name']?>:</p>
 	<p class="p02">Personal information</p>
-	<div class="main"><form action="doctor.php" method="post"><table id="t01">
+	<div class="main"><form action="doctor.php?edit=Y" method="post"><table id="t01">
 		<tr>
-			<td>First Name: <input type="text" name="fNameC" value="<?php echo $info['first_name']?>" readonly required></td>
-			<td>Middle Initial: <input type="mname" name="mNameC" maxlength="1" value="<?php echo $info['middle_name']?>" readonly ></td> <!---idk if we really need this, but ill leave it here for now -->
-			<td>Last Name: <input type="text" name="lNameC" value="<?php echo $info['last_name']?>" readonly required></td>
+			<td>First Name: * <input type="text" name="fNameC" value="<?php echo $info['first_name']?>" readonly required></td>
+			<td>Middle Initial: * <input type="mname" name="mNameC" maxlength="1" value="<?php echo $info['middle_name']?>" readonly ></td> <!---idk if we really need this, but ill leave it here for now -->
+			<td>Last Name: * <input type="text" name="lNameC" value="<?php echo $info['last_name']?>" readonly required></td>
 			
 		<br>
 		</table>
 		<br>
 		<table id="t02">
 		<tr>
-			<td>Date of Birth: (YYYY-MM-DD) <input type="text" name="ageC" value="<?php echo $info['age']?>"readonly required></td>
+			<td>Date of Birth: (YYYY-MM-DD) * <input type="text" name="ageC" value="<?php echo $info['age']?>"readonly required></td>
 			<td>Weight: <input type="mname" name="weightC" value="<?php echo $info['weight']?>" required></td>
 			<td>height: <input type="text" name="heightC" value="<?php echo $info['height']?>" required></td>
 			<td>Blood Pressure: <input type="text" name="bloodPC" value="<?php echo $info['blood_pressure']?>" required></td>
@@ -64,7 +64,7 @@ $info = mysqli_fetch_array($query_result2);
 		<br>
 		
 		<br>
-		
+		*Non-editable information
 		<br>
 		<input type="submit" value="Update Information Entered" style="color:Black">
 		<br><br>

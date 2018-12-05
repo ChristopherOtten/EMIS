@@ -7,6 +7,10 @@ session_start();
 		exit;
 	}
 	
+	if ($edit == "Y"){
+		echo("Edits were made :)");
+	}
+	
 	//Get connection to database, prints error if one exists
 	include("inc_connect.php");
 	if (!$MYSQLI)
