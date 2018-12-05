@@ -162,7 +162,7 @@ function myFunction2() {
 	
     var x = document.getElementById("mySelect").value;
 	<?php
-	$x = "<script>document.getElementByID('x').value</script>";
+	$x = "<script>document.writeln(x);</script>";
 	$queryJS = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
 	$queryJS .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' AND last_name LIKE '" . $x . "' ";
 	$query_resultJS = mysqli_query($MYSQLI,$queryJS)
