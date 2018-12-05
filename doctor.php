@@ -131,9 +131,8 @@ session_start();
 Click on the button to open the dropdown menu.<br>
 Use the input field to search for a specific dropdown link.<br>
 
-<div class="dropdown">
-<form method="post" action="" name="form">  
-  <select id="mySelect" name="mySelect" onchange="myFunction2()">
+<div class="dropdown"><form action="doctorEdit.php" method="post"> 
+  <select id="mySelect" name="mySelect">
   <option value="Selection">Selection
 	<?php
 		
@@ -149,9 +148,9 @@ Use the input field to search for a specific dropdown link.<br>
 			}
 			?>
 	</select>
-	</div>
-	</div>
-</form>
+	<input type="submit" value="Enter" style="color:BLue">
+	<br><br>
+	</form></div>
 <br><br><br>
 
 
