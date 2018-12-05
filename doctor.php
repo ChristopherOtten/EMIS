@@ -7,6 +7,34 @@ session_start();
 		exit;
 	}
 	
+	$edit=$_REQUEST['error'];
+	if ($edit == "Y"){ 
+	
+	$first = $_REQUEST['fNameDE'];
+	$first = mysqli_real_escape_string($MYSQLI, $first);
+	$last = $_REQUEST['lNameDE'];
+	$last = mysqli_real_escape_string($MYSQLI, $last);
+	$middle = $_REQUEST['mNameDE'];
+	$age = $_REQUEST['ageDE'];
+	$height = $_REQUEST['heightDE'];
+	$height = mysqli_real_escape_string($MYSQLI, $height);
+	$bloodP = $_REQUEST['bloodPDE'];
+	$diag = $_REQUEST['diagnosisDE'];
+	$diag = mysqli_real_escape_string($MYSQLI, $diag);
+	$meds = $_REQUEST['medicationsDE'];
+	$meds = mysqli_real_escape_string($MYSQLI, $meds);
+	
+	//UPDATE Customers SET ContactName='Alfred Schmidt', City='Frankfurt' WHERE CustomerID=1;
+	
+	$sql_update = "UPDATE patients SET first_name='" . $first . "'";
+	
+	
+	
+	
+	}
+	
+	
+	
 	//Get connection to database, prints error if one exists
 	include("inc_connect.php");
 	if (!$MYSQLI)
