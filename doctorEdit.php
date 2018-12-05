@@ -40,7 +40,7 @@ $info = mysqli_fetch_array($query_result2);
 	<!--paragraph has a top buffer for spacing-->
 	<p class="p01">Editing Medical Information for <?php echo $info['first_name']?> <?php echo $info['last_name']?>:</p>
 	<p class="p02">Personal information</p>
-	<div class="main"><form action="enterDB.php" method="post"><table id="t01">
+	<div class="main"><form action="doctor.php" method="post"><table id="t01">
 		<tr>
 			<td>First Name: <input type="text" name="fNameC" value="<?php echo $info['first_name']?>" readonly required></td>
 			<td>Middle Initial: <input type="mname" name="mNameC" maxlength="1" value="<?php echo $info['middle_name']?>" readonly ></td> <!---idk if we really need this, but ill leave it here for now -->
@@ -50,10 +50,7 @@ $info = mysqli_fetch_array($query_result2);
 				<input type="radio" name="genderC" id="female" value="female"><label for="female">Female</label><br>
 				<input type="radio" name="genderC" id="female" value="other"><label for="other">Other</label><br></td>
 		</tr>
-	
-		<tr>
-			<td>Cell #: <input type="text" name="phoneC" value="**********" readonly required maxlength="12"></td>
-		</tr>
+
 		<br>
 		</table>
 		<br>
