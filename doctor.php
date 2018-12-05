@@ -133,7 +133,7 @@ Use the input field to search for a specific dropdown link.<br>
 
 <div class="dropdown">
 
-  <select id="mySelect" onchange="index.php">
+  <select id="mySelect" onchange="myFunction2()">
   <option value="Selection">Selection
 	<?php
 		
@@ -159,10 +159,13 @@ Use the input field to search for a specific dropdown link.<br>
 
 <script>
 function myFunction2() {
+	<?php $_SESSION["lastName"] = $_GET['mySelect'];
+	echo ($_GET['mySelect']);
+	
 	
     var x = document.getElementById("mySelect").value;
 	if (x != "Selection"){
-		document.getElementById("demo").innerHTML = "You selected: " + x;
+		document.getElementById("demo").innerHTML = "<button onclick="myButton()">Edit File</button>";
 	}
 }
 </script>
@@ -172,8 +175,8 @@ function myFunction2() {
 <script>
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+function myButton() {
+    location.replace("10.100.116.108")
 }
 </script>
 </div>
