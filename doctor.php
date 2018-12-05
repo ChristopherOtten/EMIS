@@ -144,7 +144,7 @@ Use the input field to search for a specific dropdown link.<br>
 			foreach($items2 as $item){
 			
 				?>
-				<option value="<?php echo $item["first_name"] . " " . $item["last_name"]?>"><?php echo $item["first_name"] . " " . $item["last_name"]?>
+				<option value="<?php echo $item["last_name"]?>"><?php echo $item["first_name"] . " " . $item["last_name"]?>
 				<?php
 			}
 			?>
@@ -159,9 +159,17 @@ Use the input field to search for a specific dropdown link.<br>
 
 <script>
 function myFunction2() {
+	
     var x = document.getElementById("mySelect").value;
+	<?php
+	$queryJS = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
+	$queryJS .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' AND last_name LIKE '" . ?>x<?php . "' ";
+	$query_resultJS = mysqli_query($MYSQLI,$queryJS)
+	or die ("Invalid query: ".mysqli_error($MYSQLI));
+	$rowJS = mysqli_fetch_array($query_resultJS);
+	?>
 	if (x != "Selection"){
-		document.getElementById("demo").innerHTML = "You selected: " + x;
+		document.getElementById("demo").innerHTML = "You selected: " + <?phpecho $rowJS["weight"]?>;
 	}
 }
 </script>
