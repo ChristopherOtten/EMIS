@@ -56,7 +56,23 @@ $row = mysqli_fetch_array($query_result);
 
 <!--Info-->
 <p class="p01">Update your personal information</p>
-<div class="main"><form action="patient.html" method="post"><table id="t01">
+<?php
+//if information was incorrect, dispays error
+$error=$_REQUEST['error'];
+if ($error == "Y"){
+    echo "<div style='text-align:center'><font color='red'>Invalid Information Entered, Please Try Again</font></div>";
+}
+
+?>
+<?php
+//if information was incorrect, dispays error
+$error=$_REQUEST['error'];
+if ($error == "EM"){
+    echo "<div style='text-align:center'><font color='red'>Email Already Exists In Records, Please Try Another Email</font></div>";
+}
+
+?>
+<div class="main"><form action="patientUpdateDB.php" method="post"><table id="t01">
             <?php
             //  Using username/email, find the user's name
             $query = "SELECT firstName, lastName FROM generalUsers";
@@ -97,8 +113,8 @@ $row = mysqli_fetch_array($query_result);
             </tr>";
             echo "<tr>
                 <td>Cell #: <input type='text' name='phone' maxlength=10 value=".$row2["cellphone"]." required></td>
-                <td>Email: <input type='email' name='email' value=".$_SESSION["email"]." required></td>
-                <td>DOB: <input type='date' name='dob' value=".$row3["age"]." required></td>
+                <td>Email: <input type='email' name='email' value=".$_SESSION["email"]." disabled></td>
+                <td>DOB: <input type='date' name='dob' value=".$row3["age"]." diabled></td>
                 <td></td>
             </tr>";
             ?>
