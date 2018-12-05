@@ -165,7 +165,7 @@ function myFunction2() {
 	
     var x = document.getElementById("mySelect").value;
 	if (x != "Selection"){
-		document.getElementById("demo").innerHTML = "<button onclick="myButton()">Edit File</button>";
+		document.getElementById("demo").innerHTML = '<button onclick="myButton()">Edit File</button>';
 	}
 }
 </script>
