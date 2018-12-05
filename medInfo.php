@@ -85,7 +85,7 @@ $row = mysqli_fetch_array($query_result);
                 echo "<tr><td>First Name:<br>" .$row["firstName"]."</td>";
                 echo "<td>Middle Initial:<br>".$row2["middle_name"]."</td>";
                 echo "<td>Last Name:<br>".$row["lastName"]."</td>";
-                echo "<td>Gender:<br>".$row4["Gender"]."<br></td></tr>";
+                echo "<td>Gender:<br>".$row3["Gender"]."<br></td></tr>";
 
                 echo "<tr><td>Age:<br>".$row3["age"]."</td>";
                 echo "<td>Weight:<br>".$row3["weight"]." </td>";
@@ -94,7 +94,7 @@ $row = mysqli_fetch_array($query_result);
 
                 echo "<tr><td>Recent diagnosis:<br>".$row3["diagnosis"]." </td>";
                 echo "<td>Treatment/Medications:<br>".$row3["medications"];
-                echo "</td><td>Current doctor:<br>Dr. ".$row3["doctor"]."</td><td></td></tr>";
+                echo "</td><td>Current doctor:<br>Dr. ".$row3["Doctor"]."</td><td></td></tr>";
             }
             ?>
         </table>
