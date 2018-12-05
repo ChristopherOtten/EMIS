@@ -88,9 +88,10 @@ $row = mysqli_fetch_array($query_result);
                     <input type='radio' name='gender' id='female' value='female' required><label for='female'>Female</label><br>
                     <input type='radio' name='gender' id='female' value='female' required><label for='other'>Other</label><br></td>
             </tr>";
+            $city = $row2["city"];
             echo "<tr>
                 <td>Street Address: <input type='text' name='street' value=".$row2["address"]." required></td>
-                <td>City: <input type='text' name='city' value=".$row2["city"]." required></td>
+                <td>City: <input type='text' name='city' value=".$city." required></td>
                 <td>State: <input type='text' name='state' value=".$row2["state"]." required></td>
                 <td>Zip Code:  <input type='text' name='zip' maxlength=5 value=".$row2["zip"]." required></td>
             </tr>";
@@ -100,7 +101,6 @@ $row = mysqli_fetch_array($query_result);
                 <td>DOB: <input type='date' name='dob' value=".$row3["age"]." required></td>
                 <td></td>
             </tr>";
-            echo $row2["city"];
             ?>
         </table>
 </div>
