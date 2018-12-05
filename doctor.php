@@ -125,11 +125,8 @@ session_start();
 		</tr>
 	</table>
 	</div>
-	<div class="button">
-	<input type="submit" value="Update" style="color:BLue;margin:auto">
-	</div>
 	</form>
-	
+    <div class="button">
 <h4>Search/Filter Patients:</h4>
 *Can only view those associated with you<br>
 Click on the button to open the dropdown menu.<br>
@@ -153,7 +150,7 @@ Use the input field to search for a specific dropdown link.<br>
 			}
 			?>
 			</select>
- </div>
+ </div></div>
 <br><br><br>
 
 
