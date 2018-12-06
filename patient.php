@@ -51,18 +51,16 @@ session_start();
                     <b>EMIS</b>
             </h1></div>
             <div class="column2">
-                <?php echo "Welcome, ".$row["firstName"]."<button onclick='myFunction()'>Logout</button>";?>
+                <?php echo "Welcome, ".$row["firstName"]." <button onclick='myFunction()'>Logout</button> ";?>
             </div>
 
             <script>
                 function myFunction() {
-                    var txt;
-                    if (confirm("Press a button!")) {
-                        txt = "You pressed OK!";
-                    } else {
-                        txt = "You pressed Cancel!";
+                    if (confirm("Do you wish to log out?")) {
+                        <?php
+                            $_SESSION['email'] = "";
+                            header('Location: index.php'); ?>
                     }
-                    document.getElementById("demo").innerHTML = txt;
                 }
             </script>
         </div>
