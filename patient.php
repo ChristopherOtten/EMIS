@@ -51,7 +51,8 @@ session_start();
                     <b>EMIS</b>
             </h1></div>
             <div class="column2">
-                <?php echo "<div id=\"demo\"></div>Welcome, ".$row["firstName"]." <button onclick='myFunction()'>Logout</button>";?>
+                <?php echo "<div id=\"demo\">  </div>";
+                echo "Welcome, ".$row["firstName"]." <button onclick='myFunction()'>Logout</button>";?>
             </div>
 
             <script>
@@ -60,7 +61,7 @@ session_start();
                     if (confirm("Do you wish to logout?")) {
                         txt = "You wish to logout!";
                     } else {
-                        txt = "";
+                        txt = "  ";
                     }
                     document.getElementById("demo").innerHTML = txt;
                 }
