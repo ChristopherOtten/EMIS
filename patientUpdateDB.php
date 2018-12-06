@@ -33,9 +33,9 @@ $old = mysqli_fetch_array($query_result);
 $oldName = $old['firstName'];
 
 // Update variables
-$sql2 = "Update patientInfo SET first_name = '".$firstName."', middle_name= '".$middleName."', last_name= '".$lastName."', Gender= '".$gender."', address= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', cellphone= '".$phone."' WHERE first_name='".$oldName."' ";
-$sql = "UPDATE generalUsers SET firstName= '".$firstName."' lastName= '".$lastName."' WHERE email='".$_SESSION['email']."' ";
-$sql3 = "Update patients SET first_name ='".$firstName."', middle_name= '".$middleName."', last_name= '".$lastName."' WHERE first_name= '".$oldName."' ";
+$sql2 = "Update patientInfo SET middle_name= '".$middleName."', last_name= '".$lastName."', Gender= '".$gender."', address= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', cellphone= '".$phone."' WHERE first_name='".$oldName."' ";
+$sql = "UPDATE generalUsers SET lastName= '".$lastName."' WHERE email='".$_SESSION['email']."' ";
+$sql3 = "Update patients SET middle_name= '".$middleName."', last_name= '".$lastName."' WHERE first_name= '".$oldName."' ";
 
 //plug into database, if it breaks, print error
 if ((mysqli_query($MYSQLI, $sql)) && (mysqli_query($MYSQLI, $sql2)) &&(mysqli_query($MYSQLI, $sql3))) {
