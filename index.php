@@ -1,6 +1,4 @@
 <?php 
-session_destroy();
-
 session_start();
 //opens session, sets session variable to true (prevents skipping login section)
 $_SESSION["viewIndex"] = true;
