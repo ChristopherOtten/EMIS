@@ -47,8 +47,8 @@ $row = mysqli_fetch_array($query_result);
         </div>
     </div>
     <ul>
-        <li><a href="patient.php">Personal Info</a></li>
-        <li><a class="active" href="medInfo.php">Medical Info</a></li>
+        <li><a class="active" href="patient.php">Personal Info</a></li>
+        <li><a href="medInfo.php">Medical Info</a></li>
         <li><a href="#receipt">Receipts</a></li>
         <li><a href="#message">Messages</a></li>
     </ul>
