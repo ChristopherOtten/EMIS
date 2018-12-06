@@ -99,7 +99,7 @@ session_start();
                 </h1></div>
             <div class="column2">
                 <?php echo "<div id=\"demo\">  </div>";
-                    echo "Welcome, Dr." ." ". $row["lastName"]." <button onclick='myFunction()'>Logout</button> ";?>
+                    echo "Welcome, Dr." ." ". $row["lastName"];?> <button onclick='myFunction()'>Logout</button>
             </div>
 
             <script>

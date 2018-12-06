@@ -45,7 +45,7 @@ $row = mysqli_fetch_array($query_result);
             </h1></div>
         <div class="column2">
             <?php echo "<div id=\"demo\">  </div>";
-            echo "Welcome, ".$row["firstName"]." <button onclick='myFunction()'>Logout</button>";?>
+            echo "Welcome, ".$row["firstName"];?> <button onclick='myFunction()'>Logout</button>
         </div>
 
         <script>
@@ -53,7 +53,7 @@ $row = mysqli_fetch_array($query_result);
                 var txt;
                 if (confirm("Do you wish to logout?")) {
                     window.location.assign("index.php");
-                    txt = "You wish to logout!";
+                    txt = "  ";
                 } else {
                     txt = "  ";
                 }
