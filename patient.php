@@ -60,6 +60,9 @@ session_start();
                         <?php
                             $_SESSION['email'] = "";
                             header('Location: index.php'); ?>
+                    }else {
+                        <?php
+                        $_SESSION['email'] = $_SESSION['email']; ?>
                     }
                 }
             </script>
