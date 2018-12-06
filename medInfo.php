@@ -44,8 +44,22 @@ $row = mysqli_fetch_array($query_result);
                 <b>EMIS</b>
             </h1></div>
         <div class="column2">
-            <?php echo "Welcome, ".$row["firstName"];?>
+            <?php echo "<div id=\"demo\">  </div>";
+            echo "Welcome, ".$row["firstName"]." <button onclick='myFunction()'>Logout</button>";?>
         </div>
+
+        <script>
+            function myFunction() {
+                var txt;
+                if (confirm("Do you wish to logout?")) {
+                    window.location.assign("index.php");
+                    txt = "You wish to logout!";
+                } else {
+                    txt = "  ";
+                }
+                document.getElementById("demo").innerHTML = txt;
+            }
+        </script>
     </div>
     <ul>
         <li><a href="patient.php">Personal Info</a></li>

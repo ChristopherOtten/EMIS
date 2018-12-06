@@ -98,8 +98,22 @@ session_start();
                     <b>EMIS</b>
                 </h1></div>
             <div class="column2">
-                <?php echo "Welcome, Dr." ." ". $row["lastName"]?>
+                <?php echo "<div id=\"demo\">  </div>";
+                    echo "Welcome, Dr." ." ". $row["lastName"]." <button onclick='myFunction()'>Logout</button> ";?>
             </div>
+
+            <script>
+                function myFunction() {
+                    var txt;
+                    if (confirm("Do you wish to logout?")) {
+                        window.location.assign("index.php");
+                        txt = "You wish to logout!";
+                    } else {
+                        txt = "  ";
+                    }
+                    document.getElementById("demo").innerHTML = txt;
+                }
+            </script>
         </div>
 		<ul>
 			<li><a class="active"  href="doctor.php">Appointments</a></li>
