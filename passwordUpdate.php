@@ -17,15 +17,12 @@ $new2 = $_REQUEST['passwordN2'];
 
 $query = "SELECT firstName, lastName FROM generalUsers";
 $query .= " WHERE " . "email" . " LIKE '" . $emailCheck . "' ";
-if ((mysqli_query($MYSQLI, $query))) {
-    header('Location: index.php');
-    //close
-    mysqli_close($MYSQLI);
-    exit;
+$query_result = mysqli_query($MYSQLI,$query)
+    or die ("Invalid query: ".mysqli_error($MYSQLI));
+$nameCheck = mysqli_fetch_array($query_result);
 
-} else {
-    header('Location: passwordRecovery.php');
-    exit;
+if($nameCheck['firstName'] == $fNameCheck && $nameCheck['lastName'] == $lNameCheck){
+    echo "names match";
 }
 
 ?>
