@@ -22,9 +22,13 @@ $query_result = mysqli_query($MYSQLI,$query)
 $nameCheck = mysqli_fetch_array($query_result);
 
 if($nameCheck['firstName'] == $fNameCheck && $nameCheck['lastName'] == $lNameCheck){
-    echo "names match";
+    if($new1 == $new2) {
+        $sql = "Update generalUsers SET password='" . $new1 . "'";
+    } else{
+        header('Location: passwordRecovery.php?error=P');
+    }
 }else{
-    header('Location: passwordRecovery.php');
+    header('Location: passwordRecovery.php?error=E');
 }
 
 ?>

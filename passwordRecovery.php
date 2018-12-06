@@ -50,16 +50,16 @@ if (!$MYSQLI)
         //if information was incorrect, dispays error
         $error=$_REQUEST['error'];
         $message = $_REQUEST['message'];
-        if ($error == "Y"){
-            echo "<div style='text-align:center'><font color='red'>Invalid Information Entered, Please Try Again</font></div>";
+        if ($error == "P"){
+            echo "<div style='text-align:center'><font color='red'>Passwords do not match, try again</font></div>";
             echo $message;
         }
         ?>
         <?php
         //if information was incorrect, dispays error
         $error=$_REQUEST['error'];
-        if ($error == "EM"){
-            echo "<div style='text-align:center'><font color='red'>Email does not match</font></div>";
+        if ($error == "E"){
+            echo "<div style='text-align:center'><font color='red'>Email and user does not match</font></div>";
         }
     ?>
     <div class="main"><form action="passwordUpdate.php" method="post"><table id="t01">
