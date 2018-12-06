@@ -19,10 +19,10 @@ h1 {
 }
 
 .column2 {
-	margin-top:20px;
+	//margin-top:20px;
 	//margin:50px;
-	float: right;
-	//text-align:right;
+	//float: right;
+	text-align:right;
     width: 40%;
 }
 

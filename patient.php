@@ -51,7 +51,7 @@ session_start();
                     <b>EMIS</b>
             </h1></div>
             <div class="column2">
-                <?php echo "Welcome, ".$row["firstName"]."<div class='button' onclick='myFunction()'><input value=\"Logout\"></div>";?>
+                <?php echo "Welcome, ".$row["firstName"]."<button onclick='myFunction()'>Logout</button>";?>
             </div>
 
             <script>
