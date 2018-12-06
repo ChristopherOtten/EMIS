@@ -59,6 +59,7 @@ session_start();
                 function myFunction() {
                     var txt;
                     if (confirm("Do you wish to logout?")) {
+                        <?php $_SESSION['email'] = ''; ?>
                         window.location.assign("index.php");
                         txt = "You wish to logout!";
                     } else {

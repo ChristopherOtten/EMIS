@@ -52,6 +52,7 @@ $row = mysqli_fetch_array($query_result);
             function myFunction() {
                 var txt;
                 if (confirm("Do you wish to logout?")) {
+                    <?php $_SESSION['email'] = ''; ?>
                     window.location.assign("index.php");
                     txt = "You wish to logout!";
                 } else {
