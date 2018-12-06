@@ -23,6 +23,8 @@ $nameCheck = mysqli_fetch_array($query_result);
 
 if($nameCheck['firstName'] == $fNameCheck && $nameCheck['lastName'] == $lNameCheck){
     echo "names match";
+}else{
+    header('Location: passwordRecovery.php');
 }
 
 ?>
