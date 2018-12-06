@@ -26,13 +26,13 @@ if($nameCheck['firstName'] == $fNameCheck){
         if($new1 == $new2) {
             $sql = "Update generalUsers SET password='" . $new1 . "'";
         } else{
-            header('Location: passwordRecovery.php?error=P?message='.$query);
+            header('Location: passwordRecovery.php?error=P?message='.$query_result);
         }
     }else{
-        header('Location: passwordRecovery.php?error=E?message='.$query);
+        header('Location: passwordRecovery.php?error=E?message='.$query_result);
     }
 }else{
-    header('Location: passwordRecovery.php?error=E?message='.$query);
+    header('Location: passwordRecovery.php?error=E?message='.$query_result);
 }
 
 ?>

@@ -38,7 +38,7 @@ $_SESSION["viewIndex"] = true;
 		    Password_ <input type="password" name="password" id="password" required><br>
 
 		<div class="fpassword">
-		<a href="error.html">forgot password?</a>
+		<a href="passwordRecovery.php">forgot password?</a>
 		<a href="create.php">Create an account</a>
 		</div>
 		<input type="submit" value="Enter" style="color:BLue">
