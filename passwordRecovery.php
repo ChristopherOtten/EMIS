@@ -65,11 +65,11 @@ if (!$MYSQLI)
     <div class="main"><form action="passwordUpdate.php" method="post"><table id="t01">
                 <div style="text-align: center">
                 <tr>
-                    <td>First Name: <input type="text" name="fName" required></td>
-                    <td>Last Name : <input type="text" name="lName" required></td>
+                    <td>First Name: <input type="text" name="fNameCheck" required></td>
+                    <td>Last Name : <input type="text" name="lNameCheck" required></td>
                 </tr>
                 <tr>
-                    <td colspan="2">User Email: <input type="text" name="email" required size="40"></td>
+                    <td colspan="2">User Email: <input type="text" name="emailCheck" required size="40"></td>
                 </tr>
                 <tr>
                     <td style="text-align: center" colspan="2">Enter a new Password:<input type="password" name="passwordN1" required></td>
