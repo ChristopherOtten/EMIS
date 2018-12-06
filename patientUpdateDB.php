@@ -30,7 +30,7 @@ $query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
 $query_result = mysqli_query($MYSQLI,$query)
 or die ("Invalid query: ".mysqli_error($MYSQLI));
 $old = mysqli_fetch_array($query_result);
-$oldName = $old['name'];
+$oldName = $old['firstName'];
 
 // Update variables
 $sql2 = "Update patientInfo SET first_name= '".$firstName."', middle_name= '".$middleName."', last_name= '".$lastName."', Gender= '".$gender."', street= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', phone= '".$phone."' WHERE first_name='".$oldName."' ";
