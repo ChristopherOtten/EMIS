@@ -33,7 +33,7 @@ $old = mysqli_fetch_array($query_result);
 $oldName = $old['firstName'];
 
 // Update variables
-$sql2 = "Update patientInfo SET first_name= '".$firstName."', middle_name= '".$middleName."', last_name= '".$lastName."', Gender= '".$gender."', street= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', phone= '".$phone."' WHERE first_name='".$oldName."' ";
+$sql2 = "Update patientInfo SET middle_name= '".$middleName."', last_name= '".$lastName."', Gender= '".$gender."', street= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', phone= '".$phone."' WHERE first_name='".$oldName."' ";
 $sql = "UPDATE generalUsers SET firstName= '".$firstName."' lastName= '".$lastName."' WHERE email='".$_SESSION['email']."' ";
 
 //plug into database, if it breaks, print error
