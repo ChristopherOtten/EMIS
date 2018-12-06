@@ -25,6 +25,9 @@ if($nameCheck['firstName'] == $fNameCheck){
     if ($nameCheck['lastName'] == $lNameCheck){
         if($new1 == $new2) {
             $sql = "Update generalUsers SET password='" . $new1 . "'";
+            $sql_result = mysqli_query($MYSQLI, $sql)
+            or die("Invalid query: ".mysqli_error($MYSQLI));
+            header('Location: index.php');
         } else{
             header('Location: passwordRecovery.php?error=P?message='.$query_result);
         }
