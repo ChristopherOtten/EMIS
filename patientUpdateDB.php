@@ -33,24 +33,17 @@ $old = mysqli_fetch_array($query_result);
 $oldName = $old['firstName'];
 
 // Update variables
-$sql2 = "Update patientInfo SET middle_name= '".$middleName."', last_name= '".$lastName."', Gender= '".$gender."', address= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', cellphone= '".$phone."' WHERE first_name='".$oldName."' ";
-$sql = "UPDATE generalUsers SET lastName= '".$lastName."' WHERE email='".$_SESSION['email']."' ";
-$sql3 = "Update patients SET middle_name= '".$middleName."', last_name= '".$lastName."' WHERE first_name= '".$oldName."' ";
+$sql = "Update patientInfo SET Gender= '".$gender."', address= '".$street."', city= '".$city."', state= '".$state."', zip= '".$zip."', cellphone= '".$phone."' WHERE first_name='".$oldName."' ";
 
 //plug into database, if it breaks, print error
-if ((mysqli_query($MYSQLI, $sql)) && (mysqli_query($MYSQLI, $sql2)) &&(mysqli_query($MYSQLI, $sql3))) {
-
+if ((mysqli_query($MYSQLI, $sql))) {
     header('Location: patient.php');
-
     //close
     mysqli_close($MYSQLI);
     exit;
 
 } else {
-    echo $sql;
-    echo $sql2;
-    echo $sql3;
-    //header('Location: patientEdit.php?error=Ymessage='.$sql2);
+    header('Location: patientEdit.php?error=Y');
     exit;
 }
 ?>

@@ -98,9 +98,9 @@ if ($error == "EM"){
             $query_result3 = mysqli_query($MYSQLI,$query3)
                 or die ("Invalid query: ".mysqli_error($MYSQLI));
             $row3 = mysqli_fetch_array($query_result3);
-            echo "<tr><td>First Name: <input type='text' name='fname' value='".$row["firstName"]."' required></td>";
-            echo "<td>Middle Initial: <input maxlength=1 type='text' name='mname' value='".$row2["middle_name"]."' </td>";
-            echo "<td>Last Name: <input type='text' name='lname' value=".$row["lastName"]." required></td>";
+            echo "<tr><td>First Name: <input type='text' name='fname' value='".$row["firstName"]."' disabled></td>";
+            echo "<td>Middle Initial: <input maxlength=1 type='text' name='mname' value='".$row2["middle_name"]."' disabled> </td>";
+            echo "<td>Last Name: <input type='text' name='lname' value=".$row["lastName"]." disabled></td>";
             echo "<td>Gender: <br>
                     <input type='radio' name='gender' id='male' value='male' required><label for='male'>Male</label><br>
                     <input type='radio' name='gender' id='female' value='female' required><label for='female'>Female</label><br>
