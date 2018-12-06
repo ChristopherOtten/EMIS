@@ -21,14 +21,18 @@ $query_result = mysqli_query($MYSQLI,$query)
     or die ("Invalid query: ".mysqli_error($MYSQLI));
 $nameCheck = mysqli_fetch_array($query_result);
 
-if($nameCheck['firstName'] == $fNameCheck && $nameCheck['lastName'] == $lNameCheck){
-    if($new1 == $new2) {
-        $sql = "Update generalUsers SET password='" . $new1 . "'";
-    } else{
-        header('Location: passwordRecovery.php?error=P');
+if($nameCheck['firstName'] == $fNameCheck){
+    if ($nameCheck['lastName'] == $lNameCheck){
+        if($new1 == $new2) {
+            $sql = "Update generalUsers SET password='" . $new1 . "'";
+        } else{
+            header('Location: passwordRecovery.php?error=P?message='.$query);
+        }
+    }else{
+        header('Location: passwordRecovery.php?error=E?message='.$query);
     }
 }else{
-    header('Location: passwordRecovery.php?error=E');
+    header('Location: passwordRecovery.php?error=E?message='.$query);
 }
 
 ?>

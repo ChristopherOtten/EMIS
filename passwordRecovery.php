@@ -58,8 +58,10 @@ if (!$MYSQLI)
         <?php
         //if information was incorrect, dispays error
         $error=$_REQUEST['error'];
+        $message=$_REQUEST['message'];
         if ($error == "E"){
             echo "<div style='text-align:center'><font color='red'>Email and user does not match</font></div>";
+            echo $message;
         }
     ?>
     <div class="main"><form action="passwordUpdate.php" method="post"><table id="t01">
