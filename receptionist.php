@@ -19,7 +19,7 @@ session_start();
 	<title>EMIS - Personal Information</title>
 	<link rel="stylesheet" href="patient.css"/>
 	<meta charset="UTF-8">
-	<meta name="description" content="Medical records and Appointment scheduling">
+	<meta name="description" content="Appointment Scheduling">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,9 +63,10 @@ session_start();
 	
 	<p class="p01">Upcoming Appointments</p>
 	<div class="main" style="height:300px;width:758px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;"><form action="patientEdit.html" method="post"><table id="t01">
-	<?php
+	<?php/*
 		//print table of all information from database
 		if (mysqli_num_rows($sql_result) > 0){
+            
 		?>
 		
 			<table border="2" align="center">
@@ -101,21 +102,22 @@ session_start();
 			?>
 			</tbody>
 			</table>
+            
 		<?php
 		
 		}
 		else{
 			echo "No upcoming appointments on record.";
 		}
+        
 		
-	?>
-		
+	?>	
 		</div>
 		</tr>
 	</table>
 	</div>
 	</form>
-<!--<div class="button">
+<div class="button">
 <h4>Search/Filter Patients:</h4>
 *Can only view those associated with you<br>
 Click on the button to open the dropdown menu.<br>
@@ -124,19 +126,6 @@ Use the input field to search for a specific dropdown link.<br>
 <div class="dropdown"><form action="doctorEdit.php" method="post"> 
   <select id="mySelect" name="mySelect" value="Selection">
   <option value="" selected disabled hidden>Select Patient</option>
-	<?php/*
-		
-			while($row3 = mysqli_fetch_assoc($query_result2)){
-				$items2[] = $row3;
-			}
-			//echo("$items1");
-			foreach($items2 as $item){
-			
-				?>
-				<option value="<?php echo $item["last_name"]?>"><?php echo $item["first_name"] . " " . $item["last_name"]?>
-				<?php
-			}*/
-			?>
 	</select>
 	<input type="submit" value="Edit This Patients Info" style="color:BLue">
 	<br><br>
@@ -154,7 +143,9 @@ Use the input field to search for a specific dropdown link.<br>
 	<input type="submit" value="Create Appointment" style="color:BLue">
 		<br><br>
 </form></div>
--->
+*/
+?>	<!-- remove later -->
+
 
 
 
