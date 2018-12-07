@@ -78,7 +78,7 @@ session_start();
             </script>
         </div>
 		<ul>
-			<li><a class="active"  href="receptionist.php">Appointments</a></li>
+			<li><a class="active"  href="receptionist.php">Appointments List</a></li>
 			<li><a href="#Create_Appointments">Create Appointments</a></li>
 			<li><a href="#message">Messages</a></li>
 		</ul>
