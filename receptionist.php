@@ -15,7 +15,7 @@ session_start();
 
 	
 	//Get last name of receptionist who logged in
-	$query = "SELECT lastName FROM generalUsers";
+	$query = "SELECT firstName FROM generalUsers";
 	$query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
 	
 	//create query
@@ -27,8 +27,6 @@ session_start();
 
 	//sql to grab first, middle, last names of patients
 	$sql = "SELECT first_name, middle_name, last_name, Date, Time, ReasonForVisit FROM appointments" ;
-	
-	$_SESSION['receptionistName'] = $row['firstName'];
 	
 	//make query
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
@@ -61,7 +59,7 @@ session_start();
                 </h1></div>
             <div class="column2">
                 <?php echo "<div id=\"demo\">  </div>";
-                    echo "Welcome," ." ". $row['lastName'];?> <button onclick='myFunction()'>Logout</button>
+                    echo "Welcome," ." ". $row['firstName'];?> <button onclick='myFunction()'>Logout</button>
             </div>
 
             <script>
