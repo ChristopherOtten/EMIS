@@ -12,6 +12,26 @@ session_start();
 	if (!$MYSQLI)
 		echo "problem";
 	
+
+	
+	//Get last name of receptionist who logged in
+	$query = "SELECT lastName FROM generalUsers";
+	$query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
+	
+	//create query
+	$query_result = mysqli_query($MYSQLI,$query)
+	or die ("Invalid query: ".mysqli_error($MYSQLI));
+	
+	//make array out of query results
+	$row = mysqli_fetch_array($query_result);
+
+	
+	$_SESSION['receptionistName'] = $row['lastName'];
+	
+	//make query
+	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -38,7 +58,7 @@ session_start();
                 </h1></div>
             <div class="column2">
                 <?php echo "<div id=\"demo\">  </div>";
-                    echo "Welcome," ." ". $row["firstName"];?> <button onclick='myFunction()'>Logout</button>
+                    echo "Welcome," ." ". $row["lastName"];?> <button onclick='myFunction()'>Logout</button>
             </div>
 
             <script>
@@ -63,10 +83,9 @@ session_start();
 	
 	<p class="p01">Upcoming Appointments</p>
 	<div class="main" style="height:300px;width:758px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;"><form action="patientEdit.html" method="post"><table id="t01">
-	<?php/*
+	<?php
 		//print table of all information from database
 		if (mysqli_num_rows($sql_result) > 0){
-            
 		?>
 		
 			<table border="2" align="center">
@@ -102,55 +121,20 @@ session_start();
 			?>
 			</tbody>
 			</table>
-            
 		<?php
 		
 		}
 		else{
 			echo "No upcoming appointments on record.";
 		}
-        
 		
-	?>	
+	?>
+		
 		</div>
 		</tr>
 	</table>
 	</div>
 	</form>
-<div class="button">
-<h4>Search/Filter Patients:</h4>
-*Can only view those associated with you<br>
-Click on the button to open the dropdown menu.<br>
-Use the input field to search for a specific dropdown link.<br>
-
-<div class="dropdown"><form action="doctorEdit.php" method="post"> 
-  <select id="mySelect" name="mySelect" value="Selection">
-  <option value="" selected disabled hidden>Select Patient</option>
-	</select>
-	<input type="submit" value="Edit This Patients Info" style="color:BLue">
-	<br><br>
-	</form></div>
-<br>
-
-<div class="appointments"><form action="appMaker.php" method="post">
-	Date: <input type="date" name="dateD" id="dateD" required>
-	Time: <input type="time" name="timeD" id="timeD" required><br>
-	Reason For Visit: <input type="text" name="visitD" id="visitD" required><br>
-	Patients Name:<br>
-	First Name: <input type="text" name="firstD" id="firstD" required><br>
-	Middle Initial: <input type="text" name="middleD" id="middleD" maxlength="1" required><br>
-	Last Name: <input type="text" name="lastD" id="lastD" required><br>
-	<input type="submit" value="Create Appointment" style="color:BLue">
-		<br><br>
-</form></div>
-*/
-?>	<!-- remove later -->
-
-
-
-
-
-
 
 </div>
 </body>
