@@ -25,11 +25,14 @@ session_start();
 	//make array out of query results
 	$row = mysqli_fetch_array($query_result);
 
+	//sql to grab first, middle, last names of patients
+	$sql = "SELECT first_name, middle_name, last_name, Date, Time, ReasonForVisit FROM appointments" ;
 	
 	$_SESSION['receptionistName'] = $row['lastName'];
 	
 	//make query
-	//$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
+	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
+
 
 
 ?>
@@ -58,7 +61,7 @@ session_start();
                 </h1></div>
             <div class="column2">
                 <?php echo "<div id=\"demo\">  </div>";
-                    echo "Welcome," ." ". $row["lastName"];?> <button onclick='myFunction()'>Logout</button>
+                    echo "Welcome," ." ". $row["firstName"];?> <button onclick='myFunction()'>Logout</button>
             </div>
 
             <script>
