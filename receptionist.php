@@ -29,7 +29,7 @@ session_start();
 	$_SESSION['receptionistName'] = $row['lastName'];
 	
 	//make query
-	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
+	//$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 
 
 ?>
