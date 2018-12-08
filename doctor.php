@@ -193,7 +193,7 @@ Use the input field to search for a specific dropdown link.<br>
 			foreach($items2 as $item){
 			
 				?>
-				<option value="<?php echo $item["last_name"]?>"><?php echo $item["first_name"] . " " . $item["last_name"]?>
+				<option value="<?php echo $item["last_name"]?>"><?php echo $item["first_name"] . " " . $item["middle_name"] . " " . $item["last_name"]?>
 				<?php
 			}
 			?>
