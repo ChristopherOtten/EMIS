@@ -30,6 +30,10 @@ session_start();
 	
 	//make query
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
+	
+	$query2 = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
+	$query_result2 = mysqli_query($MYSQLI,$query2)
+	or die ("Invalid query: ".mysqli_error($MYSQLI));
 
 
 
@@ -135,6 +139,37 @@ session_start();
 	</table>
 	</div>
 	</form>
+    
+<div class="button">
+<h4>Search/Filter Patients:</h4>
+Click on the button to open the dropdown menu.<br>
+Use the input field to search for a specific dropdown link.<br>
+
+<div class="dropdown"><form method="post"> 
+  <select id="mySelect" name="mySelect" value="Selection">
+  <option value="" selected disabled hidden>Select Patient</option>
+	<?php
+		
+			while($row3 = mysqli_fetch_assoc($query_result2)){
+				$items2[] = $row3;
+			}
+			foreach($items2 as $item){
+			
+				?>
+				<option value="<?php echo $item["last_name"]?>"><?php echo $item["first_name"] . " " . $item["last_name"]?>
+				<?php
+			}
+			?>
+	</select>
+	<br><br>
+	</form></div>
+<br>
+
+<?php
+	if ($edit == "Y"){ ?>
+		Patient medical information successfuly updated
+	<?php }
+?>
     
 <div class="appointments"><form action="appMaker.php" method="post">
 	Date: <input type="date" name="dateD" id="dateD" required>
