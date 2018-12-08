@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+    // If session variable is NULL, redirect to first page, otherwise continue
+    if ($_SESSION["viewIndex"] == NULL){
+        header('Location: index.php');
+        exit;
+    }
 
 include("inc_connect.php");
 if (!$MYSQLI)
