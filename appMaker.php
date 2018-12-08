@@ -49,37 +49,41 @@ VALUES ('$date', '$time', '" . $thisDoctor . "', '$reason', '$first', '$middle',
 
 if (mysqli_query($MYSQLI, $sql)){
     
-    if ($row['permissions'] == 'Receptionist'){
+    mysqli_close($MYSQLI);
     
+    if ($row['permissions'] == 'Receptionist'){
         //close
-        mysqli_close($MYSQLI);
         header('Location: receptionist.php');
         exit;
 	
     } else if ( $row['permissions'] == 'Doctor' ){
-        
         //close
-        mysqli_close($MYSQLI);
         header('Location: doctor.php');
         exit;
     
+    } else{
+        //close
+        header('Location: index.php?error=Y');
+        exit;    
     }
 	
 } else {
     
     if ($row['permissions'] == 'Receptionist'){
-    
         //close
         header('Location: receptionist.php?error=Y');
         exit;
 	
     } else if ( $row['permissions'] == 'Doctor' ){
-        
         //close
-        mysqli_close($MYSQLI);
         header('Location: doctor.php?error=Y');
         exit;
     
+    } else{
+        //close
+        header('Location: index.php?error=Y');
+        exit;
+        
     }
 }
 
