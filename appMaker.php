@@ -38,9 +38,11 @@ $query_result2 = mysqli_query($MYSQLI,$query2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
 $row2 = mysqli_fetch_array($query_result);
 
+$thisDoctor = $_SESSION['doctorName'];
+
 if ($row['permissions'] == 'Receptionist'){
     
-    $_SESSION['doctorName'] = $row2['Doctor'];
+    $thisDoctor = $row2['Doctor'];
     
 }
 
@@ -52,7 +54,7 @@ if (mysqli_query($MYSQLI, $sql)){
     
     if ($row['permissions'] == 'Receptionist'){
     
-        	//close
+        //close
         mysqli_close($MYSQLI);
         header('Location: receptionist.php');
         exit;
@@ -60,6 +62,7 @@ if (mysqli_query($MYSQLI, $sql)){
         } else {
         header('Location: receptionist.php?error=Y');
         exit;
+        }
     
     }
 	
