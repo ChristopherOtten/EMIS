@@ -7,7 +7,7 @@ foreach ($_POST as $key => $value) {
        unset($_POST[$key]);
     }
 }
-if ( empty($_POST)) ){
+if ( empty($_POST) ){
     
     mysqli_close($MYSQLI);
         
