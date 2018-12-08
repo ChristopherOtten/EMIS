@@ -30,7 +30,12 @@ $reason = $_REQUEST['visitD'];
 $date = $_REQUEST['dateD'];
 $time = $_REQUEST['timeD'];
 
-if ( $first == '' or $middle == '' or $last '' ){
+foreach ($row as $key => $value) {
+    if (empty($value)) {
+       unset($row[$key]);
+    }
+}
+if ( empty($row) ){
     
     mysqli_close($MYSQLI);
     if ($row['permissions'] == 'Receptionist'){
@@ -67,7 +72,7 @@ if ($row['permissions'] == 'Receptionist'){
     
 }
 
-if ( $thisDoctor == '' ){
+if ( empty( $thisDoctor ) ){
     
     mysqli_close($MYSQLI);
     if ($row['permissions'] == 'Receptionist'){
