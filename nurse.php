@@ -45,7 +45,7 @@ session_start();
 		if (mysqli_query($MYSQLI, $update)) {
 			echo "Record updated successfully";
 		} else {
-			echo "Error updating record: " . mysqli_error($MYSQLI);
+			//echo "Error updating record: " . mysqli_error($MYSQLI);
 		}
 	
 	}
