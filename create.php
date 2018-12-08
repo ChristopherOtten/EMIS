@@ -5,7 +5,7 @@ include("inc_connect.php");
 
 	//Get names of all doctors
 	$query = "SELECT firstName, lastName FROM generalUsers";
-	$query .= " WHERE permissions LIKE 'Doctor' ";
+	$query .= " WHERE permissions = 'Doctor' ";
 	
 	//create query
 	$query_result = mysqli_query($MYSQLI,$query)
