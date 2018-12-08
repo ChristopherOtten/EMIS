@@ -31,6 +31,7 @@ $date = $_REQUEST['dateD'];
 $time = $_REQUEST['timeD'];
 
 foreach ($row as $key => $value) {
+    echo $row[$key];
     if (empty($value)) {
        unset($row[$key]);
     }
@@ -98,7 +99,7 @@ if ( empty( $thisDoctor ) ){
 $sql = "INSERT INTO appointments". "(Date, Time, Doctor, ReasonForVisit, first_name, middle_name, last_name)". "
 VALUES ('$date', '$time', '" . $thisDoctor . "', '$reason', '$first', '$middle', '$last')";
 
-if (mysqli_query($MYSQLI, $sql)){
+/*if (mysqli_query($MYSQLI, $sql)){
     
     mysqli_close($MYSQLI);
     
@@ -136,7 +137,7 @@ if (mysqli_query($MYSQLI, $sql)){
         exit;
         
     }
-}
+}*/
 
 
 
