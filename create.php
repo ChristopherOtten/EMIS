@@ -117,10 +117,7 @@ include("inc_connect.php");
   <option value="" selected disabled hidden>Select Doctor</option>
 	<?php
 		
-			while($row = mysqli_fetch_assoc($query_result)){
-				$items[] = $row;
-			}
-			foreach($items as $item){
+			foreach($row as $item){
 			
 				?>
 				<option value="<?php echo $item["lastName"]?>"><?php echo "Dr. " . $item["firstName"] . " " . $item["lastName"]?>
