@@ -3,8 +3,8 @@ session_start();
 include("inc_connect.php");
 
 
-	//Get last name of receptionist who logged in
-	$query = "SELECT * FROM generalUsers";
+	//Get names of all doctors
+	$query = "SELECT firstName, lastName FROM generalUsers";
 	$query .= " WHERE permissions LIKE 'Doctor' ";
 	
 	//create query
