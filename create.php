@@ -123,7 +123,7 @@ include("inc_connect.php");
 			foreach($items as $item){
 			
 				?>
-				<option value="<?php echo $item["lastName"]?>"><?php echo $item["firstName"] . " " . $item["lastName"]?>
+				<option value="<?php echo $item["lastName"]?>"><?php echo "Dr. " . $item["firstName"] . " " . $item["lastName"]?>
 				<?php
 			}
 			?>
