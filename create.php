@@ -1,6 +1,19 @@
 <?php 
 session_start();
 include("inc_connect.php");
+
+
+	//Get last name of receptionist who logged in
+	$query = "SELECT * FROM generalUsers";
+	$query .= " WHERE permissions = 'Doctor' ";
+	
+	//create query
+	$query_result = mysqli_query($MYSQLI,$query)
+	or die ("Invalid query: ".mysqli_error($MYSQLI));
+	
+	//make array out of query results
+	$row = mysqli_fetch_array($query_result);
+
 ?>
 
 
@@ -99,6 +112,25 @@ include("inc_connect.php");
 			<td style="text-align:center">Confirm : <input type="password" name="email" required size="20"></td>
 		</tr>
 		</table>
+        <div class="dropdown"><form method="post"> 
+  <select id="doctorSelect" name="doctorSelect" value="Selection">
+  <option value="" selected disabled hidden>Select Doctor</option>
+	<?php
+		
+			while($row = mysqli_fetch_assoc($query_result)){
+				$items[] = $row;
+			}
+			foreach($items as $item){
+			
+				?>
+				<option value="<?php echo $item["lastName"]?>"><?php echo $item["firstName"] . " " . $item["lastName"]?>
+				<?php
+			}
+			?>
+	</select>
+	<br><br>
+	</form></div>
+<br>
 		<br>
 		<input type="submit" value="Create Account" style="color:Black">
 		<br><br>
