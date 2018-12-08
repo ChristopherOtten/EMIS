@@ -5,7 +5,7 @@ include("inc_connect.php");
 
 	//Get names of all doctors
 	$query = "SELECT firstName, lastName FROM generalUsers";
-	$query .= " WHERE permissions = 'Doctor' ";
+	//$query .= " WHERE permissions = 'Doctor' ";
 	
 	//create query
 	$query_result = mysqli_query($MYSQLI,$query)
@@ -14,7 +14,7 @@ include("inc_connect.php");
 	//make array out of query results
 	$row = mysqli_fetch_array($query_result);
     foreach($row as $item){
-        echo $item;
+        echo $item . " ";
 	}
 
 ?>
