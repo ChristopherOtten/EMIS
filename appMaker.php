@@ -32,7 +32,8 @@ $reason = $_REQUEST['visitD'];
 $date = $_REQUEST['dateD'];
 $time = $_REQUEST['timeD'];
 
-$query2 = "SELECT " . $first . ", " . $middle . ", " . $last . "FROM patients";
+$query2 = "SELECT first_name, middle_name, last_name, Doctor FROM patients";
+$query2 .= " WHERE " . "first_name, middle_name, last_name" . " LIKE '" . $first . "' " . $middle . "' " . $last . "' ";
 $query_result2 = mysqli_query($MYSQLI,$query2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
 $row2 = mysqli_fetch_array($query_result);
