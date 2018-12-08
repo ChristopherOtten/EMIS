@@ -38,9 +38,6 @@ $row2 = mysqli_fetch_array($query_result);
 
 $thisDoctor = $_SESSION['doctorName'];
 
-echo $thisDoctor;
-echo $row['permissions'];
-
 if ($row['permissions'] == 'Receptionist'){
     
     $thisDoctor = $row2['Doctor'];
@@ -60,20 +57,31 @@ if (mysqli_query($MYSQLI, $sql)){
         header('Location: receptionist.php');
         exit;
 	
-    } else {
-        header('Location: receptionist.php?error=Y');
+    } else if ( $row['permissions'] == 'Doctor' ){
+        
+        //close
+        mysqli_close($MYSQLI);
+        header('Location: doctor.php');
         exit;
     
     }
 	
-	//close
-	mysqli_close($MYSQLI);
-	header('Location: doctor.php');
-	exit;
-	
 } else {
-    header('Location: doctor.php?error=Y');
-	exit;
+    
+    if ($row['permissions'] == 'Receptionist'){
+    
+        //close
+        header('Location: receptionist.php?error=Y');
+        exit;
+	
+    } else if ( $row['permissions'] == 'Doctor' ){
+        
+        //close
+        mysqli_close($MYSQLI);
+        header('Location: doctor.php?error=Y');
+        exit;
+    
+    }
 }
 
 
