@@ -38,7 +38,8 @@ $row2 = mysqli_fetch_array($query_result);
 
 $thisDoctor = $_SESSION['doctorName'];
 
-echo $query_result2;
+echo $row;
+echo $row2;
 echo $row['permissions'];
 echo $row2['Doctor'];
 
