@@ -13,7 +13,9 @@ include("inc_connect.php");
 	
 	//make array out of query results
 	$row = mysqli_fetch_array($query_result);
-    echo $row;
+    foreach($row as $item){
+        echo $item;
+	}
 
 ?>
 
