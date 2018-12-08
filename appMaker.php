@@ -13,9 +13,7 @@ if (!$MYSQLI)
 
 $query = "SELECT email, permissions FROM generalUsers";
 
-$_SESSION["email"] = $search_value; // create session variable from email
-
-$query .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
+$query .= " WHERE " . "email" . " LIKE '" . $_SESSION['email'] . "' ";
 
 //create query, die if error
 $query_result = mysqli_query($MYSQLI,$query)
