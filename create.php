@@ -13,9 +13,6 @@ include("inc_connect.php");
 	
 	//make array out of query results
 	$row = mysqli_fetch_array($query_result);
-    foreach($row as $item){
-        echo $item . " ";
-	}
 
 ?>
 
