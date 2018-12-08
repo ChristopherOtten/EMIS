@@ -129,6 +129,7 @@ Use the input field to search for a specific dropdown link.<br>
 				?>
 				<option value="<?php echo $row["lastName"]?>"><?php echo "Dr. " . $row["firstName"] . " " . $row["lastName"]?>
 				<?php
+                $row = mysqli_fetch_assoc( $query_result );
 			}
 			?>
 	</select>
