@@ -10,8 +10,6 @@ session_start();
 include("inc_connect.php");
 if (!$MYSQLI)
 	echo "problem";
-$search_value = $_REQUEST['email']; //from index.php
-$_SESSION["email"] = $search_value; // create session variable from email
 
 $query = "SELECT permissions FROM generalUsers";
 
@@ -40,8 +38,10 @@ $row2 = mysqli_fetch_array($query_result);
 
 $thisDoctor = $_SESSION['doctorName'];
 
-
-echo $_SESSION;
+foreach ( $thing as $_SESSION ){
+    echo $thing;
+}
+echo $_SESSION['email'];
 
 if ($row['permissions'] == 'Receptionist'){
     
