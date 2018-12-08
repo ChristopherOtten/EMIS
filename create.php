@@ -13,6 +13,7 @@ include("inc_connect.php");
 	
 	//make array out of query results
 	$row = mysqli_fetch_array($query_result);
+    echo $row;
 
 ?>
 
@@ -113,6 +114,7 @@ include("inc_connect.php");
 		</tr>
 		</table>
         <div class="button">
+
 <h4>Select Doctor:</h4>
 Click on the button to open the dropdown menu.<br>
 Use the input field to search for a specific dropdown link.<br>
@@ -123,7 +125,6 @@ Use the input field to search for a specific dropdown link.<br>
 		
 			while($row = mysqli_fetch_assoc($query_result)){
 				$items[] = $row;
-                echo $row;
 			}
 			foreach($items as $item){
 			
