@@ -59,7 +59,7 @@ session_start();
 	$row = mysqli_fetch_array($query_result);
 	
 	//sql to grab first, middle, last names of patients associated w/ doctor who logged in
-	$sql = "SELECT first_name, middle_name, last_name, Date, Time, ReasonForVisit FROM appointments" ;
+	$sql = "SELECT * FROM appointments";
 	$sql .= " WHERE " . "Doctor" . " LIKE '" . $row['lastName'] . "' ";
 	
 	$_SESSION['doctorName'] = $row['lastName'];
