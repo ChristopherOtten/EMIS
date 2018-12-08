@@ -34,11 +34,10 @@ $query2 = "SELECT Doctor FROM patients";
 $query2 .= " WHERE first_name LIKE '" . $first . "' AND middle_name LIKE '" . $middle . "' AND last_name LIKE '" . $last . "' ";
 $query_result2 = mysqli_query($MYSQLI,$query2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
-$row2 = mysqli_fetch_array($query_result);
+$row2 = mysqli_fetch_array($query_result2);
 
 $thisDoctor = $_SESSION['doctorName'];
 
-echo $row['permissions'];
 echo $row2['Doctor'];
 
 if ($row['permissions'] == 'Receptionist'){
