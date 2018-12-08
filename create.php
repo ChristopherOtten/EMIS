@@ -114,25 +114,25 @@ include("inc_connect.php");
 		</table>
         <div class="button">
 
-<h4>Select Doctor:</h4>
-Click on the button to open the dropdown menu.<br>
-Use the input field to search for a specific dropdown link.<br>
+        <h4>Select Doctor:</h4>
+        Click on the button to open the dropdown menu.<br>
+        Use the input field to search for a specific dropdown link.<br>
         <div class="dropdown"><form method="post"> 
-  <select id="doctorSelect" name="doctorSelect" value="Selection">
-  <option value="" selected disabled hidden>Select Doctor</option>
-	<?php
-			while( !empty( $row ) ){
+            <select id="doctorSelect" name="doctorSelect" value="Selection">
+                <option value="" selected disabled hidden>Select Doctor</option>
+                <?php
+                    while( !empty( $row ) ){
 			
 				?>
-				<option value="<?php echo $row["lastName"]?>"><?php echo "Dr. " . $row["firstName"] . " " . $row["lastName"]?>
+                    <option value="<?php echo $row["lastName"]?>"><?php echo "Dr. " . $row["firstName"] . " " . $row["lastName"]?>
 				<?php
-                $row = mysqli_fetch_assoc( $query_result );
-			}
-			?>
-	</select>
-	<br><br>
-	</form></div>
-<br>
+                    $row = mysqli_fetch_assoc( $query_result );
+                    }
+                ?>
+            </select>
+        <br><br>
+        </form></div>
+        <br>
 		<br>
 		<input type="submit" value="Create Account" style="color:Black">
 		<br><br>
