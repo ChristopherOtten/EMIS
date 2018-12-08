@@ -49,6 +49,19 @@ $sql = "INSERT INTO appointments". "(Date, Time, Doctor, ReasonForVisit, first_n
 VALUES ('$date', '$time', '" . $_SESSION['doctorName']. "', '$reason', '$first', '$middle', '$last')";
 
 if (mysqli_query($MYSQLI, $sql)){
+    
+    if ($row['permissions'] == 'Receptionist'){
+    
+        	//close
+        mysqli_close($MYSQLI);
+        header('Location: receptionist.php');
+        exit;
+	
+        } else {
+        header('Location: receptionist.php?error=Y');
+        exit;
+    
+    }
 	
 	//close
 	mysqli_close($MYSQLI);
