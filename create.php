@@ -112,6 +112,10 @@ include("inc_connect.php");
 			<td style="text-align:center">Confirm : <input type="password" name="email" required size="20"></td>
 		</tr>
 		</table>
+        <div class="button">
+<h4>Select Doctor:</h4>
+Click on the button to open the dropdown menu.<br>
+Use the input field to search for a specific dropdown link.<br>
         <div class="dropdown"><form method="post"> 
   <select id="doctorSelect" name="doctorSelect" value="Selection">
   <option value="" selected disabled hidden>Select Doctor</option>
@@ -119,6 +123,7 @@ include("inc_connect.php");
 		
 			while($row = mysqli_fetch_assoc($query_result)){
 				$items[] = $row;
+                echo $row;
 			}
 			foreach($items as $item){
 			
