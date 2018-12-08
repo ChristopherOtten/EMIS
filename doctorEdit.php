@@ -2,7 +2,20 @@
 session_start();
 include("inc_connect.php");
 
-
+foreach ($_POST as $key => $value) {
+    if (empty($value)) {
+       unset($_POST[$key]);
+    }
+}
+if ( empty($_POST) ){
+    
+    mysqli_close($MYSQLI);
+        
+    header('Location: nurse.php?error=Y');
+    exit; 
+        
+     
+}
 
 $query2 = "SELECT first_name, middle_name, last_name, weight, height, age, blood_pressure, diagnosis, medications FROM patients";
 $query2 .= " WHERE " . "Doctor" . " LIKE '" . $_SESSION['doctorName']  . "' AND last_name LIKE '" . $_POST['mySelect']  . "'";
