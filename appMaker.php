@@ -30,6 +30,29 @@ $reason = $_REQUEST['visitD'];
 $date = $_REQUEST['dateD'];
 $time = $_REQUEST['timeD'];
 
+if ( $first == '' or $middle == '' or $last '' ){
+    
+    mysqli_close($MYSQLI);
+    if ($row['permissions'] == 'Receptionist'){
+        
+        header('Location: receptionist.php?error=Y');
+        exit; 
+        
+    } else if ( $row['permissions'] == 'Doctor' ){
+        
+        header('Location: doctor.php?error=Y');
+        exit; 
+        
+    } else {
+        
+        //close
+        header('Location: index.php?error=Y');
+        exit;
+        
+    }
+     
+}
+
 $query2 = "SELECT Doctor FROM patients";
 $query2 .= " WHERE first_name LIKE '" . $first . "' AND middle_name LIKE '" . $middle . "' AND last_name LIKE '" . $last . "' ";
 $query_result2 = mysqli_query($MYSQLI,$query2)
@@ -41,6 +64,29 @@ $thisDoctor = $_SESSION['doctorName'];
 if ($row['permissions'] == 'Receptionist'){
     
     $thisDoctor = $row2['Doctor'];
+    
+}
+
+if ( $thisDoctor == '' ){
+    
+    mysqli_close($MYSQLI);
+    if ($row['permissions'] == 'Receptionist'){
+        
+        header('Location: receptionist.php?error=Y');
+        exit; 
+        
+    } else if ( $row['permissions'] == 'Doctor' ){
+        
+        header('Location: doctor.php?error=Y');
+        exit; 
+        
+    } else {
+        
+        //close
+        header('Location: index.php?error=Y');
+        exit;
+        
+    }  
     
 }
 
