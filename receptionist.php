@@ -77,7 +77,6 @@ session_start();
         </div>
 		<ul>
 			<li><a class="active"  href="receptionist.php">Appointments List</a></li>
-			<li><a href="#Create_Appointments">Create Appointments</a></li>
 			<li><a href="#message">Messages</a></li>
 		</ul>
 	</header>
@@ -136,6 +135,18 @@ session_start();
 	</table>
 	</div>
 	</form>
+    
+<div class="appointments"><form action="appMaker.php" method="post">
+	Date: <input type="date" name="dateD" id="dateD" required>
+	Time: <input type="time" name="timeD" id="timeD" required><br>
+	Reason For Visit: <input type="text" name="visitD" id="visitD" required><br>
+	Patients Name:<br>
+	First Name: <input type="text" name="firstD" id="firstD" required><br>
+	Middle Initial: <input type="text" name="middleD" id="middleD" maxlength="1" required><br>
+	Last Name: <input type="text" name="lastD" id="lastD" required><br>
+	<input type="submit" value="Create Appointment" style="color:BLue">
+		<br><br>
+</form></div>
 
 </div>
 </body>
