@@ -59,10 +59,9 @@ if (mysqli_query($MYSQLI, $sql)){
         header('Location: receptionist.php');
         exit;
 	
-        } else {
+    } else {
         header('Location: receptionist.php?error=Y');
         exit;
-        }
     
     }
 	
