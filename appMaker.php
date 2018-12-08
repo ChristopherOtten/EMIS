@@ -13,7 +13,7 @@ if (!$MYSQLI)
 
 $query = "SELECT permissions FROM generalUsers";
 
-$query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
+$query .= " WHERE " . "email" . " LIKE '" . $_SESSION['email'] . "' ";
 
 //create query, die if error
 $query_result = mysqli_query($MYSQLI,$query)
@@ -30,7 +30,7 @@ $reason = $_REQUEST['visitD'];
 $date = $_REQUEST['dateD'];
 $time = $_REQUEST['timeD'];
 
-$query2 = "SELECT * FROM patients";
+$query2 = "SELECT Doctor FROM patients";
 $query2 .= " WHERE first_name LIKE '" . $first . "' AND middle_name LIKE '" . $middle . "' AND last_name LIKE '" . $last . "' ";
 $query_result2 = mysqli_query($MYSQLI,$query2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
