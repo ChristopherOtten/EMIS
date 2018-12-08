@@ -124,7 +124,7 @@ Use the input field to search for a specific dropdown link.<br>
   <select id="doctorSelect" name="doctorSelect" value="Selection">
   <option value="" selected disabled hidden>Select Doctor</option>
 	<?php
-			foreach($row as $item){
+			while( !empty( $row ) ){
 			
 				?>
 				<option value="<?php echo $row["lastName"]?>"><?php echo "Dr. " . $row["firstName"] . " " . $row["lastName"]?>
