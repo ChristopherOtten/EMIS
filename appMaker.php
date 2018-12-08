@@ -38,6 +38,7 @@ $row2 = mysqli_fetch_array($query_result);
 
 $thisDoctor = $_SESSION['doctorName'];
 
+echo $row['permissions'];
 echo $row2['Doctor'];
 
 if ($row['permissions'] == 'Receptionist'){
@@ -49,7 +50,7 @@ if ($row['permissions'] == 'Receptionist'){
 
 
 $sql = "INSERT INTO appointments". "(Date, Time, Doctor, ReasonForVisit, first_name, middle_name, last_name)". "
-VALUES ('$date', '$time', '" . $thisDoctor. "', '$reason', '$first', '$middle', '$last')";
+VALUES ('$date', '$time', '" . $thisDoctor . "', '$reason', '$first', '$middle', '$last')";
 /*
 if (mysqli_query($MYSQLI, $sql)){
     
