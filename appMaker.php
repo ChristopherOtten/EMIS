@@ -11,6 +11,17 @@ include("inc_connect.php");
 if (!$MYSQLI)
 	echo "problem";
 
+$query = "SELECT email, permissions FROM generalUsers";
+
+$_SESSION["email"] = $search_value; // create session variable from email
+
+$query .= " WHERE " . "email" . " LIKE '" . strtolower($search_value) . "' ";
+
+//create query, die if error
+$query_result = mysqli_query($MYSQLI,$query)
+	or die ("Invalid query: ".mysqli_error($MYSQLI));
+//make array out of query results
+$row = mysqli_fetch_array($query_result);
 
 $first = $_REQUEST['firstD'];
 $first = mysqli_real_escape_string($MYSQLI, $first);
@@ -20,6 +31,17 @@ $middle = $_REQUEST['middleD'];
 $reason = $_REQUEST['visitD'];
 $date = $_REQUEST['dateD'];
 $time = $_REQUEST['timeD'];
+
+$query2 = "SELECT " . $first . ", " . $middle . ", " . $last . "FROM patients";
+$query_result2 = mysqli_query($MYSQLI,$query2)
+	or die ("Invalid query: ".mysqli_error($MYSQLI));
+$row2 = mysqli_fetch_array($query_result);
+
+if ($row['permissions'] == 'Receptionist'){
+    
+    $_SESSION['doctorName'] = $row2['Doctor'];
+    
+}
 
 
 $sql = "INSERT INTO appointments". "(Date, Time, Doctor, ReasonForVisit, first_name, middle_name, last_name)". "
