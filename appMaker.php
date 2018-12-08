@@ -40,6 +40,7 @@ $thisDoctor = $_SESSION['doctorName'];
 
 echo $row['permissions'];
 echo $row2['Doctor'];
+echo "test...";
 
 if ($row['permissions'] == 'Receptionist'){
     
