@@ -5,7 +5,7 @@ include("inc_connect.php");
 
 	//Get last name of receptionist who logged in
 	$query = "SELECT * FROM generalUsers";
-	$query .= " WHERE permissions = 'Doctor' ";
+	$query .= " WHERE permissions LIKE 'Doctor' ";
 	
 	//create query
 	$query_result = mysqli_query($MYSQLI,$query)
