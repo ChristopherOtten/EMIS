@@ -5,7 +5,7 @@ include("inc_connect.php");
 
 	//Get names of all doctors
 	$query = "SELECT firstName, lastName FROM generalUsers";
-	//$query .= " WHERE permissions = 'Doctor' ";
+	$query .= " WHERE permissions = 'Doctor' ";
 	
 	//create query
 	$query_result = mysqli_query($MYSQLI,$query)
@@ -124,14 +124,10 @@ Use the input field to search for a specific dropdown link.<br>
   <select id="doctorSelect" name="doctorSelect" value="Selection">
   <option value="" selected disabled hidden>Select Doctor</option>
 	<?php
-		
-			while($row = mysqli_fetch_assoc($query_result)){
-				$items[] = $row;
-			}
-			foreach($items as $item){
+			foreach($row as $item){
 			
 				?>
-				<option value="<?php echo $item["lastName"]?>"><?php echo "Dr. " . $item["firstName"] . " " . $item["lastName"]?>
+				<option value="<?php echo $row["lastName"]?>"><?php echo "Dr. " . $row["firstName"] . " " . $row["lastName"]?>
 				<?php
 			}
 			?>
