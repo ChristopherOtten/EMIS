@@ -10,6 +10,8 @@ session_start();
 include("inc_connect.php");
 if (!$MYSQLI)
 	echo "problem";
+$search_value = $_REQUEST['email']; //from index.php
+$_SESSION["email"] = $search_value; // create session variable from email
 
 $query = "SELECT permissions FROM generalUsers";
 
