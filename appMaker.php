@@ -11,7 +11,7 @@ include("inc_connect.php");
 if (!$MYSQLI)
 	echo "problem";
 
-$query = "SELECT email, permissions FROM generalUsers";
+$query = "SELECT permissions FROM generalUsers";
 
 $query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
 
