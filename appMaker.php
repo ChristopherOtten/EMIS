@@ -41,7 +41,7 @@ $thisDoctor = $_SESSION['doctorName'];
 foreach ( $thing as $_SESSION ){
     echo $thing;
 }
-echo $_SESSION['email'];
+//echo $_SESSION['email'];
 
 if ($row['permissions'] == 'Receptionist'){
     
