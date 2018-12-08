@@ -117,7 +117,6 @@ session_start();
         </div>
 		<ul>
 			<li><a class="active"  href="doctor.php">Appointments</a></li>
-			<li><a href="#Patient_list">Patient List</a></li>
 			<li><a href="#message">Messages</a></li>
 		</ul>
 	</header>
