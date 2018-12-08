@@ -120,7 +120,7 @@ include("inc_connect.php");
 			while($row = mysqli_fetch_assoc($query_result)){
 				$items[] = $row;
 			}
-			foreach($row as $item){
+			foreach($items as $item){
 			
 				?>
 				<option value="<?php echo $item["lastName"]?>"><?php echo "Dr. " . $item["firstName"] . " " . $item["lastName"]?>
