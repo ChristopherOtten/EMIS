@@ -30,13 +30,26 @@ $reason = $_REQUEST['visitD'];
 $date = $_REQUEST['dateD'];
 $time = $_REQUEST['timeD'];
 
-foreach ($row as $key => $value) {
-    echo $row[$key];
+$query2 = "SELECT Doctor FROM patients";
+$query2 .= " WHERE first_name LIKE '" . $first . "' AND middle_name LIKE '" . $middle . "' AND last_name LIKE '" . $last . "' ";
+$query_result2 = mysqli_query($MYSQLI,$query2)
+	or die ("Invalid query: ".mysqli_error($MYSQLI));
+$row2 = mysqli_fetch_array($query_result2);
+
+$thisDoctor = $_SESSION['doctorName'];
+
+if ($row['permissions'] == 'Receptionist'){
+    
+    $thisDoctor = $row2['Doctor'];
+    
+}
+
+foreach ($row2 as $key => $value) {
     if (empty($value)) {
-       unset($row[$key]);
+       unset($row2[$key]);
     }
 }
-if ( empty($row) ){
+if ( empty($row2) ){
     
     mysqli_close($MYSQLI);
     if ($row['permissions'] == 'Receptionist'){
@@ -57,20 +70,6 @@ if ( empty($row) ){
         
     }
      
-}
-
-$query2 = "SELECT Doctor FROM patients";
-$query2 .= " WHERE first_name LIKE '" . $first . "' AND middle_name LIKE '" . $middle . "' AND last_name LIKE '" . $last . "' ";
-$query_result2 = mysqli_query($MYSQLI,$query2)
-	or die ("Invalid query: ".mysqli_error($MYSQLI));
-$row2 = mysqli_fetch_array($query_result2);
-
-$thisDoctor = $_SESSION['doctorName'];
-
-if ($row['permissions'] == 'Receptionist'){
-    
-    $thisDoctor = $row2['Doctor'];
-    
 }
 
 if ( empty( $thisDoctor ) ){
@@ -99,7 +98,7 @@ if ( empty( $thisDoctor ) ){
 $sql = "INSERT INTO appointments". "(Date, Time, Doctor, ReasonForVisit, first_name, middle_name, last_name)". "
 VALUES ('$date', '$time', '" . $thisDoctor . "', '$reason', '$first', '$middle', '$last')";
 
-/*if (mysqli_query($MYSQLI, $sql)){
+if (mysqli_query($MYSQLI, $sql)){
     
     mysqli_close($MYSQLI);
     
@@ -137,7 +136,7 @@ VALUES ('$date', '$time', '" . $thisDoctor . "', '$reason', '$first', '$middle',
         exit;
         
     }
-}*/
+}
 
 
 
