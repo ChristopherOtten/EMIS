@@ -38,10 +38,10 @@ $row2 = mysqli_fetch_array($query_result);
 
 $thisDoctor = $_SESSION['doctorName'];
 
-echo $query;
-echo $query2;
-echo $row['permissions'];
-echo $row2['Doctor'];
+echo $query . "\n";
+echo $query2 . "\n";
+echo $row['permissions'] . "\n";
+echo $row2['Doctor'] . "\n";
 
 if ($row['permissions'] == 'Receptionist'){
     
