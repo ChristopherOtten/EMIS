@@ -182,7 +182,7 @@ Click on the button to open the dropdown menu.<br>
 Use the input field to search for a specific dropdown link.<br>
 
 <div class="dropdown"><form action="doctorEdit.php" method="post"> 
-  <select id="mySelect" name="mySelect" value="Selection">
+  <select required id="mySelect" name="mySelect" value="Selection">
   <option value="" selected disabled hidden>Select Patient</option>
 	<?php
 		
