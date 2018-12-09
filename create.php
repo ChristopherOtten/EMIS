@@ -118,7 +118,7 @@ include("inc_connect.php");
         Click on the button to open the dropdown menu.<br>
         Use the input field to search for a specific dropdown link.<br>
         <div class="dropdown"><form method="post"> 
-            <select id="doctorSelect" name="doctorSelect" value="Selection">
+            <select required id="doctorSelect" name="doctorSelect" value="Selection">
                 <option value="" selected disabled hidden>Select Doctor</option>
                 <?php
                     while( !empty( $row ) ){
