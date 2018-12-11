@@ -95,19 +95,18 @@ if ($error == "Y"){
             echo "<td>Middle Initial: <input maxlength=1 type='text' name='mnameM' value='".$row2["middle_name"]."' disabled> </td>";
             echo "<td>Last Name: <input type='text' name='lnameM' value=".$row["lastName"]." disabled></td>";
             echo "<td>Gender: <br>
-                    <input type='radio' name='gender' id='male' value='male' required><label for='male'>Male</label><br>
-                    <input type='radio' name='gender' id='female' value='female' required><label for='female'>Female</label><br>
-                    <input type='radio' name='gender' id='other' value='other' required><label for='other'>Other</label><br></td>
+                    <input type='radio' name='gender' id='male' value='male' disabled><label for='male'>Male</label><br>
+                    <input type='radio' name='gender' id='female' value='female' disabled><label for='female'>Female</label><br>
+                    <input type='radio' name='gender' id='other' value='other' disabled><label for='other'>Other</label><br></td>
             </tr>";
-            $city = $row2["city"];
             echo "<tr>
                 <td>Age: <input type='date' name='ageM' value='".$row3["age"]."' disabled></td>
-                <td>Weight</td>: <input type='text' name='weightM' value='".$row3["weight"]."'required></td>
+                <td>Weight<input type='text' name='weightM' value='".$row3["weight"]."'required></td>
                 <td>Height: <input type='text' name='heightM' value='".$row3["height"]."' required></td>
                 <td>Blood Pressure: <input type='text' name='bpM' value='".$row3["blood_pressure"]."' required></td></tr>";
             echo "<tr>
                 <td>Recent Diagnosis: <input type='text' name='diadM' value='".$row3["diagnosis"]."' required></td>
-                <td>Treatment/Medications: <input type='text' name='medM' value='".$row3["medications"]."' disabled></td>
+                <td>Treatment/Medications: <input type='text' name='medM' value='".$row3["medications"]."' required></td>
                 <td>Doctor: <input type='text' name='docM' value='".$row3["Doctor"]."' required></td>
             </tr>";
             ?>
