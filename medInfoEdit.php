@@ -99,10 +99,11 @@ if ($error == "Y"){
                     <input type='radio' name='gender' id='female' value='female' disabled><label for='female'>Female</label><br>
                     <input type='radio' name='gender' id='other' value='other' disabled><label for='other'>Other</label><br></td>
             </tr>";
+            $height = $row3["height"];
             echo "<tr>
                 <td>Age: <input type='date' name='ageM' value='".$row3["age"]."' disabled></td>
                 <td>Weight<input type='text' name='weightM' value='".$row3["weight"]."'required></td>
-                <td>Height: <input type='text' name='heightM' value='".$row3["height"]."' required></td>
+                <td>Height: <input type='text' name='heightM' value='".$height."' required></td>
                 <td>Blood Pressure: <input type='text' name='bpM' value='".$row3["blood_pressure"]."' required></td></tr>";
             echo "<tr>
                 <td>Recent Diagnosis: <input type='text' name='diadM' value='".$row3["diagnosis"]."' required></td>
