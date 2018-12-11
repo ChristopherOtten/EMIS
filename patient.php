@@ -129,7 +129,7 @@ session_start();
 	</div>
 	</form>
     
-    	<p class="p01">Upcoming Appointments</p>
+    <p class="p01">Upcoming Appointments</p>
 	<div class="main" style="height:300px;width:758px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;"><form action="patientEdit.html" method="post"><table id="t01">
 	<?php
 		//print table of all information from database
