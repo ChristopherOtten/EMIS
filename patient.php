@@ -14,7 +14,7 @@ session_start();
 
 
     //  Using username/email, find the user's name
-    $query = "SELECT firstName, lastName FROM generalUsers";
+    $query = "SELECT * FROM generalUsers";
     //$search_value2 = $GLOBALS['search_value']; //from index.php
     $query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
     $query_result = mysqli_query($MYSQLI,$query)
@@ -24,7 +24,7 @@ session_start();
     
     $query7 = "SELECT * FROM appointments";
     //$search_value2 = $GLOBALS['search_value']; //from index.php
-    $query7 .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
+    $query7 .= " WHERE first_name LIKE '" . $row['first_name'] . "' , middle_name LIKE '" . $row[middle_name] . "' , last_name LIKE '" . $row[middle_name] . "' ";
     $query_result7 = mysqli_query($MYSQLI,$query7)
         or die ("Invalid query: ".mysqli_error($MYSQLI));
 
@@ -89,7 +89,7 @@ session_start();
             //  Using username/email, find the user's name
             $query = "SELECT firstName, lastName FROM generalUsers";
             //$search_value2 = $GLOBALS['search_value']; //from index.php
-            $query .= " WHERE " . "email" . " LIKE '" . $_SESSION["email"] . "' ";
+            $query .= " WHERE email LIKE '" . $_SESSION["email"] . "' ";
             $query_result = mysqli_query($MYSQLI,$query)
                 or die ("Invalid query: ".mysqli_error($MYSQLI));
             //make array out of query results
