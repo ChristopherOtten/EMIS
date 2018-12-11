@@ -43,8 +43,20 @@ $row = mysqli_fetch_array($query_result);
                 <b>EMIS</b>
             </h1></div>
         <div class="column2">
-            <?php echo "Welcome, ".$row["firstName"];?>
+            <?php echo "Welcome, ".$row["firstName"];?> <button onclick='myFunction()'>Logout</button>
         </div>
+        <script>
+            function myFunction() {
+                var txt;
+                if (confirm("Do you wish to logout?")) {
+                    window.location.assign("index.php");
+                    txt = "You wish to logout!";
+                } else {
+                    txt = "  ";
+                }
+                document.getElementById("demo").innerHTML = txt;
+            }
+        </script>
     </div>
     <ul>
         <li><a href="patient.php">Personal Info</a></li>
@@ -107,9 +119,9 @@ if ($error == "Y"){
                 <td>Height: <input type='text' name='heightM' value=".$height." required></td>
                 <td>Blood Pressure: <input type='text' name='bpM' value='".$row3["blood_pressure"]."' required></td></tr>";
             echo "<tr>
-                <td>Recent Diagnosis: <input type='text' name='diadM' value='".$row3["diagnosis"]."' required></td>
+                <td>Recent Diagnosis: <input type='text' name='diaM' value='".$row3["diagnosis"]."' required></td>
                 <td>Treatment/Medications: <input type='text' name='medM' value='".$row3["medications"]."' required></td>
-                <td>Doctor: <input type='text' name='docM' value='".$row3["Doctor"]."' required></td>
+                <td>Doctor: <input type='text' name='docM' value='".$row3["Doctor"]."' disabled></td>
             </tr>";
             ?>
         </table>

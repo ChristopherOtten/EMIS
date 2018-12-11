@@ -121,9 +121,9 @@ if ($error == "EM"){
             echo "<td>Middle Initial: <input maxlength=1 type='text' name='mname' value='".$row2["middle_name"]."' disabled> </td>";
             echo "<td>Last Name: <input type='text' name='lname' value=".$row["lastName"]." disabled></td>";
             echo "<td>Gender: <br>
-                    <input type='radio' name='gender' id='male' value='male'><label for='male'>Male</label><br>
-                    <input type='radio' name='gender' id='female' value='female'><label for='female'>Female</label><br>
-                    <input type='radio' name='gender' id='other' value='other'><label for='other'>Other</label><br></td>
+                    <input type='radio' name='gender' id='male' value='male' disabled><label for='male'>Male</label><br>
+                    <input type='radio' name='gender' id='female' value='female' disabled><label for='female'>Female</label><br>
+                    <input type='radio' name='gender' id='other' value='other' disabled><label for='other'>Other</label><br></td>
             </tr>";
             $city = $row2["city"];
             echo "<tr>
