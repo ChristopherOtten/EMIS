@@ -24,7 +24,7 @@ session_start();
     
     $query7 = "SELECT * FROM appointments";
     //$search_value2 = $GLOBALS['search_value']; //from index.php
-    $query7 .= " WHERE first_name LIKE '" . $row['firstName'] . "' , last_name LIKE '" . $row['lastName'] . "' ";
+    $query7 .= " WHERE first_name LIKE '" . $row['firstName'] . "' AND last_name LIKE '" . $row['lastName'] . "' ";
     $query_result7 = mysqli_query($MYSQLI,$query7)
         or die ("Invalid query: ".mysqli_error($MYSQLI));
 
