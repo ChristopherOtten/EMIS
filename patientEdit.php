@@ -55,6 +55,7 @@ $row = mysqli_fetch_array($query_result);
     <ul>
         <li><a class="active" href="patient.php">Personal Info</a></li>
         <li><a href="medInfo.php">Medical Info</a></li>
+        <li><a href="appointment.php">Appointments</a></li>
         <li><a href="#receipt">Receipts</a></li>
         <li><a href="#message">Messages</a></li>
     </ul>
