@@ -31,7 +31,7 @@ session_start();
 	//make query
 	$sql_result = mysqli_query($MYSQLI,$sql)or die ("Invalid query: ".mysqli_error($MYSQLI));
 	
-	$query2 = "SELECT first_name, last_name, weight, age, blood_pressure, diagnosis, medications FROM patients";
+	$query2 = "SELECT * FROM patients";
 	$query_result2 = mysqli_query($MYSQLI,$query2)
 	or die ("Invalid query: ".mysqli_error($MYSQLI));
 
