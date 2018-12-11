@@ -22,17 +22,9 @@ session_start();
     //make array out of query results
     $row = mysqli_fetch_array($query_result);
     
-    $query9 = "SELECT * FROM patients";
-    //$search_value2 = $GLOBALS['search_value']; //from index.php
-    $query9 .= " WHERE email LIKE '" . $_SESSION["email"] . "' ";
-    $query_result9 = mysqli_query($MYSQLI,$query9)
-        or die ("Invalid query: ".mysqli_error($MYSQLI));
-    //make array out of query results
-    $row9 = mysqli_fetch_array($query_result);
-    
     $query7 = "SELECT * FROM appointments";
     //$search_value2 = $GLOBALS['search_value']; //from index.php
-    $query7 .= " WHERE first_name LIKE '" . $row9['first_name'] . "' , middle_name LIKE '" . $row9[middle_name] . "' , last_name LIKE '" . $row9[middle_name] . "' ";
+    $query7 .= " WHERE first_name LIKE '" . $row['firstName'] . "' , last_name LIKE '" . $row['lastName'] . "' ";
     $query_result7 = mysqli_query($MYSQLI,$query7)
         or die ("Invalid query: ".mysqli_error($MYSQLI));
 
