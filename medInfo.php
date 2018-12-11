@@ -71,7 +71,7 @@ $row = mysqli_fetch_array($query_result);
 
 <!--  get data from the server and display it here  -->
 <p class="p01">Medical Information</p>
-<div class="main"><form action="medInfoEdit.html" method="post"><table id="t01">
+<div class="main"><form action="medInfoEdit.php" method="post"><table id="t01">
             <?php
             //  Using username/email, find the user's name
             $query = "SELECT firstName, lastName FROM generalUsers";
