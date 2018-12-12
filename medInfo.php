@@ -120,9 +120,9 @@ $row = mysqli_fetch_array($query_result);
             ?>
         </table>
 </div>
-<div class="button">
+<!--<div class="button">
     <input type="submit" value="Update" style="color:BLue;margin:auto">
-</div>
+</div>-->
 </form>
 
 </body>
