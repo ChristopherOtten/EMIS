@@ -146,61 +146,6 @@ if ($error == "EM"){
 </div>
 </form>
 
-    <p class="p01">Upcoming Appointments</p>
-	<div class="main" style="height:300px;width:758px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;"><form action="patientEdit.html" method="post"><table id="t01">
-	<?php
-		//print table of all information from database
-		if (mysqli_num_rows($query_result7) > 0){
-		?>
-		
-			<table border="2" align="center">
-			<tbody>
-			<tr>
-			<td>First name</td>
-			<td>Middle name</td>
-			<td>Last name</td>
-			<td>Date</td>
-			<td>Time</td>
-			<td>ReasonForVisit</td>
-			</tr>
-		
-			<?php
-		
-			while($row7 = mysqli_fetch_assoc($query_result7)){
-				$items[] = $row7;
-			}
-			
-			foreach($items as $item){
-			
-				?>
-				<tr>
-				<td><?php echo $item["first_name"]?></td>
-				<td><?php echo $item["middle_name"]?></td>
-				<td><?php echo $item["last_name"]?></td>
-				<td><?php echo $item["Date"]?></td>
-				<td><?php echo $item["Time"]?></td>
-				<td><?php echo $item["ReasonForVisit"]?></td>
-				</tr>
-				<?php
-			}
-			?>
-			</tbody>
-			</table>
-		<?php
-		
-		}
-		else{
-			echo "No upcoming appointments on record.";
-		}
-		
-	?>
-		
-		</div>
-		</tr>
-	</table>
-	</div>
-	</form>
-
 <!--Footer and Address-->
 <!--<div><footer><address>
     <hr>
